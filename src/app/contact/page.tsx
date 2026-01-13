@@ -149,10 +149,10 @@ export default function ContactPage() {
                       Service Area
                     </h3>
                     <p className="text-[#6B6560]">
-                      Los Angeles & surrounding areas
+                      Chicagoland & surrounding areas
                     </p>
                     <p className="text-sm text-[#A09A94] mt-1">
-                      We travel up to 50 miles from LA
+                      We travel up to 50 miles from Chicago
                     </p>
                   </div>
                 </div>
@@ -323,7 +323,7 @@ export default function ContactPage() {
               },
               {
                 q: "Do you travel to my location?",
-                a: "Yes! We provide on-site services throughout Los Angeles and surrounding areas within 50 miles. Travel within 25 miles is complimentary.",
+                a: "Yes! We provide on-site services throughout Chicagoland and surrounding areas within 50 miles. Travel within 25 miles is complimentary.",
               },
               {
                 q: "What is your cancellation policy?",

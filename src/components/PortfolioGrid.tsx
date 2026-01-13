@@ -89,50 +89,52 @@ export default function PortfolioGrid({
         </motion.div>
       )}
 
-      {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {/* Grid - Mathematically verified layout:
+          Desktop (4 cols): 8 items = 12 cells (3 rows) - item 0 is 2×2, item 6 is 2×1
+          Tablet (3 cols): 6 items = 9 cells (3 rows) - item 0 is 2×2
+          Mobile (2 cols): 4 items = 4 cells (2 rows) - all 1×1
+      */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[160px] md:auto-rows-[180px] lg:auto-rows-[200px] grid-flow-dense">
         <AnimatePresence mode="popLayout">
-          {displayItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                item.aspectRatio === "portrait"
-                  ? "row-span-2"
-                  : item.aspectRatio === "landscape"
-                  ? "col-span-2"
-                  : ""
-              }`}
-              onClick={() => setSelectedImage(item.id)}
-            >
-              <div
-                className={`relative w-full ${
-                  item.aspectRatio === "portrait"
-                    ? "h-[400px] md:h-[500px]"
-                    : item.aspectRatio === "landscape"
-                    ? "h-[200px] md:h-[240px]"
-                    : "h-[200px] md:h-[240px]"
-                }`}
+          {displayItems.map((item, index) => {
+            // Position-based responsive classes for mathematically perfect tiling
+            const isFirstItem = index === 0;
+            const isSeventhItem = index === 6;
+            const isHiddenOnMobile = index >= 4 && index < 6; // Items 5-6 hidden on mobile
+            const isHiddenUntilDesktop = index >= 6; // Items 7-8 hidden until desktop
+
+            return (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className={`
+                  relative overflow-hidden rounded-xl cursor-pointer group
+                  ${isFirstItem ? "md:col-span-2 md:row-span-2" : ""}
+                  ${isSeventhItem ? "lg:col-span-2" : ""}
+                  ${isHiddenOnMobile ? "hidden md:block" : ""}
+                  ${isHiddenUntilDesktop ? "hidden lg:block" : ""}
+                `}
+                onClick={() => setSelectedImage(item.id)}
               >
                 <Image
                   src={item.imageUrl}
                   alt={item.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizes={isFirstItem ? "(max-width: 768px) 50vw, 50vw" : "(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="text-white font-serif text-lg">{item.title}</h3>
                   <p className="text-white/80 text-sm">{item.description}</p>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </div>
 

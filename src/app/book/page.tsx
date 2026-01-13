@@ -340,7 +340,7 @@ export default function BookingPage() {
                           name="location"
                           value={formData.location}
                           onChange={handleInputChange}
-                          placeholder="e.g., The Grand Hotel, Los Angeles or 123 Main St..."
+                          placeholder="e.g., The Grand Hotel, Chicago or 123 Main St..."
                           required
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all"
                         />

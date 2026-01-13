@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -16,6 +17,11 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
+  // Use dark header style when scrolled OR when not on homepage
+  const showDarkHeader = isScrolled || !isHomePage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +34,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+        showDarkHeader
           ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
           : "bg-transparent py-6"
       }`}
@@ -43,7 +49,7 @@ export default function Header() {
           >
             <span
               className={`font-serif text-xl md:text-2xl tracking-wide transition-colors duration-500 ${
-                isScrolled ? "text-[#1A1A1A]" : "text-white"
+                showDarkHeader ? "text-[#1A1A1A]" : "text-white"
               }`}
             >
               Beautiful{" "}
@@ -64,7 +70,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={`text-sm tracking-wide transition-colors duration-300 ${
-                isScrolled
+                showDarkHeader
                   ? "text-[#6B6560] hover:text-[#C9A962]"
                   : "text-white/90 hover:text-[#C9A962]"
               }`}
@@ -75,7 +81,7 @@ export default function Header() {
           <Link
             href="/book"
             className={`ml-4 px-6 py-2.5 text-sm tracking-wide rounded-full transition-all duration-300 transform hover:scale-105 ${
-              isScrolled
+              showDarkHeader
                 ? "bg-[#1A1A1A] text-white hover:bg-[#C9A962]"
                 : "bg-[#C9A962] text-white hover:bg-[#A68B4B]"
             }`}
@@ -88,7 +94,7 @@ export default function Header() {
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`md:hidden relative z-10 p-2 transition-colors duration-300 ${
-            isScrolled || isMobileMenuOpen ? "text-[#1A1A1A]" : "text-white"
+            showDarkHeader || isMobileMenuOpen ? "text-[#1A1A1A]" : "text-white"
           }`}
           aria-label="Toggle menu"
         >

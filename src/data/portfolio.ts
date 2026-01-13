@@ -41,7 +41,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Garden Wedding Look",
     description: "Soft curls with dewy skin finish",
     imageUrl: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
-    aspectRatio: "landscape"
+    aspectRatio: "square"
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "quinceanera",
     title: "Elegant Quinceañera",
     description: "Sophisticated updo with soft glam",
-    imageUrl: "https://images.unsplash.com/photo-1529635424086-79d7e6d68d07?w=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
     aspectRatio: "square"
   },
   {

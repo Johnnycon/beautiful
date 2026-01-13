@@ -96,7 +96,9 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                 <span className="text-[#A09A94] text-sm">
-                  Serving Los Angeles & surrounding areas within 50 miles
+                  3434 W 26th St<br />
+                  Chicago, IL 60623<br />
+                  <span className="text-[#C9A962]/80">Serving Chicagoland & surrounding areas within 50 miles</span>
                 </span>
               </li>
               <li className="flex items-center gap-3">
