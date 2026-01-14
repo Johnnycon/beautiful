@@ -117,7 +117,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="text-[#6B6560] hover:text-[#C9A962] transition-colors"
                     >
-                      @beautifulinsideout
+                      @beautifulio
                     </a>
                     <p className="text-sm text-[#A09A94] mt-1">
                       Follow us for updates

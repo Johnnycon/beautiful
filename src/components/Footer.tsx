@@ -124,7 +124,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
                 >
-                  @beautifulinsideout
+                  @beautifulio
                 </a>
               </li>
             </ul>

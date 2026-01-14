@@ -30,6 +30,17 @@ const iconMap: Record<string, LucideIcon> = {
   users: Users,
 };
 
+// Service images - real images where available, Unsplash placeholders for others
+const serviceImages = [
+  "/images/gallery/gallery_12.JPG", // Bridal - crystal headpiece updo
+  "/images/gallery/gallery_2.JPG",  // Quinceañera - blue ball gown
+  "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80", // Sweet 16 - placeholder
+  "/images/gallery/gallery_1.JPG",  // Hair Styling - textured updo
+  "/images/gallery/gallery_5.JPG",  // Natural - natural glam portrait
+  "/images/gallery/gallery_10.JPG", // Glam - soft glam makeup
+  "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=800&q=80", // Group - placeholder
+];
+
 export default function ServicesPage() {
   const t = useTranslations("services");
   const tData = useTranslations("data.services");
@@ -41,7 +52,7 @@ export default function ServicesPage() {
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-[#FAF8F5] overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
           <Image
-            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80"
+            src="/images/gallery/gallery_10.JPG"
             alt=""
             fill
             className="object-cover"
@@ -93,21 +104,7 @@ export default function ServicesPage() {
                   >
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                       <Image
-                        src={`https://images.unsplash.com/photo-${
-                          index === 0
-                            ? "1519741497674-611481863552"
-                            : index === 1
-                            ? "1560807707-8cc77767d783"
-                            : index === 2
-                            ? "1531746020798-e6953c6e8e04"
-                            : index === 3
-                            ? "1522337360788-8b13dee7a37e"
-                            : index === 4
-                            ? "1487412947147-5cebf100ffc2"
-                            : index === 5
-                            ? "1503104834685-7205e8607eb9"
-                            : "1516726817505-f5ed825624d8"
-                        }?w=800&q=80`}
+                        src={serviceImages[index] || serviceImages[serviceImages.length - 1]}
                         alt={tData(`${service.id}.title`)}
                         fill
                         className="object-cover"

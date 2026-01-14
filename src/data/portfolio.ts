@@ -19,20 +19,21 @@ export const portfolioCategories: { id: PortfolioCategory; label: string }[] = [
 ];
 
 export const portfolioItems: PortfolioItem[] = [
+  // Bridal - 2 real images + 2 placeholders
   {
     id: 1,
     category: "bridal",
-    title: "Classic Bridal Elegance",
-    description: "Soft romantic waves with natural glam makeup",
-    imageUrl: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=80",
+    title: "Crystal Elegance",
+    description: "Elegant low bun with stunning crystal headpiece",
+    imageUrl: "/images/gallery/gallery_12.JPG",
     aspectRatio: "portrait"
   },
   {
     id: 2,
     category: "bridal",
-    title: "Modern Bride",
-    description: "Sleek updo with sophisticated makeup",
-    imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    title: "Garden Romance",
+    description: "Romantic braided updo with delicate floral accents",
+    imageUrl: "/images/gallery/gallery_13.JPG",
     aspectRatio: "portrait"
   },
   {
@@ -44,31 +45,57 @@ export const portfolioItems: PortfolioItem[] = [
     aspectRatio: "square"
   },
   {
+    id: 18,
+    category: "bridal",
+    title: "Bohemian Bride",
+    description: "Effortless waves with natural makeup",
+    imageUrl: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80",
+    aspectRatio: "portrait"
+  },
+  // Quinceañera - 5 real images
+  {
     id: 4,
     category: "quinceanera",
-    title: "Princess Moment",
-    description: "Glamorous waves with dramatic eyes",
-    imageUrl: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=800&q=80",
+    title: "Royal Blue Dream",
+    description: "Sparkling blue ball gown with elegant tiara",
+    imageUrl: "/images/gallery/gallery_2.JPG",
     aspectRatio: "portrait"
   },
   {
     id: 5,
     category: "quinceanera",
-    title: "Elegant Quinceañera",
-    description: "Sophisticated updo with soft glam",
-    imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
-    aspectRatio: "square"
+    title: "Golden Elegance",
+    description: "Stunning blue and gold gown with dramatic glam makeup",
+    imageUrl: "/images/gallery/gallery_3.JPG",
+    aspectRatio: "portrait"
   },
   {
     id: 6,
     category: "quinceanera",
-    title: "Royal Celebration",
-    description: "Half-up style with full glam makeup",
-    imageUrl: "https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=800&q=80",
+    title: "Lavender Princess",
+    description: "Dreamy lavender tulle gown with soft glam",
+    imageUrl: "/images/gallery/gallery_4.JPG",
     aspectRatio: "portrait"
   },
   {
     id: 7,
+    category: "quinceanera",
+    title: "Cascading Curls",
+    description: "Beautiful half-up curls with golden tiara",
+    imageUrl: "/images/gallery/gallery_6.JPG",
+    aspectRatio: "portrait"
+  },
+  {
+    id: 20,
+    category: "quinceanera",
+    title: "Princess Curls",
+    description: "Voluminous curls cascading with crown detail",
+    imageUrl: "/images/gallery/gallery_7.JPG",
+    aspectRatio: "portrait"
+  },
+  // Sweet 16 - placeholders (no real images yet)
+  {
+    id: 8,
     category: "sweet16",
     title: "Sweet & Sophisticated",
     description: "Fresh-faced beauty with soft waves",
@@ -76,23 +103,24 @@ export const portfolioItems: PortfolioItem[] = [
     aspectRatio: "portrait"
   },
   {
-    id: 8,
+    id: 9,
     category: "sweet16",
     title: "Youthful Glam",
     description: "Age-appropriate sparkle and shine",
     imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
     aspectRatio: "portrait"
   },
+  // Glam - 1 real image + 3 placeholders
   {
-    id: 9,
+    id: 10,
     category: "glam",
-    title: "Red Carpet Ready",
-    description: "Full glam with dramatic lashes",
-    imageUrl: "https://images.unsplash.com/photo-1503104834685-7205e8607eb9?w=800&q=80",
+    title: "Soft Glam Perfection",
+    description: "Flawless dewy skin with soft smoky eyes",
+    imageUrl: "/images/gallery/gallery_10.JPG",
     aspectRatio: "portrait"
   },
   {
-    id: 10,
+    id: 11,
     category: "glam",
     title: "Evening Elegance",
     description: "Smoky eyes with sculpted features",
@@ -100,68 +128,12 @@ export const portfolioItems: PortfolioItem[] = [
     aspectRatio: "square"
   },
   {
-    id: 11,
+    id: 12,
     category: "glam",
     title: "Bold & Beautiful",
     description: "Statement makeup with sleek hair",
     imageUrl: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80",
     aspectRatio: "landscape"
-  },
-  {
-    id: 12,
-    category: "natural",
-    title: "Effortless Beauty",
-    description: "Glowing skin with soft enhancement",
-    imageUrl: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
-    aspectRatio: "portrait"
-  },
-  {
-    id: 13,
-    category: "natural",
-    title: "Fresh & Radiant",
-    description: "Minimal makeup, maximum glow",
-    imageUrl: "https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=800&q=80",
-    aspectRatio: "portrait"
-  },
-  {
-    id: 14,
-    category: "natural",
-    title: "Soft & Simple",
-    description: "Natural waves with barely-there makeup",
-    imageUrl: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80",
-    aspectRatio: "square"
-  },
-  {
-    id: 15,
-    category: "updos",
-    title: "Classic Chignon",
-    description: "Timeless elegance in every strand",
-    imageUrl: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
-    aspectRatio: "portrait"
-  },
-  {
-    id: 16,
-    category: "updos",
-    title: "Romantic Updo",
-    description: "Soft, romantic styling with loose tendrils",
-    imageUrl: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80",
-    aspectRatio: "portrait"
-  },
-  {
-    id: 17,
-    category: "updos",
-    title: "Modern Twist",
-    description: "Contemporary updo with clean lines",
-    imageUrl: "https://images.unsplash.com/photo-1513379733131-47fc74b45fc7?w=800&q=80",
-    aspectRatio: "landscape"
-  },
-  {
-    id: 18,
-    category: "bridal",
-    title: "Bohemian Bride",
-    description: "Effortless waves with natural makeup",
-    imageUrl: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80",
-    aspectRatio: "portrait"
   },
   {
     id: 19,
@@ -171,13 +143,63 @@ export const portfolioItems: PortfolioItem[] = [
     imageUrl: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=800&q=80",
     aspectRatio: "portrait"
   },
+  // Natural - 1 real image + 2 placeholders
   {
-    id: 20,
-    category: "quinceanera",
-    title: "Dream Come True",
-    description: "Fairytale styling for your special day",
-    imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
+    id: 13,
+    category: "natural",
+    title: "Fresh & Radiant",
+    description: "Beautiful natural glam with flawless skin",
+    imageUrl: "/images/gallery/gallery_5.JPG",
+    aspectRatio: "portrait"
+  },
+  {
+    id: 14,
+    category: "natural",
+    title: "Effortless Beauty",
+    description: "Glowing skin with soft enhancement",
+    imageUrl: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
+    aspectRatio: "portrait"
+  },
+  {
+    id: 15,
+    category: "natural",
+    title: "Soft & Simple",
+    description: "Natural waves with barely-there makeup",
+    imageUrl: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80",
     aspectRatio: "square"
+  },
+  // Updos - 4 real images
+  {
+    id: 16,
+    category: "updos",
+    title: "Textured High Bun",
+    description: "Elegant high updo with beautiful texture and soft tendrils",
+    imageUrl: "/images/gallery/gallery_1.JPG",
+    aspectRatio: "portrait"
+  },
+  {
+    id: 17,
+    category: "updos",
+    title: "Romantic Low Bun",
+    description: "Soft romantic updo with delicate curls",
+    imageUrl: "/images/gallery/gallery_8.JPG",
+    aspectRatio: "portrait"
+  },
+  {
+    id: 21,
+    category: "updos",
+    title: "Braided Elegance",
+    description: "Intricate braided updo with crystal flower pins",
+    imageUrl: "/images/gallery/gallery_9.JPG",
+    aspectRatio: "portrait"
+  },
+  {
+    id: 22,
+    category: "updos",
+    title: "Classic Chignon",
+    description: "Timeless low chignon with smooth finish",
+    imageUrl: "/images/gallery/gallery_11.JPG",
+    aspectRatio: "portrait"
   }
 ];
 

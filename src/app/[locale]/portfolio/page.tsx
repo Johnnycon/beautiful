@@ -64,13 +64,13 @@ export default function PortfolioPage() {
               {tInstagram("description")}
             </p>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/lizbethbiso"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 bg-[#1A1A1A] text-white rounded-full hover:bg-[#C9A962] transition-colors duration-300"
             >
               <Instagram size={20} />
-              @beautifulinsideout
+              @lizbethbiso
             </a>
           </motion.div>
         </div>

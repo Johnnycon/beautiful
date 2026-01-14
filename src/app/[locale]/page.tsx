@@ -26,7 +26,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80"
+            src="/images/hero/hero.png"
             alt="Luxury beauty styling"
             fill
             className="object-cover"
@@ -284,7 +284,7 @@ export default function Home() {
             >
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80"
+                  src="/images/hero/about.png"
                   alt="Professional makeup artist"
                   fill
                   className="object-cover"
@@ -309,12 +309,19 @@ export default function Home() {
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] mb-6">
                 {t("about.title")}
               </h2>
-              <p className="text-[#6B6560] text-lg leading-relaxed mb-6">
-                {t("about.description")}
-              </p>
+              <div className="space-y-4 mb-6">
+                <p className="text-[#6B6560] text-lg leading-relaxed">
+                  {t("about.description")}
+                </p>
+                <p className="text-[#6B6560] leading-relaxed">
+                  {t("about.description2")}
+                </p>
+                <p className="text-[#6B6560] leading-relaxed">
+                  {t("about.description3")}
+                </p>
+              </div>
               <ul className="space-y-3 mb-8">
                 {[
-                  t("about.features.licensed"),
                   t("about.features.premium"),
                   t("about.features.punctual"),
                   t("about.features.calm"),
