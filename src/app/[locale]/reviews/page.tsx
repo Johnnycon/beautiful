@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -9,6 +10,10 @@ import { testimonials } from "@/data/testimonials";
 import { Star, Quote } from "lucide-react";
 
 export default function ReviewsPage() {
+  const t = useTranslations("reviews");
+  const tData = useTranslations("data.testimonials");
+  const tCommon = useTranslations("common");
+
   const averageRating =
     testimonials.reduce((acc, t) => acc + t.rating, 0) / testimonials.length;
 
@@ -24,15 +29,13 @@ export default function ReviewsPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Testimonials
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              What Our Clients Say
+              {t("hero.title")}
             </h1>
             <p className="text-[#6B6560] text-lg leading-relaxed mb-8">
-              Real stories from real clients. Every review reflects our
-              commitment to making you feel beautiful and confident on your
-              special day.
+              {t("hero.description")}
             </p>
 
             {/* Rating Summary */}
@@ -51,7 +54,7 @@ export default function ReviewsPage() {
                   {averageRating.toFixed(1)}
                 </span>
                 <span className="text-sm text-[#6B6560]">
-                  {testimonials.length} reviews
+                  {t("hero.reviewCount")}
                 </span>
               </div>
             </div>
@@ -83,12 +86,12 @@ export default function ReviewsPage() {
               ))}
             </div>
             <blockquote className="font-serif text-2xl md:text-3xl text-white mb-8 leading-relaxed">
-              &ldquo;{testimonials[0].quote}&rdquo;
+              &ldquo;{tData("0.quote")}&rdquo;
             </blockquote>
             <div>
-              <p className="text-white font-medium">{testimonials[0].name}</p>
+              <p className="text-white font-medium">{tData("0.name")}</p>
               <p className="text-[#A09A94]">
-                {testimonials[0].eventType} • {testimonials[0].date}
+                {tData("0.eventType")} • {tData("0.date")}
               </p>
             </div>
           </motion.div>
@@ -99,9 +102,9 @@ export default function ReviewsPage() {
       <section className="py-20 md:py-32 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="All Reviews"
-            title="More Happy Clients"
-            description="Browse all testimonials from brides, quinceañeras, and event guests."
+            eyebrow={t("all.eyebrow")}
+            title={t("all.title")}
+            description=""
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -120,16 +123,16 @@ export default function ReviewsPage() {
       <AnimatedSection className="py-20 md:py-32 bg-[#F5E6E0]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <SectionHeading
-            eyebrow="Join Our Happy Clients"
-            title="Ready to Experience the Difference?"
-            description="Book your appointment today and become part of our growing family of satisfied clients."
+            eyebrow={t("cta.title")}
+            title={t("cta.description")}
+            description=""
           />
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/book" variant="primary" size="lg">
-              Book with Confidence
+              {t("cta.button")}
             </Button>
             <Button href="/portfolio" variant="outline" size="lg">
-              View Our Work
+              {tCommon("viewAll")}
             </Button>
           </div>
         </div>

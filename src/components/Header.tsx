@@ -1,27 +1,34 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/reviews", label: "Reviews" },
-];
+import { Menu, X, Globe } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("nav");
+
+  // Check if on homepage (pathname is "/" regardless of locale)
   const isHomePage = pathname === "/";
 
   // Use dark header style when scrolled OR when not on homepage
   const showDarkHeader = isScrolled || !isHomePage;
+
+  // Get the alternate locale
+  const alternateLocale = locale === "en" ? "es" : "en";
+
+  const navLinks = [
+    { href: "/", label: t("home") },
+    { href: "/services", label: t("services") },
+    { href: "/portfolio", label: t("portfolio") },
+    { href: "/pricing", label: t("pricing") },
+    { href: "/reviews", label: t("reviews") },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,6 +85,21 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+
+          {/* Language Switcher */}
+          <Link
+            href={pathname}
+            locale={alternateLocale}
+            className={`flex items-center gap-1.5 text-sm tracking-wide transition-colors duration-300 ${
+              showDarkHeader
+                ? "text-[#6B6560] hover:text-[#C9A962]"
+                : "text-white/90 hover:text-[#C9A962]"
+            }`}
+          >
+            <Globe size={16} />
+            <span className="uppercase">{alternateLocale}</span>
+          </Link>
+
           <Link
             href="/book"
             className={`ml-4 px-6 py-2.5 text-sm tracking-wide rounded-full transition-all duration-300 transform hover:scale-105 ${
@@ -86,7 +108,7 @@ export default function Header() {
                 : "bg-[#C9A962] text-white hover:bg-[#A68B4B]"
             }`}
           >
-            Book Now
+            {t("bookNow")}
           </Link>
         </motion.div>
 
@@ -122,12 +144,24 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
+
+                {/* Mobile Language Switcher */}
+                <Link
+                  href={pathname}
+                  locale={alternateLocale}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-2 text-lg tracking-wide text-[#6B6560] hover:text-[#C9A962] transition-colors duration-300"
+                >
+                  <Globe size={18} />
+                  <span>{alternateLocale === "es" ? "Español" : "English"}</span>
+                </Link>
+
                 <Link
                   href="/book"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="mt-4 px-8 py-3 bg-[#1A1A1A] text-white text-sm tracking-wide rounded-full hover:bg-[#C9A962] transition-all duration-300"
                 >
-                  Book Now
+                  {t("bookNow")}
                 </Link>
               </div>
             </motion.div>

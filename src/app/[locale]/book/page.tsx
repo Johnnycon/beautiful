@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Button from "@/components/Button";
 import { services } from "@/data/services";
 import {
@@ -34,6 +35,9 @@ interface FormData {
 }
 
 export default function BookingPage() {
+  const t = useTranslations("book");
+  const tServices = useTranslations("data.services");
+
   const [currentStep, setCurrentStep] = useState<FormStep>(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -71,10 +75,10 @@ export default function BookingPage() {
   };
 
   const steps = [
-    { number: 1, label: "Service" },
-    { number: 2, label: "Date & Time" },
-    { number: 3, label: "Your Details" },
-    { number: 4, label: "Review" },
+    { number: 1, label: t("steps.services") },
+    { number: 2, label: t("steps.event") },
+    { number: 3, label: t("steps.contact") },
+    { number: 4, label: t("steps.review") },
   ];
 
   if (isSubmitted) {
@@ -90,41 +94,39 @@ export default function BookingPage() {
               <CheckCircle size={48} className="text-white" />
             </div>
             <h1 className="font-serif text-4xl md:text-5xl text-[#1A1A1A] mb-6">
-              Booking Request Received
+              {t("success.title")}
             </h1>
             <p className="text-[#6B6560] text-lg mb-8">
-              Thank you for your booking request! We&apos;ve received your
-              information and will be in touch within 24 hours to confirm your
-              appointment and discuss any final details.
+              {t("success.description")}
             </p>
             <div className="bg-white rounded-2xl p-8 mb-8 text-left">
               <h3 className="font-serif text-xl text-[#1A1A1A] mb-4">
-                What happens next?
+                {t("success.nextSteps")}
               </h3>
               <ul className="space-y-3 text-[#6B6560]">
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 rounded-full bg-[#FAF8F5] flex items-center justify-center text-sm text-[#C9A962] flex-shrink-0">
                     1
                   </span>
-                  We&apos;ll review your request and check availability
+                  {t("success.step1")}
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 rounded-full bg-[#FAF8F5] flex items-center justify-center text-sm text-[#C9A962] flex-shrink-0">
                     2
                   </span>
-                  You&apos;ll receive a confirmation email or call within 24 hours
+                  {t("success.step2")}
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 rounded-full bg-[#FAF8F5] flex items-center justify-center text-sm text-[#C9A962] flex-shrink-0">
                     3
                   </span>
-                  We&apos;ll send a deposit invoice to secure your booking
+                  {t("success.step3")}
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 rounded-full bg-[#FAF8F5] flex items-center justify-center text-sm text-[#C9A962] flex-shrink-0">
                     4
                   </span>
-                  For bridal bookings, we&apos;ll schedule your trial session
+                  {t("success.step4")}
                 </li>
               </ul>
             </div>
@@ -133,13 +135,13 @@ export default function BookingPage() {
                 href="/"
                 className="px-8 py-3 bg-[#1A1A1A] text-white rounded-full hover:bg-[#C9A962] transition-colors duration-300"
               >
-                Back to Home
+                {t("success.backToHome")}
               </Link>
               <Link
                 href="/portfolio"
                 className="px-8 py-3 border-2 border-[#1A1A1A] text-[#1A1A1A] rounded-full hover:bg-[#1A1A1A] hover:text-white transition-colors duration-300"
               >
-                View Portfolio
+                {t("success.viewPortfolio")}
               </Link>
             </div>
           </motion.div>
@@ -160,14 +162,13 @@ export default function BookingPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Book Your Appointment
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              Request a Booking
+              {t("hero.title")}
             </h1>
             <p className="text-[#6B6560] text-lg leading-relaxed">
-              Fill out the form below to request your appointment. We&apos;ll
-              confirm availability within 24 hours.
+              {t("hero.description")}
             </p>
           </motion.div>
         </div>
@@ -230,7 +231,7 @@ export default function BookingPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <h2 className="font-serif text-2xl text-[#1A1A1A] mb-6">
-                      Select Your Service
+                      {t("form.selectServices")}
                     </h2>
                     <div className="space-y-3">
                       {services.map((service) => (
@@ -263,10 +264,10 @@ export default function BookingPage() {
                           </div>
                           <div className="flex-grow">
                             <p className="font-medium text-[#1A1A1A]">
-                              {service.title}
+                              {tServices(`${service.id}.title`)}
                             </p>
                             <p className="text-sm text-[#6B6560]">
-                              Starting at ${service.startingPrice}
+                              {t("form.startingAt")} ${service.startingPrice}
                             </p>
                           </div>
                         </label>
@@ -285,13 +286,13 @@ export default function BookingPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <h2 className="font-serif text-2xl text-[#1A1A1A] mb-6">
-                      When & Where
+                      {t("steps.event")}
                     </h2>
                     <div className="space-y-6">
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <Calendar size={18} className="text-[#C9A962]" />
-                          Event Date
+                          {t("form.eventDate")}
                         </label>
                         <input
                           type="date"
@@ -305,7 +306,7 @@ export default function BookingPage() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <Clock size={18} className="text-[#C9A962]" />
-                          Preferred Start Time
+                          {t("form.eventTime")}
                         </label>
                         <select
                           name="time"
@@ -314,7 +315,7 @@ export default function BookingPage() {
                           required
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all bg-white"
                         >
-                          <option value="">Select a time</option>
+                          <option value="">{t("form.selectTime")}</option>
                           <option value="5:00 AM">5:00 AM</option>
                           <option value="6:00 AM">6:00 AM</option>
                           <option value="7:00 AM">7:00 AM</option>
@@ -333,14 +334,14 @@ export default function BookingPage() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <MapPin size={18} className="text-[#C9A962]" />
-                          Location (Address or Venue Name)
+                          {t("form.location")}
                         </label>
                         <input
                           type="text"
                           name="location"
                           value={formData.location}
                           onChange={handleInputChange}
-                          placeholder="e.g., The Grand Hotel, Chicago or 123 Main St..."
+                          placeholder={t("form.locationPlaceholder")}
                           required
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all"
                         />
@@ -348,7 +349,7 @@ export default function BookingPage() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <Users size={18} className="text-[#C9A962]" />
-                          Party Size (including yourself)
+                          {t("form.partySize")}
                         </label>
                         <select
                           name="partySize"
@@ -358,10 +359,10 @@ export default function BookingPage() {
                         >
                           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                             <option key={num} value={num}>
-                              {num} {num === 1 ? "person" : "people"}
+                              {num} {num === 1 ? t("form.person") : t("form.people")}
                             </option>
                           ))}
-                          <option value="10+">10+ people</option>
+                          <option value="10+">10+ {t("form.people")}</option>
                         </select>
                       </div>
                     </div>
@@ -378,20 +379,20 @@ export default function BookingPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <h2 className="font-serif text-2xl text-[#1A1A1A] mb-6">
-                      Your Details
+                      {t("steps.contact")}
                     </h2>
                     <div className="space-y-6">
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <User size={18} className="text-[#C9A962]" />
-                          Full Name
+                          {t("form.name")}
                         </label>
                         <input
                           type="text"
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
-                          placeholder="Your full name"
+                          placeholder={t("form.namePlaceholder")}
                           required
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all"
                         />
@@ -399,14 +400,14 @@ export default function BookingPage() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <Mail size={18} className="text-[#C9A962]" />
-                          Email Address
+                          {t("form.email")}
                         </label>
                         <input
                           type="email"
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          placeholder="your@email.com"
+                          placeholder={t("form.emailPlaceholder")}
                           required
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all"
                         />
@@ -414,14 +415,14 @@ export default function BookingPage() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <Phone size={18} className="text-[#C9A962]" />
-                          Phone Number
+                          {t("form.phone")}
                         </label>
                         <input
                           type="tel"
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="(555) 123-4567"
+                          placeholder={t("form.phonePlaceholder")}
                           required
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all"
                         />
@@ -429,13 +430,13 @@ export default function BookingPage() {
                       <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-[#1A1A1A] mb-2">
                           <FileText size={18} className="text-[#C9A962]" />
-                          Additional Notes or Inspiration
+                          {t("form.notes")}
                         </label>
                         <textarea
                           name="notes"
                           value={formData.notes}
                           onChange={handleInputChange}
-                          placeholder="Tell us about your vision, share Pinterest links, or any special requests..."
+                          placeholder={t("form.notesPlaceholder")}
                           rows={4}
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all resize-none"
                         />
@@ -454,21 +455,20 @@ export default function BookingPage() {
                     transition={{ duration: 0.3 }}
                   >
                     <h2 className="font-serif text-2xl text-[#1A1A1A] mb-6">
-                      Review Your Booking
+                      {t("form.review.title")}
                     </h2>
                     <div className="space-y-6">
                       <div className="bg-[#FAF8F5] rounded-xl p-6">
                         <h3 className="text-sm uppercase tracking-wider text-[#A09A94] mb-4">
-                          Service
+                          {t("form.review.selectedServices")}
                         </h3>
                         <p className="text-[#1A1A1A] font-medium">
-                          {services.find((s) => s.id === formData.service)
-                            ?.title || "Not selected"}
+                          {formData.service ? tServices(`${formData.service}.title`) : t("form.notSelected")}
                         </p>
                       </div>
                       <div className="bg-[#FAF8F5] rounded-xl p-6">
                         <h3 className="text-sm uppercase tracking-wider text-[#A09A94] mb-4">
-                          Date & Time
+                          {t("form.review.eventDetails")}
                         </h3>
                         <p className="text-[#1A1A1A]">
                           {formData.date
@@ -481,26 +481,26 @@ export default function BookingPage() {
                                   day: "numeric",
                                 }
                               )
-                            : "Not selected"}
+                            : t("form.notSelected")}
                         </p>
                         <p className="text-[#6B6560]">
-                          {formData.time || "Time not selected"}
+                          {formData.time || t("form.timeNotSelected")}
                         </p>
                       </div>
                       <div className="bg-[#FAF8F5] rounded-xl p-6">
                         <h3 className="text-sm uppercase tracking-wider text-[#A09A94] mb-4">
-                          Location
+                          {t("form.location")}
                         </h3>
                         <p className="text-[#1A1A1A]">
-                          {formData.location || "Not provided"}
+                          {formData.location || t("form.notProvided")}
                         </p>
                         <p className="text-[#6B6560]">
-                          Party size: {formData.partySize}
+                          {t("form.partySize")}: {formData.partySize}
                         </p>
                       </div>
                       <div className="bg-[#FAF8F5] rounded-xl p-6">
                         <h3 className="text-sm uppercase tracking-wider text-[#A09A94] mb-4">
-                          Contact Information
+                          {t("form.review.contactInfo")}
                         </h3>
                         <p className="text-[#1A1A1A] font-medium">
                           {formData.name}
@@ -511,7 +511,7 @@ export default function BookingPage() {
                       {formData.notes && (
                         <div className="bg-[#FAF8F5] rounded-xl p-6">
                           <h3 className="text-sm uppercase tracking-wider text-[#A09A94] mb-4">
-                            Notes
+                            {t("form.review.notes")}
                           </h3>
                           <p className="text-[#6B6560]">{formData.notes}</p>
                         </div>
@@ -530,7 +530,7 @@ export default function BookingPage() {
                     className="flex items-center gap-2 px-6 py-3 text-[#6B6560] hover:text-[#1A1A1A] transition-colors"
                   >
                     <ArrowLeft size={18} />
-                    Back
+                    {t("form.back")}
                   </button>
                 ) : (
                   <div />
@@ -543,12 +543,12 @@ export default function BookingPage() {
                     disabled={currentStep === 1 && !formData.service}
                     className="flex items-center gap-2 px-8 py-3 bg-[#1A1A1A] text-white rounded-full hover:bg-[#C9A962] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Continue
+                    {t("form.next")}
                     <ArrowRight size={18} />
                   </button>
                 ) : (
                   <Button type="submit" variant="secondary" size="lg">
-                    Submit Booking Request
+                    {t("form.submit")}
                   </Button>
                 )}
               </div>
@@ -566,10 +566,10 @@ export default function BookingPage() {
                 <Clock size={24} className="text-[#C9A962]" />
               </div>
               <h3 className="font-medium text-[#1A1A1A] mb-2">
-                Quick Response
+                {t("info.quickResponse.title")}
               </h3>
               <p className="text-sm text-[#6B6560]">
-                We respond to all booking requests within 24 hours
+                {t("info.quickResponse.description")}
               </p>
             </div>
             <div>
@@ -577,19 +577,21 @@ export default function BookingPage() {
                 <CheckCircle size={24} className="text-[#C9A962]" />
               </div>
               <h3 className="font-medium text-[#1A1A1A] mb-2">
-                Secure Booking
+                {t("info.secureBooking.title")}
               </h3>
               <p className="text-sm text-[#6B6560]">
-                30% deposit required to confirm your appointment
+                {t("info.secureBooking.description")}
               </p>
             </div>
             <div>
               <div className="w-12 h-12 rounded-full bg-[#FAF8F5] flex items-center justify-center mx-auto mb-4">
                 <MapPin size={24} className="text-[#C9A962]" />
               </div>
-              <h3 className="font-medium text-[#1A1A1A] mb-2">We Come to You</h3>
+              <h3 className="font-medium text-[#1A1A1A] mb-2">
+                {t("info.weComeToYou.title")}
+              </h3>
               <p className="text-sm text-[#6B6560]">
-                On-site service at your home, venue, or hotel
+                {t("info.weComeToYou.description")}
               </p>
             </div>
           </div>

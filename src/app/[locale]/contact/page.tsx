@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Button from "@/components/Button";
 import AnimatedSection from "@/components/AnimatedSection";
 import {
@@ -15,6 +16,9 @@ import {
 } from "lucide-react";
 
 export default function ContactPage() {
+  const t = useTranslations("contact");
+  const tCommon = useTranslations("common");
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -50,15 +54,13 @@ export default function ContactPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Get in Touch
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              Contact Us
+              {t("hero.title")}
             </h1>
             <p className="text-[#6B6560] text-lg leading-relaxed">
-              Have questions about our services or want to discuss your event?
-              We&apos;d love to hear from you. Reach out and we&apos;ll respond
-              within 24 hours.
+              {t("hero.description")}
             </p>
           </motion.div>
         </div>
@@ -76,7 +78,7 @@ export default function ContactPage() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="font-serif text-3xl text-[#1A1A1A] mb-8">
-                Let&apos;s Connect
+                {t("info.serviceArea")}
               </h2>
 
               <div className="space-y-8">
@@ -113,7 +115,7 @@ export default function ContactPage() {
                       hello@beautifulinsideout.com
                     </a>
                     <p className="text-sm text-[#A09A94] mt-1">
-                      We respond within 24 hours
+                      {t("info.responseNote")}
                     </p>
                   </div>
                 </div>
@@ -146,13 +148,13 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-[#1A1A1A] mb-1">
-                      Service Area
+                      {t("info.serviceArea")}
                     </h3>
                     <p className="text-[#6B6560]">
-                      Chicagoland & surrounding areas
+                      {t("info.serviceAreaValue")}
                     </p>
                     <p className="text-sm text-[#A09A94] mt-1">
-                      We travel up to 50 miles from Chicago
+                      {t("info.serviceAreaNote")}
                     </p>
                   </div>
                 </div>
@@ -163,11 +165,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-[#1A1A1A] mb-1">
-                      Availability
+                      {t("info.availability")}
                     </h3>
-                    <p className="text-[#6B6560]">By appointment only</p>
+                    <p className="text-[#6B6560]">{t("info.availabilityValue")}</p>
                     <p className="text-sm text-[#A09A94] mt-1">
-                      7 days a week, including early mornings
+                      {t("info.availabilityNote")}
                     </p>
                   </div>
                 </div>
@@ -187,14 +189,13 @@ export default function ContactPage() {
                     <CheckCircle size={32} className="text-white" />
                   </div>
                   <h3 className="font-serif text-2xl text-[#1A1A1A] mb-4">
-                    Message Sent!
+                    {t("form.successTitle")}
                   </h3>
                   <p className="text-[#6B6560] mb-6">
-                    Thank you for reaching out. We&apos;ll get back to you
-                    within 24 hours.
+                    {t("form.successMessage")}
                   </p>
                   <Button href="/" variant="outline">
-                    Back to Home
+                    {t("form.backToHome")}
                   </Button>
                 </div>
               ) : (
@@ -203,13 +204,13 @@ export default function ContactPage() {
                   className="bg-[#FAF8F5] rounded-2xl p-8 md:p-12"
                 >
                   <h2 className="font-serif text-2xl text-[#1A1A1A] mb-6">
-                    Send a Message
+                    {t("form.title")}
                   </h2>
 
                   <div className="space-y-6">
                     <div>
                       <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
-                        Full Name
+                        {t("form.name")}
                       </label>
                       <input
                         type="text"
@@ -217,7 +218,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        placeholder="Your name"
+                        placeholder={t("form.namePlaceholder")}
                         className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all bg-white"
                       />
                     </div>
@@ -225,7 +226,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
-                          Email
+                          {t("form.email")}
                         </label>
                         <input
                           type="email"
@@ -233,20 +234,20 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          placeholder="your@email.com"
+                          placeholder={t("form.emailPlaceholder")}
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all bg-white"
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
-                          Phone (optional)
+                          {t("form.phone")}
                         </label>
                         <input
                           type="tel"
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="(555) 123-4567"
+                          placeholder={t("form.phonePlaceholder")}
                           className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all bg-white"
                         />
                       </div>
@@ -254,7 +255,7 @@ export default function ContactPage() {
 
                     <div>
                       <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
-                        Subject
+                        {t("form.eventType")}
                       </label>
                       <select
                         name="subject"
@@ -263,19 +264,20 @@ export default function ContactPage() {
                         required
                         className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all bg-white"
                       >
-                        <option value="">Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="booking">Booking Question</option>
-                        <option value="pricing">Pricing Information</option>
-                        <option value="bridal">Bridal Consultation</option>
-                        <option value="group">Group Booking</option>
-                        <option value="other">Other</option>
+                        <option value="">{t("form.eventTypePlaceholder")}</option>
+                        <option value="wedding">{t("form.eventTypes.wedding")}</option>
+                        <option value="quinceanera">{t("form.eventTypes.quinceanera")}</option>
+                        <option value="sweet16">{t("form.eventTypes.sweet16")}</option>
+                        <option value="prom">{t("form.eventTypes.prom")}</option>
+                        <option value="corporate">{t("form.eventTypes.corporate")}</option>
+                        <option value="photoshoot">{t("form.eventTypes.photoshoot")}</option>
+                        <option value="other">{t("form.eventTypes.other")}</option>
                       </select>
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
-                        Message
+                        {t("form.message")}
                       </label>
                       <textarea
                         name="message"
@@ -283,7 +285,7 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         rows={5}
-                        placeholder="How can we help you?"
+                        placeholder={t("form.messagePlaceholder")}
                         className="w-full px-4 py-3 rounded-xl border border-[#E8D5A3] focus:border-[#C9A962] focus:ring-2 focus:ring-[#C9A962]/20 outline-none transition-all bg-white resize-none"
                       />
                     </div>
@@ -293,7 +295,7 @@ export default function ContactPage() {
                       className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#1A1A1A] text-white rounded-full hover:bg-[#C9A962] transition-colors duration-300"
                     >
                       <Send size={18} />
-                      Send Message
+                      {t("form.submit")}
                     </button>
                   </div>
                 </form>
@@ -308,30 +310,30 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Quick Answers
+              {t("faq.eyebrow")}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-[#1A1A1A]">
-              Frequently Asked Questions
+              {t("faq.title")}
             </h2>
           </div>
 
           <div className="space-y-4">
             {[
               {
-                q: "How far in advance should I book?",
-                a: "For weddings and quinceañeras, we recommend booking 3-6 months in advance, especially during peak season (May-October). For other events, 2-4 weeks is usually sufficient.",
+                q: t("faq.questions.advance.q"),
+                a: t("faq.questions.advance.a"),
               },
               {
-                q: "Do you travel to my location?",
-                a: "Yes! We provide on-site services throughout Chicagoland and surrounding areas within 50 miles. Travel within 25 miles is complimentary.",
+                q: t("faq.questions.travel.q"),
+                a: t("faq.questions.travel.a"),
               },
               {
-                q: "What is your cancellation policy?",
-                a: "Cancellations 14+ days before receive a full deposit refund. 7-14 days receives 50%. Less than 7 days is non-refundable. We understand emergencies happen and handle each case with care.",
+                q: t("faq.questions.cancellation.q"),
+                a: t("faq.questions.cancellation.a"),
               },
               {
-                q: "Do you do trials for bridal makeup?",
-                a: "Absolutely! All bridal packages include a trial session. This is a crucial step to ensure we perfect your look before your big day.",
+                q: t("faq.questions.trials.q"),
+                a: t("faq.questions.trials.a"),
               },
             ].map((faq, index) => (
               <motion.div
@@ -354,14 +356,13 @@ export default function ContactPage() {
       <AnimatedSection className="py-20 md:py-32 bg-[#1A1A1A]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">
-            Ready to Book Your Beauty Experience?
+            {t("cta.title")}
           </h2>
           <p className="text-[#A09A94] text-lg mb-10 max-w-2xl mx-auto">
-            Skip the inquiry and go straight to booking. We&apos;ll confirm your
-            appointment within 24 hours.
+            {t("cta.description")}
           </p>
           <Button href="/book" variant="secondary" size="lg">
-            Book Now
+            {tCommon("bookNow")}
           </Button>
         </div>
       </AnimatedSection>

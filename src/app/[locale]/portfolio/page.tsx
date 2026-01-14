@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -9,6 +10,10 @@ import { portfolioItems } from "@/data/portfolio";
 import { Instagram } from "lucide-react";
 
 export default function PortfolioPage() {
+  const t = useTranslations("portfolio");
+  const tCommon = useTranslations("common");
+  const tInstagram = useTranslations("data.instagram");
+
   return (
     <>
       {/* Hero */}
@@ -21,15 +26,13 @@ export default function PortfolioPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Our Work
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              Portfolio
+              {t("hero.title")}
             </h1>
             <p className="text-[#6B6560] text-lg leading-relaxed">
-              Browse our collection of beautiful transformations—from stunning
-              bridal looks to glamorous quinceañera styling. Each image tells a
-              story of confidence and beauty.
+              {t("hero.description")}
             </p>
           </motion.div>
         </div>
@@ -55,11 +58,10 @@ export default function PortfolioPage() {
               <Instagram size={28} className="text-white" />
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-[#1A1A1A] mb-4">
-              Follow Along on Instagram
+              {tInstagram("title")}
             </h2>
             <p className="text-[#6B6560] text-lg mb-8 max-w-xl mx-auto">
-              See more behind-the-scenes moments, styling tips, and the latest
-              looks. Join our community of beauty lovers.
+              {tInstagram("description")}
             </p>
             <a
               href="https://instagram.com"
@@ -78,16 +80,16 @@ export default function PortfolioPage() {
       <AnimatedSection className="py-20 md:py-32 bg-[#F5E6E0]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <SectionHeading
-            eyebrow="Love What You See?"
-            title="Book Your Beauty Experience"
-            description="Let's create something beautiful together. Your special day deserves the perfect look."
+            eyebrow={t("cta.title")}
+            title={t("cta.description")}
+            description=""
           />
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/book" variant="primary" size="lg">
-              Book Now
+              {t("cta.button")}
             </Button>
             <Button href="/services" variant="outline" size="lg">
-              View Services
+              {tCommon("viewAll")}
             </Button>
           </div>
         </div>

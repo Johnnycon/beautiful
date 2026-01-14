@@ -1,0 +1,608 @@
+{
+  "metadata": {
+    "title": "Beautiful Inside Out | Maquillaje y Peinado de Lujo a Domicilio",
+    "description": "Servicios de maquillaje y peinado a domicilio para bodas, quinceañeras y eventos especiales en el área de Chicago."
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "pricing": "Precios",
+    "reviews": "Reseñas",
+    "bookNow": "Reservar"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Belleza de Lujo a Domicilio",
+      "title": "Glamour perfecto para los",
+      "titleHighlight": "días más importantes",
+      "description": "Maquillaje y peinado a domicilio con una experiencia tranquila y premium—desde el primer toque hasta el resultado final.",
+      "bookButton": "Reserva Tu Fecha",
+      "portfolioButton": "Ver Portafolio"
+    },
+    "trust": {
+      "weddings": "Especialistas en Bodas",
+      "quinceaneras": "Quinceañeras",
+      "events": "Eventos de Alto Perfil"
+    },
+    "services": {
+      "eyebrow": "Nuestros Servicios",
+      "title": "Servicios de Belleza Exclusivos",
+      "description": "Desde la elegancia nupcial hasta el glamour de quinceañera, llevamos el estilo de lujo a donde sea tu momento especial.",
+      "viewAll": "Ver Todos los Servicios"
+    },
+    "portfolio": {
+      "eyebrow": "Nuestro Trabajo",
+      "title": "El Trabajo Habla por Sí Solo",
+      "description": "Explora nuestro portafolio de hermosas transformaciones para bodas, quinceañeras y eventos especiales.",
+      "viewFull": "Ver Portafolio Completo"
+    },
+    "howItWorks": {
+      "eyebrow": "Cómo Funciona",
+      "title": "Reservar es Muy Fácil",
+      "description": "Tres simples pasos para asegurar tu experiencia de belleza perfecta.",
+      "step1": {
+        "number": "01",
+        "title": "Elige Tu Servicio",
+        "description": "Selecciona de nuestros servicios exclusivos—nupcial, quinceañera, glam para eventos o reserva grupal."
+      },
+      "step2": {
+        "number": "02",
+        "title": "Escoge Fecha y Lugar",
+        "description": "Dinos cuándo y dónde. Vamos a ti—casa, salón de eventos, hotel, donde nos necesites."
+      },
+      "step3": {
+        "number": "03",
+        "title": "Confirma y Relájate",
+        "description": "Asegura tu lugar con un depósito. Nosotros nos encargamos del resto para que disfrutes tu momento."
+      },
+      "checkAvailability": "Ver Disponibilidad"
+    },
+    "testimonials": {
+      "eyebrow": "Reseñas",
+      "title": "Lo Que Dicen Nuestras Clientas",
+      "description": "Historias reales de novias, quinceañeras e invitadas que confiaron en nosotros para sus momentos especiales.",
+      "readMore": "Leer Más Reseñas"
+    },
+    "about": {
+      "eyebrow": "Sobre Nosotros",
+      "experience": "10+ Años de Experiencia",
+      "title": "Belleza con un Toque Personal",
+      "description": "Creo que cada momento especial merece una belleza que se sienta lujosa y sin esfuerzo. Con más de una década de experiencia en estilismo nupcial y eventos especiales, aporto profesionalismo tranquilo, atención meticulosa al detalle y una pasión genuina por hacerte sentir increíble.",
+      "features": {
+        "licensed": "Profesional licenciada y certificada",
+        "premium": "Productos premium e higiénicos",
+        "punctual": "Servicio puntual y confiable",
+        "calm": "Experiencia tranquila y sin estrés"
+      },
+      "meetStylist": "Conoce a Tu Estilista"
+    },
+    "cta": {
+      "eyebrow": "¿Lista para Comenzar?",
+      "title": "Tu fecha merece belleza perfecta",
+      "description": "Creemos algo hermoso juntas. Reserva tu consulta hoy y asegura tu lugar para tu día especial.",
+      "bookNow": "Reservar Ahora",
+      "contact": "¿Preguntas? Contáctanos"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "Lo Que Ofrecemos",
+      "title": "Servicios",
+      "description": "Servicios de belleza completos diseñados para tu ocasión especial. Cada servicio incluye productos premium y atención personalizada."
+    },
+    "includes": "Qué Incluye",
+    "addOns": "Complementos Populares",
+    "startingAt": "Desde",
+    "bookService": "Reservar Este Servicio",
+    "cta": {
+      "title": "¿Lista para Reservar Tu Servicio?",
+      "description": "Hablemos de tu visión y creemos el look perfecto para tu día especial.",
+      "button": "Ver Disponibilidad"
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "eyebrow": "Nuestro Trabajo",
+      "title": "Portafolio",
+      "description": "Explora nuestra colección de hermosas transformaciones. Cada look está diseñado especialmente para cada persona."
+    },
+    "filters": {
+      "all": "Todos",
+      "bridal": "Nupcial",
+      "quinceanera": "Quinceañera",
+      "sweet16": "Sweet 16",
+      "glam": "Glam",
+      "natural": "Natural",
+      "updos": "Peinados"
+    },
+    "cta": {
+      "title": "¿Te Gusta Lo Que Ves?",
+      "description": "Creemos tu look perfecto. Reserva una consulta para hablar de tu visión.",
+      "button": "Reserva Tu Look"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "eyebrow": "Inversión",
+      "title": "Precios",
+      "description": "Precios transparentes para servicios premium. Todos los paquetes incluyen traslado dentro de 25 millas de Chicago."
+    },
+    "popular": "Más Popular",
+    "includes": "Incluye",
+    "addOns": {
+      "title": "Mejora Tu Experiencia",
+      "description": "Personaliza tu paquete con estas adiciones populares."
+    },
+    "policies": {
+      "title": "Políticas de Reservación",
+      "description": "Información importante sobre depósitos, traslados y cancelaciones."
+    },
+    "cta": {
+      "title": "¿Lista para Reservar?",
+      "description": "Asegura tu fecha con un depósito. Nosotros nos encargamos de todo lo demás.",
+      "button": "Ver Disponibilidad"
+    }
+  },
+  "reviews": {
+    "hero": {
+      "eyebrow": "Testimonios",
+      "title": "Lo Que Dicen Nuestras Clientas",
+      "description": "Historias reales de clientas reales. Cada reseña refleja nuestro compromiso de hacerte sentir hermosa y segura en tu día especial.",
+      "rating": "5.0",
+      "reviewCount": "12 reseñas"
+    },
+    "featured": {
+      "eyebrow": "Reseña Destacada"
+    },
+    "all": {
+      "eyebrow": "Todas las Reseñas",
+      "title": "Más Clientas Felices"
+    },
+    "cta": {
+      "title": "¿Lista para Ser Nuestra Próxima Clienta Feliz?",
+      "description": "Reserva tu consulta y creemos algo hermoso juntas.",
+      "button": "Reservar Ahora"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contáctanos",
+      "title": "Contacto",
+      "description": "¿Tienes preguntas? Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible."
+    },
+    "form": {
+      "title": "Enviar un Mensaje",
+      "name": "Tu Nombre",
+      "namePlaceholder": "María García",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "maria@ejemplo.com",
+      "phone": "Número de Teléfono",
+      "phonePlaceholder": "(312) 555-1234",
+      "eventType": "Tipo de Evento",
+      "eventTypePlaceholder": "Selecciona tipo de evento",
+      "eventTypes": {
+        "wedding": "Boda",
+        "quinceanera": "Quinceañera",
+        "sweet16": "Sweet 16",
+        "prom": "Prom / Graduación",
+        "corporate": "Evento Corporativo",
+        "photoshoot": "Sesión de Fotos",
+        "other": "Otro"
+      },
+      "message": "Tu Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu evento, la fecha que tienes en mente y cualquier pregunta...",
+      "submit": "Enviar Mensaje",
+      "successTitle": "¡Mensaje Enviado!",
+      "successMessage": "Gracias por contactarnos. Te responderemos dentro de 24-48 horas.",
+      "backToHome": "Volver al Inicio"
+    },
+    "info": {
+      "serviceArea": "Área de Servicio",
+      "serviceAreaValue": "Chicago y alrededores",
+      "serviceAreaNote": "Viajamos hasta 50 millas desde Chicago",
+      "availability": "Disponibilidad",
+      "availabilityValue": "Solo con cita",
+      "availabilityNote": "7 días a la semana, incluyendo temprano por la mañana",
+      "response": "Tiempo de Respuesta",
+      "responseValue": "Dentro de 24 horas",
+      "responseNote": "Usualmente mucho más rápido en horario de oficina"
+    },
+    "faq": {
+      "eyebrow": "Preguntas Frecuentes",
+      "title": "Preguntas Comunes",
+      "questions": {
+        "advance": {
+          "q": "¿Con cuánta anticipación debo reservar?",
+          "a": "Para bodas y quinceañeras, recomendamos reservar con 3-6 meses de anticipación, especialmente durante la temporada alta (mayo-octubre). Para otros eventos, 2-4 semanas es suficiente."
+        },
+        "travel": {
+          "q": "¿Viajan a mi ubicación?",
+          "a": "¡Sí! Ofrecemos servicios a domicilio en todo Chicago y alrededores dentro de 50 millas. El traslado dentro de 25 millas es gratis."
+        },
+        "cancellation": {
+          "q": "¿Cuál es su política de cancelación?",
+          "a": "Cancelaciones con 14+ días de anticipación reciben reembolso total del depósito. 7-14 días recibe 50%. Menos de 7 días no es reembolsable. Entendemos que hay emergencias y manejamos cada caso con cuidado."
+        },
+        "trials": {
+          "q": "¿Hacen pruebas de maquillaje nupcial?",
+          "a": "¡Por supuesto! Todos los paquetes nupciales incluyen una sesión de prueba. Este es un paso crucial para asegurar que perfeccionemos tu look antes del gran día."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Lista para Reservar?",
+      "description": "Salta el formulario y reserva tu cita directamente."
+    }
+  },
+  "book": {
+    "hero": {
+      "eyebrow": "Reservar",
+      "title": "Reserva Tu Fecha",
+      "description": "Completa el formulario para solicitar tu reservación. Confirmaremos disponibilidad y te enviaremos una cotización detallada dentro de 24 horas."
+    },
+    "steps": {
+      "event": "Detalles del Evento",
+      "services": "Servicios",
+      "contact": "Contacto",
+      "review": "Revisar"
+    },
+    "form": {
+      "eventType": "Tipo de Evento",
+      "eventDate": "Fecha del Evento",
+      "eventTime": "Hora de Inicio",
+      "selectTime": "Selecciona una hora",
+      "location": "Lugar del Evento",
+      "locationPlaceholder": "ej., Hotel Grand, Chicago o 123 Calle Principal...",
+      "partySize": "Número de Personas",
+      "person": "persona",
+      "people": "personas",
+      "selectServices": "Selecciona Servicios",
+      "servicesNote": "Selecciona todos los servicios que te interesan",
+      "startingAt": "Desde",
+      "name": "Nombre Completo",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "phone": "Número de Teléfono",
+      "phonePlaceholder": "(312) 555-1234",
+      "notes": "Notas Adicionales",
+      "notesPlaceholder": "Cualquier solicitud especial, fotos de inspiración o preguntas...",
+      "review": {
+        "title": "Revisa Tu Solicitud de Reservación",
+        "eventDetails": "Detalles del Evento",
+        "selectedServices": "Servicios Seleccionados",
+        "contactInfo": "Información de Contacto",
+        "notes": "Notas Adicionales"
+      },
+      "back": "Atrás",
+      "next": "Siguiente",
+      "submit": "Enviar Solicitud",
+      "notSelected": "No seleccionado",
+      "timeNotSelected": "Hora no seleccionada",
+      "notProvided": "No proporcionado"
+    },
+    "success": {
+      "title": "¡Solicitud de Reservación Recibida!",
+      "description": "Gracias por tu solicitud. Revisaremos los detalles y confirmaremos disponibilidad dentro de 24-48 horas.",
+      "nextSteps": "Próximos Pasos",
+      "step1": "Revisaremos tu solicitud y verificaremos disponibilidad",
+      "step2": "Recibirás un correo de confirmación con los siguientes pasos",
+      "step3": "Se requiere un depósito del 30% para asegurar tu fecha",
+      "step4": "Para reservas nupciales, programaremos tu sesión de prueba",
+      "backToHome": "Volver al Inicio",
+      "viewPortfolio": "Ver Portafolio"
+    },
+    "info": {
+      "quickResponse": {
+        "title": "Respuesta Rápida",
+        "description": "Respondemos a todas las consultas dentro de 24-48 horas"
+      },
+      "secureBooking": {
+        "title": "Reservación Segura",
+        "description": "Tu información está segura y nunca se comparte"
+      },
+      "weComeToYou": {
+        "title": "Vamos a Ti",
+        "description": "Servicio móvil a tu ubicación"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Servicios de maquillaje y peinado de lujo a domicilio para los momentos más hermosos de tu vida.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "address": "3434 W 26th St",
+    "city": "Chicago, IL 60623",
+    "serviceArea": "Servicio en Chicago y alrededores dentro de 50 millas",
+    "availability": "Disponibilidad",
+    "byAppointment": "Solo con Cita",
+    "availableDays": "Disponible 7 días a la semana",
+    "earlyMornings": "incluyendo temprano por la mañana",
+    "forWeddings": "para fiestas de bodas",
+    "checkAvailability": "Ver Disponibilidad",
+    "copyright": "© {year} Beautiful Inside Out. Todos los derechos reservados.",
+    "policies": "Políticas"
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "bookNow": "Reservar Ahora",
+    "contactUs": "Contáctanos",
+    "viewAll": "Ver Todo",
+    "close": "Cerrar",
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "data": {
+    "services": {
+      "bridal-hair-makeup": {
+        "title": "Peinado + Maquillaje Nupcial",
+        "shortDescription": "Tu look nupcial perfecto, ejecutado impecablemente en tu día especial.",
+        "description": "Nuestro servicio nupcial exclusivo incluye una consulta personalizada, sesión de prueba y estilismo el día de la boda para asegurar que te veas absolutamente radiante al caminar hacia el altar. Usamos solo productos premium de larga duración que fotografían hermoso y se mantienen perfectos a través de cada lágrima de alegría.",
+        "duration": "2-3 horas",
+        "includes": [
+          "Consulta pre-boda",
+          "Sesión de prueba",
+          "Peinado el día de la boda",
+          "Maquillaje el día de la boda",
+          "Kit de retoque",
+          "Pestañas postizas incluidas"
+        ],
+        "addOns": [
+          { "name": "Dama de honor adicional" },
+          { "name": "Madre de la novia/novio" },
+          { "name": "Estilismo para niña de las flores" }
+        ]
+      },
+      "quinceanera-glam": {
+        "title": "Glam de Quinceañera",
+        "shortDescription": "Elegancia apropiada para la edad en tu celebración memorable.",
+        "description": "Celebra este hermoso hito con un look que capture la magia del momento. Nuestro paquete de quinceañera ofrece glamour listo para cámara que es apropiado para la edad y absolutamente impresionante, asegurando que brilles en cada foto.",
+        "duration": "2 horas",
+        "includes": [
+          "Consulta de estilo",
+          "Peinado con accesorios",
+          "Maquillaje completo",
+          "Pestañas postizas",
+          "Spray fijador para todo el día"
+        ],
+        "addOns": [
+          { "name": "Damas (cada una)" },
+          { "name": "Estilismo para mamá" },
+          { "name": "Colocación de accesorios de cabello" }
+        ]
+      },
+      "sweet-16": {
+        "title": "Estilismo Sweet 16",
+        "shortDescription": "Glam juvenil y chic para tu celebración de dieciséis.",
+        "description": "Celebra tus dieciséis con estilo con un look fresco y juvenil que es perfecto para tu celebración. Creamos un glamour apropiado para la edad que te hace sentir segura y hermosa mientras te mantienes fiel a tu estilo personal.",
+        "duration": "1.5 horas",
+        "includes": [
+          "Consulta",
+          "Peinado",
+          "Aplicación de maquillaje",
+          "Pestañas incluidas"
+        ],
+        "addOns": [
+          { "name": "Estilismo de amiga (cada una)" },
+          { "name": "Estilismo para mamá" }
+        ]
+      },
+      "event-hair": {
+        "title": "Peinado para Eventos",
+        "shortDescription": "Recogidos elegantes y estilismo para cualquier ocasión especial.",
+        "description": "Ya sea una gala, cena formal o celebración especial, nuestro servicio de peinado para eventos ofrece estilos sofisticados y duraderos. Desde ondas románticas hasta elegantes recogidos, creamos el look de cabello perfecto para tu ocasión.",
+        "duration": "45-60 minutos",
+        "includes": [
+          "Consulta",
+          "Estilismo con calor",
+          "Recogido o cabello suelto",
+          "Productos de acabado"
+        ]
+      },
+      "soft-glam": {
+        "title": "Maquillaje Soft Glam",
+        "shortDescription": "Realce de belleza natural sin esfuerzo.",
+        "description": "Nuestro look soft glam realza tu belleza natural con un acabado pulido y radiante. Perfecto para quienes quieren verse como la mejor versión de sí mismas—frescas, luminosas y naturalmente hermosas.",
+        "duration": "45 minutos",
+        "includes": [
+          "Preparación de piel",
+          "Aplicación de maquillaje natural",
+          "Contorno suave",
+          "Pestañas naturales"
+        ]
+      },
+      "full-glam": {
+        "title": "Maquillaje Full Glam",
+        "shortDescription": "Maquillaje atrevido y listo para cámara para máximo impacto.",
+        "description": "Cuando quieres hacer una declaración, nuestro servicio full glam lo logra. Piensa en ojos dramáticos, piel impecable, facciones esculpidas y un look que llama la atención y fotografía como un sueño.",
+        "duration": "1 hora",
+        "includes": [
+          "Preparación completa de piel",
+          "Aplicación completa de maquillaje",
+          "Contorno e iluminación completos",
+          "Pestañas dramáticas"
+        ]
+      },
+      "group-booking": {
+        "title": "Reservas Grupales",
+        "shortDescription": "Servicios de belleza coordinados para todo tu grupo.",
+        "description": "¿Planeas una fiesta nupcial, grupo de prom o celebración especial con amigas? Nuestro paquete de reserva grupal asegura que todas estén estilizadas a la perfección con coordinación y timing sin problemas.",
+        "duration": "Varía según el tamaño del grupo",
+        "includes": [
+          "Consulta grupal",
+          "Programación coordinada",
+          "Estilismo en sitio para todas",
+          "Descuento grupal aplicado"
+        ]
+      }
+    },
+    "testimonials": {
+      "0": {
+        "name": "María G.",
+        "eventType": "Novia",
+        "quote": "Me sentí como la versión más hermosa de mí misma en mi día de boda. La atención al detalle fue impecable, y mi maquillaje duró a través de cada lágrima de felicidad. No podría haber pedido una mejor experiencia.",
+        "date": "Octubre 2024"
+      },
+      "1": {
+        "name": "Sofía R.",
+        "eventType": "Quinceañera",
+        "quote": "¡Mi quinceañera fue absolutamente mágica! El maquillaje fue apropiado para mi edad pero aún glamuroso, y mi cabello se mantuvo perfecto toda la noche. Cada foto salió increíble.",
+        "date": "Septiembre 2024"
+      },
+      "2": {
+        "name": "Jennifer L.",
+        "eventType": "Madre de la Novia",
+        "quote": "Profesional, puntual e increíblemente talentosa. Nos hizo sentir hermosas y tranquilas tanto a mí como a mi hija durante una mañana tan emotiva. ¡Totalmente recomendado!",
+        "date": "Agosto 2024"
+      },
+      "3": {
+        "name": "Isabella M.",
+        "eventType": "Sweet 16",
+        "quote": "Estaba nerviosa por hacerme el maquillaje profesionalmente por primera vez, pero ella me hizo sentir muy cómoda. ¡Amé mi look y me sentí muy segura en mi fiesta!",
+        "date": "Julio 2024"
+      },
+      "4": {
+        "name": "Carmen D.",
+        "eventType": "Novia",
+        "quote": "Desde la prueba hasta el día de la boda, todo fue perfecto. Escuchó exactamente lo que quería y superó mis expectativas. ¡Mi cortejo nupcial también se veía impresionante!",
+        "date": "Junio 2024"
+      },
+      "5": {
+        "name": "Ashley T.",
+        "eventType": "Invitada",
+        "quote": "Reservé para una gala de etiqueta y recibí tantos cumplidos. El glam fue sofisticado y se mantuvo impecable toda la noche. ¡Definitivamente reservaré de nuevo!",
+        "date": "Mayo 2024"
+      },
+      "6": {
+        "name": "Daniela V.",
+        "eventType": "Quinceañera",
+        "quote": "Ella entendió exactamente lo que quería para mi quinceañera. El peinado fue absolutamente impresionante y el maquillaje me hizo sentir como una princesa. ¡El mejor día de mi vida!",
+        "date": "Abril 2024"
+      },
+      "7": {
+        "name": "Michelle K.",
+        "eventType": "Novia",
+        "quote": "La experiencia de lujo de principio a fin valió cada centavo. Llegó a tiempo, me mantuvo tranquila y me hizo ver absolutamente radiante. ¡Mi esposo lloró cuando me vio!",
+        "date": "Marzo 2024"
+      },
+      "8": {
+        "name": "Olivia S.",
+        "eventType": "Prom",
+        "quote": "¡Me sentí como una celebridad en la noche de prom! El look soft glam fue exactamente lo que quería—elegante pero aún juvenil. ¡Todas mis amigas preguntaron quién hizo mi maquillaje!",
+        "date": "Mayo 2024"
+      },
+      "9": {
+        "name": "Rosa H.",
+        "eventType": "Madre de la Novia",
+        "quote": "Ella tiene un don para hacerte sentir hermosa a cualquier edad. Mi maquillaje fue sofisticado y atemporal, y me sentí segura al lado de mi hija en su gran día.",
+        "date": "Febrero 2024"
+      },
+      "10": {
+        "name": "Victoria P.",
+        "eventType": "Novia",
+        "quote": "La prueba me quitó todas las preocupaciones. El día de la boda, recreó el look perfectamente e incluso hizo algunas mejoras. ¡Ejecución absolutamente impecable!",
+        "date": "Enero 2024"
+      },
+      "11": {
+        "name": "Alejandra M.",
+        "eventType": "Quinceañera",
+        "quote": "El look de quinceañera de mi hija fue más que hermoso. Profesional, paciente y muy talentosa. ¡Ya reservamos para la quinceañera de mi otra hija el próximo año!",
+        "date": "Diciembre 2023"
+      }
+    },
+    "portfolio": {
+      "categories": {
+        "bridal": "Nupcial",
+        "quinceanera": "Quinceañera",
+        "sweet16": "Sweet 16",
+        "glam": "Glam",
+        "natural": "Natural",
+        "updos": "Peinados"
+      }
+    },
+    "pricing": {
+      "starting": "desde",
+      "packages": {
+        "bridal-complete": {
+          "name": "Paquete Nupcial Completo",
+          "description": "La experiencia nupcial definitiva desde la consulta hasta tu día perfecto",
+          "features": [
+            "Consulta de estilo a profundidad",
+            "Sesión de prueba completa (cabello + maquillaje)",
+            "Peinado nupcial el día de la boda",
+            "Maquillaje nupcial el día de la boda",
+            "Pestañas premium incluidas",
+            "Kit de retoque para el día",
+            "Coordinación de timeline"
+          ],
+          "idealFor": "Novias que quieren la experiencia de lujo completa"
+        },
+        "quinceanera-package": {
+          "name": "Paquete Quinceañera",
+          "description": "Haz tu celebración de quince años absolutamente inolvidable",
+          "features": [
+            "Consulta de estilo",
+            "Peinado con accesorios",
+            "Aplicación de maquillaje completo",
+            "Pestañas premium",
+            "Productos fijadores para todo el día",
+            "Guía rápida de retoques"
+          ],
+          "idealFor": "Quinceañeras que quieren glam listo para cámara"
+        },
+        "group-celebration": {
+          "name": "Celebración Grupal",
+          "description": "Servicios de belleza coordinados para cortejo nupcial y grupos",
+          "features": [
+            "Llamada de consulta grupal",
+            "Programación coordinada",
+            "Peinado por persona",
+            "Maquillaje por persona",
+            "Descuento grupal aplicado",
+            "Servicio en sitio para todas"
+          ],
+          "idealFor": "Cortejo nupcial, grupos de prom, celebraciones"
+        },
+        "event-glam": {
+          "name": "Glam para Eventos",
+          "description": "Perfecto para galas, proms y ocasiones especiales",
+          "features": [
+            "Peinado O maquillaje",
+            "Consulta de estilo",
+            "Pestañas incluidas con maquillaje",
+            "Productos de larga duración"
+          ],
+          "idealFor": "Eventos especiales y ocasiones formales"
+        }
+      },
+      "addOns": [
+        { "name": "Persona Adicional", "description": "Cabello y maquillaje para miembro adicional del grupo" },
+        { "name": "Solo Cabello Adicional", "description": "Estilismo para persona adicional (solo cabello)" },
+        { "name": "Solo Maquillaje Adicional", "description": "Maquillaje para persona adicional (solo maquillaje)" },
+        { "name": "Mejora a Aerógrafo", "description": "Mejora a base con aerógrafo para acabado impecable" },
+        { "name": "Mejora de Pestañas Premium", "description": "Mejora a pestañas individuales de lujo" },
+        { "name": "Kit de Retoque", "description": "Kit de retoque personalizado para llevar contigo" },
+        { "name": "Inicio Temprano (antes de 6am)", "description": "Para servicios que comienzan antes de las 6:00 AM" }
+      ],
+      "policies": {
+        "travel": {
+          "title": "Política de Traslado",
+          "description": "El traslado dentro de 25 millas es gratis. Más allá de eso, se aplica una tarifa de $0.65 por milla."
+        },
+        "deposit": {
+          "title": "Política de Depósito",
+          "description": "Se requiere un depósito no reembolsable del 30% para asegurar tu reservación. El saldo restante se debe el día de tu cita."
+        },
+        "cancellation": {
+          "title": "Política de Cancelación",
+          "description": "Las cancelaciones hechas 14+ días antes de tu cita reciben un reembolso completo del depósito. Las cancelaciones dentro de 7-14 días reciben un reembolso del 50%. Las cancelaciones dentro de 7 días no son reembolsables."
+        }
+      }
+    },
+    "instagram": {
+      "title": "Síguenos",
+      "description": "Ve momentos detrás de cámaras, inspiración diaria y más de nuestro trabajo en Instagram."
+    }
+  }
+}

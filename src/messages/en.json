@@ -1,0 +1,608 @@
+{
+  "metadata": {
+    "title": "Beautiful Inside Out | Luxury Mobile Hair & Makeup",
+    "description": "On-site hair and makeup styling for weddings, quinceañeras, and special events in the Chicagoland area."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "reviews": "Reviews",
+    "bookNow": "Book Now"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Luxury Mobile Beauty",
+      "title": "Camera-ready glam for life's",
+      "titleHighlight": "biggest days",
+      "description": "On-site hair and makeup styling with a calm, premium experience—from first brush to final touch.",
+      "bookButton": "Book Your Date",
+      "portfolioButton": "View Portfolio"
+    },
+    "trust": {
+      "weddings": "Trusted for Weddings",
+      "quinceaneras": "Quinceañeras",
+      "events": "High-Profile Events"
+    },
+    "services": {
+      "eyebrow": "Our Services",
+      "title": "Signature Beauty Services",
+      "description": "From bridal elegance to quinceañera glam, we bring luxury styling wherever your moment happens.",
+      "viewAll": "View All Services"
+    },
+    "portfolio": {
+      "eyebrow": "Our Work",
+      "title": "The Work Speaks for Itself",
+      "description": "Browse our portfolio of beautiful transformations for weddings, quinceañeras, and special events.",
+      "viewFull": "See Full Portfolio"
+    },
+    "howItWorks": {
+      "eyebrow": "How It Works",
+      "title": "Booking Made Simple",
+      "description": "Three easy steps to secure your perfect beauty experience.",
+      "step1": {
+        "number": "01",
+        "title": "Choose Your Service",
+        "description": "Select from our signature services—bridal, quinceañera, event glam, or group booking."
+      },
+      "step2": {
+        "number": "02",
+        "title": "Pick Date & Location",
+        "description": "Tell us when and where. We come to you—home, venue, hotel, wherever you need us."
+      },
+      "step3": {
+        "number": "03",
+        "title": "Confirm & Relax",
+        "description": "Secure your spot with a deposit. We handle the rest so you can focus on your moment."
+      },
+      "checkAvailability": "Check Availability"
+    },
+    "testimonials": {
+      "eyebrow": "Reviews",
+      "title": "What Our Clients Say",
+      "description": "Real stories from brides, quinceañeras, and event guests who trusted us with their special moments.",
+      "readMore": "Read More Reviews"
+    },
+    "about": {
+      "eyebrow": "About",
+      "experience": "10+ Years Experience",
+      "title": "Beauty with a Personal Touch",
+      "description": "I believe every special moment deserves beauty that feels both luxurious and effortless. With over a decade of experience in bridal and special event styling, I bring calm professionalism, meticulous attention to detail, and a genuine passion for making you feel your absolute best.",
+      "features": {
+        "licensed": "Licensed and certified professional",
+        "premium": "Premium, hygienic product selection",
+        "punctual": "Punctual and reliable service",
+        "calm": "Calm, stress-free experience"
+      },
+      "meetStylist": "Meet Your Stylist"
+    },
+    "cta": {
+      "eyebrow": "Ready to Begin?",
+      "title": "Your date deserves perfect beauty",
+      "description": "Let's create something beautiful together. Book your consultation today and secure your spot for your special day.",
+      "bookNow": "Book Now",
+      "contact": "Questions? Contact Us"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "What We Offer",
+      "title": "Services",
+      "description": "Comprehensive beauty services tailored to your special occasion. Every service includes premium products and personalized attention."
+    },
+    "includes": "What's Included",
+    "addOns": "Popular Add-Ons",
+    "startingAt": "Starting at",
+    "bookService": "Book This Service",
+    "cta": {
+      "title": "Ready to Book Your Service?",
+      "description": "Let's discuss your vision and create the perfect look for your special day.",
+      "button": "Check Availability"
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "eyebrow": "Our Work",
+      "title": "Portfolio",
+      "description": "Browse our collection of beautiful transformations. Each look is uniquely crafted for the individual."
+    },
+    "filters": {
+      "all": "All",
+      "bridal": "Bridal",
+      "quinceanera": "Quinceañera",
+      "sweet16": "Sweet 16",
+      "glam": "Glam",
+      "natural": "Natural",
+      "updos": "Updos"
+    },
+    "cta": {
+      "title": "Love What You See?",
+      "description": "Let's create your perfect look. Book a consultation to discuss your vision.",
+      "button": "Book Your Look"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "eyebrow": "Investment",
+      "title": "Pricing",
+      "description": "Transparent pricing for premium services. All packages include travel within 25 miles of Chicago."
+    },
+    "popular": "Most Popular",
+    "includes": "Includes",
+    "addOns": {
+      "title": "Enhance Your Experience",
+      "description": "Customize your package with these popular additions."
+    },
+    "policies": {
+      "title": "Booking Policies",
+      "description": "Important information about deposits, travel, and cancellations."
+    },
+    "cta": {
+      "title": "Ready to Book?",
+      "description": "Secure your date with a deposit. We'll handle everything else.",
+      "button": "Check Availability"
+    }
+  },
+  "reviews": {
+    "hero": {
+      "eyebrow": "Testimonials",
+      "title": "What Our Clients Say",
+      "description": "Real stories from real clients. Every review reflects our commitment to making you feel beautiful and confident on your special day.",
+      "rating": "5.0",
+      "reviewCount": "12 reviews"
+    },
+    "featured": {
+      "eyebrow": "Featured Review"
+    },
+    "all": {
+      "eyebrow": "All Reviews",
+      "title": "More Happy Clients"
+    },
+    "cta": {
+      "title": "Ready to Become Our Next Happy Client?",
+      "description": "Book your consultation and let's create something beautiful together.",
+      "button": "Book Now"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Get in Touch",
+      "title": "Contact Us",
+      "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Your Name",
+      "namePlaceholder": "Jane Smith",
+      "email": "Email Address",
+      "emailPlaceholder": "jane@example.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "(312) 555-1234",
+      "eventType": "Event Type",
+      "eventTypePlaceholder": "Select event type",
+      "eventTypes": {
+        "wedding": "Wedding",
+        "quinceanera": "Quinceañera",
+        "sweet16": "Sweet 16",
+        "prom": "Prom",
+        "corporate": "Corporate Event",
+        "photoshoot": "Photoshoot",
+        "other": "Other"
+      },
+      "message": "Your Message",
+      "messagePlaceholder": "Tell us about your event, the date you have in mind, and any questions...",
+      "submit": "Send Message",
+      "successTitle": "Message Sent!",
+      "successMessage": "Thank you for reaching out. We'll get back to you within 24-48 hours.",
+      "backToHome": "Back to Home"
+    },
+    "info": {
+      "serviceArea": "Service Area",
+      "serviceAreaValue": "Chicagoland & surrounding areas",
+      "serviceAreaNote": "We travel up to 50 miles from Chicago",
+      "availability": "Availability",
+      "availabilityValue": "By appointment only",
+      "availabilityNote": "7 days a week, including early mornings",
+      "response": "Response Time",
+      "responseValue": "Within 24 hours",
+      "responseNote": "Usually much faster during business hours"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Common Questions",
+      "questions": {
+        "advance": {
+          "q": "How far in advance should I book?",
+          "a": "For weddings and quinceañeras, we recommend booking 3-6 months in advance, especially during peak season (May-October). For other events, 2-4 weeks is usually sufficient."
+        },
+        "travel": {
+          "q": "Do you travel to my location?",
+          "a": "Yes! We provide on-site services throughout Chicagoland and surrounding areas within 50 miles. Travel within 25 miles is complimentary."
+        },
+        "cancellation": {
+          "q": "What is your cancellation policy?",
+          "a": "Cancellations 14+ days before receive a full deposit refund. 7-14 days receives 50%. Less than 7 days is non-refundable. We understand emergencies happen and handle each case with care."
+        },
+        "trials": {
+          "q": "Do you do trials for bridal makeup?",
+          "a": "Absolutely! All bridal packages include a trial session. This is a crucial step to ensure we perfect your look before your big day."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Book?",
+      "description": "Skip the form and book your appointment directly."
+    }
+  },
+  "book": {
+    "hero": {
+      "eyebrow": "Book Now",
+      "title": "Reserve Your Date",
+      "description": "Complete the form below to request your booking. We'll confirm availability and send you a detailed quote within 24 hours."
+    },
+    "steps": {
+      "event": "Event Details",
+      "services": "Services",
+      "contact": "Contact",
+      "review": "Review"
+    },
+    "form": {
+      "eventType": "Event Type",
+      "eventDate": "Event Date",
+      "eventTime": "Start Time",
+      "selectTime": "Select a time",
+      "location": "Event Location",
+      "locationPlaceholder": "e.g., The Grand Hotel, Chicago or 123 Main St...",
+      "partySize": "Party Size",
+      "person": "person",
+      "people": "people",
+      "selectServices": "Select Services",
+      "servicesNote": "Select all services you're interested in",
+      "startingAt": "Starting at",
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "(312) 555-1234",
+      "notes": "Additional Notes",
+      "notesPlaceholder": "Any special requests, inspiration photos, or questions...",
+      "review": {
+        "title": "Review Your Booking Request",
+        "eventDetails": "Event Details",
+        "selectedServices": "Selected Services",
+        "contactInfo": "Contact Information",
+        "notes": "Additional Notes"
+      },
+      "back": "Back",
+      "next": "Next Step",
+      "submit": "Submit Booking Request",
+      "notSelected": "Not selected",
+      "timeNotSelected": "Time not selected",
+      "notProvided": "Not provided"
+    },
+    "success": {
+      "title": "Booking Request Received!",
+      "description": "Thank you for your booking request. We'll review your details and confirm availability within 24-48 hours.",
+      "nextSteps": "What Happens Next",
+      "step1": "We'll review your booking request and check availability",
+      "step2": "You'll receive a confirmation email with next steps",
+      "step3": "A 30% deposit will be required to secure your date",
+      "step4": "For bridal bookings, we'll schedule your trial session",
+      "backToHome": "Back to Home",
+      "viewPortfolio": "View Portfolio"
+    },
+    "info": {
+      "quickResponse": {
+        "title": "Quick Response",
+        "description": "We respond to all inquiries within 24-48 hours"
+      },
+      "secureBooking": {
+        "title": "Secure Booking",
+        "description": "Your information is safe and never shared"
+      },
+      "weComeToYou": {
+        "title": "We Come to You",
+        "description": "Mobile service to your location"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Luxury mobile hair and makeup services for life's most beautiful moments.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "address": "3434 W 26th St",
+    "city": "Chicago, IL 60623",
+    "serviceArea": "Serving Chicagoland & surrounding areas within 50 miles",
+    "availability": "Availability",
+    "byAppointment": "By Appointment Only",
+    "availableDays": "Available 7 days a week",
+    "earlyMornings": "including early mornings",
+    "forWeddings": "for wedding parties",
+    "checkAvailability": "Check Availability",
+    "copyright": "© {year} Beautiful Inside Out. All rights reserved.",
+    "policies": "Policies"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "bookNow": "Book Now",
+    "contactUs": "Contact Us",
+    "viewAll": "View All",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "data": {
+    "services": {
+      "bridal-hair-makeup": {
+        "title": "Bridal Hair + Makeup",
+        "shortDescription": "Your perfect bridal look, flawlessly executed on your special day.",
+        "description": "Our signature bridal service includes a personalized consultation, trial session, and day-of styling to ensure you look absolutely radiant walking down the aisle. We use only premium, long-lasting products that photograph beautifully and stay perfect through every tear of joy.",
+        "duration": "2-3 hours",
+        "includes": [
+          "Pre-wedding consultation",
+          "Trial session",
+          "Day-of hair styling",
+          "Day-of makeup application",
+          "Touch-up kit",
+          "False lashes included"
+        ],
+        "addOns": [
+          { "name": "Additional bridesmaid" },
+          { "name": "Mother of bride/groom" },
+          { "name": "Flower girl styling" }
+        ]
+      },
+      "quinceanera-glam": {
+        "title": "Quinceañera Glam",
+        "shortDescription": "Age-appropriate elegance for your momentous celebration.",
+        "description": "Celebrate this beautiful milestone with a look that captures the magic of the moment. Our quinceañera package delivers camera-ready glamour that's both age-appropriate and absolutely stunning, ensuring you shine in every photo.",
+        "duration": "2 hours",
+        "includes": [
+          "Style consultation",
+          "Hair styling with accessories",
+          "Full makeup application",
+          "False lashes",
+          "Setting spray for all-day wear"
+        ],
+        "addOns": [
+          { "name": "Damas (each)" },
+          { "name": "Mother styling" },
+          { "name": "Hair accessory placement" }
+        ]
+      },
+      "sweet-16": {
+        "title": "Sweet 16 Styling",
+        "shortDescription": "Chic and youthful glam for your sixteenth celebration.",
+        "description": "Turn sixteen in style with a fresh, youthful look that's perfect for your celebration. We create age-appropriate glamour that makes you feel confident and beautiful while still being true to your personal style.",
+        "duration": "1.5 hours",
+        "includes": [
+          "Consultation",
+          "Hair styling",
+          "Makeup application",
+          "Lashes included"
+        ],
+        "addOns": [
+          { "name": "Friend styling (each)" },
+          { "name": "Mother styling" }
+        ]
+      },
+      "event-hair": {
+        "title": "Event Hair Styling",
+        "shortDescription": "Elegant updos and styling for any special occasion.",
+        "description": "Whether it's a gala, formal dinner, or special celebration, our event hair styling service delivers sophisticated, lasting styles. From romantic waves to elegant updos, we create the perfect hair look for your occasion.",
+        "duration": "45-60 minutes",
+        "includes": [
+          "Consultation",
+          "Heat styling",
+          "Updo or down styling",
+          "Finishing products"
+        ]
+      },
+      "soft-glam": {
+        "title": "Soft Glam Makeup",
+        "shortDescription": "Effortless, natural-looking beauty enhancement.",
+        "description": "Our soft glam look enhances your natural beauty with a polished, radiant finish. Perfect for those who want to look like the best version of themselves—fresh, dewy, and naturally beautiful.",
+        "duration": "45 minutes",
+        "includes": [
+          "Skin prep",
+          "Natural makeup application",
+          "Soft contouring",
+          "Natural lashes"
+        ]
+      },
+      "full-glam": {
+        "title": "Full Glam Makeup",
+        "shortDescription": "Bold, camera-ready makeup for maximum impact.",
+        "description": "When you want to make a statement, our full glam service delivers. Think dramatic eyes, flawless skin, sculpted features, and a look that commands attention and photographs like a dream.",
+        "duration": "1 hour",
+        "includes": [
+          "Full skin prep",
+          "Complete makeup application",
+          "Full contouring & highlighting",
+          "Dramatic lashes"
+        ]
+      },
+      "group-booking": {
+        "title": "Group Bookings",
+        "shortDescription": "Coordinated beauty services for your entire party.",
+        "description": "Planning a bridal party, prom group, or special celebration with friends? Our group booking package ensures everyone is styled to perfection with seamless coordination and timing.",
+        "duration": "Varies by group size",
+        "includes": [
+          "Group consultation",
+          "Coordinated scheduling",
+          "On-site styling for all",
+          "Group discount applied"
+        ]
+      }
+    },
+    "testimonials": {
+      "0": {
+        "name": "Maria G.",
+        "eventType": "Bride",
+        "quote": "I felt like the most beautiful version of myself on my wedding day. The attention to detail was impeccable, and my makeup lasted through every happy tear. I couldn't have asked for a better experience.",
+        "date": "October 2024"
+      },
+      "1": {
+        "name": "Sofia R.",
+        "eventType": "Quinceañera",
+        "quote": "My quinceañera was absolutely magical! The makeup was age-appropriate but still glamorous, and my hair stayed perfect all night. Every photo turned out amazing.",
+        "date": "September 2024"
+      },
+      "2": {
+        "name": "Jennifer L.",
+        "eventType": "Mother of Bride",
+        "quote": "Professional, punctual, and incredibly talented. She made both me and my daughter feel beautiful and calm during such an emotional morning. Highly recommend!",
+        "date": "August 2024"
+      },
+      "3": {
+        "name": "Isabella M.",
+        "eventType": "Sweet 16",
+        "quote": "I was nervous about getting my makeup done professionally for the first time, but she made me feel so comfortable. I loved my look and felt so confident at my party!",
+        "date": "July 2024"
+      },
+      "4": {
+        "name": "Carmen D.",
+        "eventType": "Bride",
+        "quote": "From the trial to the wedding day, everything was perfect. She listened to exactly what I wanted and delivered beyond my expectations. My bridal party all looked stunning too!",
+        "date": "June 2024"
+      },
+      "5": {
+        "name": "Ashley T.",
+        "eventType": "Guest",
+        "quote": "I booked for a black-tie gala and received so many compliments. The glam was sophisticated and stayed flawless the entire evening. Will definitely book again!",
+        "date": "May 2024"
+      },
+      "6": {
+        "name": "Daniela V.",
+        "eventType": "Quinceañera",
+        "quote": "She understood exactly what I wanted for my quinceañera. The hair was absolutely stunning and the makeup made me feel like a princess. Best day ever!",
+        "date": "April 2024"
+      },
+      "7": {
+        "name": "Michelle K.",
+        "eventType": "Bride",
+        "quote": "The luxury experience from start to finish was worth every penny. She arrived on time, kept me calm, and made me look absolutely radiant. My husband cried when he saw me!",
+        "date": "March 2024"
+      },
+      "8": {
+        "name": "Olivia S.",
+        "eventType": "Prom",
+        "quote": "I felt like a celebrity on prom night! The soft glam look was exactly what I wanted—elegant but still youthful. All my friends asked who did my makeup!",
+        "date": "May 2024"
+      },
+      "9": {
+        "name": "Rosa H.",
+        "eventType": "Mother of Bride",
+        "quote": "She has a gift for making you feel beautiful at any age. My makeup was sophisticated and timeless, and I felt confident standing next to my daughter on her big day.",
+        "date": "February 2024"
+      },
+      "10": {
+        "name": "Victoria P.",
+        "eventType": "Bride",
+        "quote": "The trial run put all my worries to rest. On the wedding day, she recreated the look perfectly and even made some improvements. Absolutely flawless execution!",
+        "date": "January 2024"
+      },
+      "11": {
+        "name": "Alejandra M.",
+        "eventType": "Quinceañera",
+        "quote": "My daughter's quinceañera look was beyond beautiful. Professional, patient, and so talented. We've already booked for my other daughter's quinceañera next year!",
+        "date": "December 2023"
+      }
+    },
+    "portfolio": {
+      "categories": {
+        "bridal": "Bridal",
+        "quinceanera": "Quinceañera",
+        "sweet16": "Sweet 16",
+        "glam": "Glam",
+        "natural": "Natural",
+        "updos": "Updos"
+      }
+    },
+    "pricing": {
+      "starting": "starting",
+      "packages": {
+        "bridal-complete": {
+          "name": "Bridal Complete",
+          "description": "The ultimate bridal experience from consultation to your perfect day",
+          "features": [
+            "In-depth style consultation",
+            "Full trial session (hair + makeup)",
+            "Day-of bridal hair styling",
+            "Day-of bridal makeup",
+            "Premium lashes included",
+            "Touch-up kit for the day",
+            "Timeline coordination"
+          ],
+          "idealFor": "Brides who want the complete luxury experience"
+        },
+        "quinceanera-package": {
+          "name": "Quinceañera Package",
+          "description": "Make your milestone celebration absolutely unforgettable",
+          "features": [
+            "Style consultation",
+            "Hair styling with accessories",
+            "Full makeup application",
+            "Premium lashes",
+            "All-day setting products",
+            "Quick touch-up guidance"
+          ],
+          "idealFor": "Quinceañeras wanting camera-ready glam"
+        },
+        "group-celebration": {
+          "name": "Group Celebration",
+          "description": "Coordinated beauty services for bridal parties and groups",
+          "features": [
+            "Group consultation call",
+            "Coordinated scheduling",
+            "Hair styling per person",
+            "Makeup per person",
+            "Group discount applied",
+            "On-site service for all"
+          ],
+          "idealFor": "Bridal parties, prom groups, celebrations"
+        },
+        "event-glam": {
+          "name": "Event Glam",
+          "description": "Perfect for galas, proms, and special occasions",
+          "features": [
+            "Hair styling OR makeup",
+            "Style consultation",
+            "Lashes included with makeup",
+            "Long-lasting products"
+          ],
+          "idealFor": "Special events and formal occasions"
+        }
+      },
+      "addOns": [
+        { "name": "Additional Person", "description": "Hair and makeup for additional party member" },
+        { "name": "Hair Only Add-On", "description": "Styling for additional person (hair only)" },
+        { "name": "Makeup Only Add-On", "description": "Makeup for additional person (makeup only)" },
+        { "name": "Airbrush Upgrade", "description": "Upgrade to airbrush foundation for flawless finish" },
+        { "name": "Premium Lash Upgrade", "description": "Upgrade to luxury individual lashes" },
+        { "name": "Touch-Up Kit", "description": "Custom touch-up kit to take with you" },
+        { "name": "Early Start (before 6am)", "description": "For services starting before 6:00 AM" }
+      ],
+      "policies": {
+        "travel": {
+          "title": "Travel Policy",
+          "description": "Travel within 25 miles is complimentary. Beyond that, a travel fee of $0.65 per mile applies."
+        },
+        "deposit": {
+          "title": "Deposit Policy",
+          "description": "A 30% non-refundable deposit is required to secure your booking. The remaining balance is due the day of your appointment."
+        },
+        "cancellation": {
+          "title": "Cancellation Policy",
+          "description": "Cancellations made 14+ days before your appointment receive a full refund of the deposit. Cancellations within 7-14 days receive a 50% refund. Cancellations within 7 days are non-refundable."
+        }
+      }
+    },
+    "instagram": {
+      "title": "Follow Along",
+      "description": "See behind-the-scenes moments, daily inspiration, and more of our work on Instagram."
+    }
+  }
+}

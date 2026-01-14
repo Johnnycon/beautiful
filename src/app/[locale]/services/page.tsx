@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -30,6 +31,10 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export default function ServicesPage() {
+  const t = useTranslations("services");
+  const tData = useTranslations("data.services");
+  const tCommon = useTranslations("common");
+
   return (
     <>
       {/* Hero */}
@@ -50,15 +55,13 @@ export default function ServicesPage() {
             className="max-w-2xl"
           >
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Our Services
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              Signature Beauty Services
+              {t("hero.title")}
             </h1>
             <p className="text-[#6B6560] text-lg leading-relaxed">
-              From elegant bridal styling to quinceañera glam, each service is
-              tailored to make you feel confident, beautiful, and camera-ready
-              for your special moment.
+              {t("hero.description")}
             </p>
           </motion.div>
         </div>
@@ -105,7 +108,7 @@ export default function ServicesPage() {
                             ? "1503104834685-7205e8607eb9"
                             : "1516726817505-f5ed825624d8"
                         }?w=800&q=80`}
-                        alt={service.title}
+                        alt={tData(`${service.id}.title`)}
                         fill
                         className="object-cover"
                       />
@@ -118,21 +121,21 @@ export default function ServicesPage() {
                   {/* Content */}
                   <div className={isEven ? "" : "lg:col-start-1 lg:row-start-1"}>
                     <h2 className="font-serif text-3xl md:text-4xl text-[#1A1A1A] mb-4">
-                      {service.title}
+                      {tData(`${service.id}.title`)}
                     </h2>
                     <p className="text-[#6B6560] text-lg leading-relaxed mb-6">
-                      {service.description}
+                      {tData(`${service.id}.description`)}
                     </p>
 
                     {/* Details */}
                     <div className="flex flex-wrap gap-4 mb-6">
                       <div className="flex items-center gap-2 text-[#6B6560]">
                         <Clock size={18} className="text-[#C9A962]" />
-                        <span>{service.duration}</span>
+                        <span>{tData(`${service.id}.duration`)}</span>
                       </div>
                       <div className="flex items-center gap-2 text-[#6B6560]">
                         <span className="text-[#C9A962] font-medium">
-                          Starting at ${service.startingPrice}
+                          {t("startingAt")} ${service.startingPrice}
                         </span>
                       </div>
                     </div>
@@ -140,10 +143,10 @@ export default function ServicesPage() {
                     {/* Includes */}
                     <div className="mb-8">
                       <h4 className="text-sm uppercase tracking-wider text-[#A09A94] mb-4">
-                        Includes
+                        {t("includes")}
                       </h4>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {service.includes.map((item, i) => (
+                        {service.includes.map((_, i) => (
                           <li
                             key={i}
                             className="flex items-start gap-2 text-[#6B6560]"
@@ -152,7 +155,7 @@ export default function ServicesPage() {
                               size={18}
                               className="text-[#C9A962] flex-shrink-0 mt-0.5"
                             />
-                            <span>{item}</span>
+                            <span>{tData(`${service.id}.includes.${i}`)}</span>
                           </li>
                         ))}
                       </ul>
@@ -162,7 +165,7 @@ export default function ServicesPage() {
                     {service.addOns && service.addOns.length > 0 && (
                       <div className="mb-8">
                         <h4 className="text-sm uppercase tracking-wider text-[#A09A94] mb-4">
-                          Add-Ons Available
+                          {t("addOns")}
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {service.addOns.map((addon, i) => (
@@ -170,7 +173,7 @@ export default function ServicesPage() {
                               key={i}
                               className="px-3 py-1 bg-[#FAF8F5] rounded-full text-sm text-[#6B6560]"
                             >
-                              {addon.name} +${addon.price}
+                              {tData(`${service.id}.addOns.${i}.name`)} +${addon.price}
                             </span>
                           ))}
                         </div>
@@ -178,7 +181,7 @@ export default function ServicesPage() {
                     )}
 
                     <Button href="/book" variant="primary">
-                      Book This Service
+                      {t("bookService")}
                     </Button>
                   </div>
                 </motion.div>
@@ -192,14 +195,14 @@ export default function ServicesPage() {
       <AnimatedSection className="py-20 md:py-32 bg-[#1A1A1A]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <SectionHeading
-            eyebrow="Ready to Book?"
-            title="Let's Create Your Perfect Look"
-            description="Every service is customized to your unique style and occasion. Book a consultation to discuss your vision."
+            eyebrow={t("cta.title")}
+            title={t("cta.description")}
+            description=""
             light
           />
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/book" variant="secondary" size="lg">
-              Book Now
+              {tCommon("bookNow")}
             </Button>
             <Button
               href="/pricing"
@@ -207,7 +210,7 @@ export default function ServicesPage() {
               size="lg"
               className="border-white text-white hover:bg-white hover:text-[#1A1A1A]"
             >
-              View Pricing
+              {t("cta.button")}
             </Button>
           </div>
         </div>

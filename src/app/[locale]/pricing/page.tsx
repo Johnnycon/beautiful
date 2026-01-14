@@ -1,19 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import {
   pricingPackages,
   addOns,
-  travelPolicy,
-  depositPolicy,
-  cancellationPolicy,
 } from "@/data/pricing";
 import { CheckCircle, MapPin, CreditCard, Calendar, Star } from "lucide-react";
 
 export default function PricingPage() {
+  const t = useTranslations("pricing");
+  const tData = useTranslations("data.pricing");
+  const tCommon = useTranslations("common");
+
   return (
     <>
       {/* Hero */}
@@ -26,14 +28,13 @@ export default function PricingPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Investment
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              Transparent Pricing
+              {t("hero.title")}
             </h1>
             <p className="text-[#6B6560] text-lg leading-relaxed">
-              Quality beauty services should be straightforward. Here&apos;s
-              everything you need to know about our packages and pricing.
+              {t("hero.description")}
             </p>
           </motion.div>
         </div>
@@ -59,7 +60,7 @@ export default function PricingPage() {
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <span className="inline-flex items-center gap-1 px-4 py-1 bg-[#C9A962] text-white text-xs uppercase tracking-wider rounded-full">
-                      <Star size={12} className="fill-current" /> Most Popular
+                      <Star size={12} className="fill-current" /> {t("popular")}
                     </span>
                   </div>
                 )}
@@ -69,14 +70,14 @@ export default function PricingPage() {
                     pkg.popular ? "text-white" : "text-[#1A1A1A]"
                   }`}
                 >
-                  {pkg.name}
+                  {tData(`packages.${pkg.id}.name`)}
                 </h3>
                 <p
                   className={`text-sm mb-6 ${
                     pkg.popular ? "text-white/70" : "text-[#6B6560]"
                   }`}
                 >
-                  {pkg.description}
+                  {tData(`packages.${pkg.id}.description`)}
                 </p>
 
                 <div className="mb-6">
@@ -92,12 +93,12 @@ export default function PricingPage() {
                       pkg.popular ? "text-white/70" : "text-[#A09A94]"
                     }`}
                   >
-                    {pkg.priceType === "starting" ? " starting" : ""}
+                    {pkg.priceType === "starting" ? ` ${tData("starting")}` : ""}
                   </span>
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {pkg.features.map((feature, i) => (
+                  {pkg.features.map((_, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle
                         size={18}
@@ -110,7 +111,7 @@ export default function PricingPage() {
                           pkg.popular ? "text-white/90" : "text-[#6B6560]"
                         }`}
                       >
-                        {feature}
+                        {tData(`packages.${pkg.id}.features.${i}`)}
                       </span>
                     </li>
                   ))}
@@ -121,7 +122,7 @@ export default function PricingPage() {
                     pkg.popular ? "text-white/50" : "text-[#A09A94]"
                   }`}
                 >
-                  Ideal for: {pkg.idealFor}
+                  {tData(`packages.${pkg.id}.idealFor`)}
                 </p>
 
                 <Button
@@ -129,7 +130,7 @@ export default function PricingPage() {
                   variant={pkg.popular ? "secondary" : "primary"}
                   className="w-full"
                 >
-                  Book Now
+                  {tCommon("bookNow")}
                 </Button>
               </motion.div>
             ))}
@@ -141,9 +142,9 @@ export default function PricingPage() {
       <AnimatedSection className="py-20 md:py-32 bg-[#FAF8F5]">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Customize Your Experience"
-            title="Available Add-Ons"
-            description="Enhance your service with these optional extras."
+            eyebrow={t("addOns.title")}
+            title={t("addOns.description")}
+            description=""
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -158,9 +159,9 @@ export default function PricingPage() {
               >
                 <div>
                   <h4 className="font-medium text-[#1A1A1A] mb-1">
-                    {addon.name}
+                    {tData(`addOns.${index}.name`)}
                   </h4>
-                  <p className="text-sm text-[#6B6560]">{addon.description}</p>
+                  <p className="text-sm text-[#6B6560]">{tData(`addOns.${index}.description`)}</p>
                 </div>
                 <span className="text-[#C9A962] font-medium whitespace-nowrap ml-4">
                   +${addon.price}
@@ -175,9 +176,9 @@ export default function PricingPage() {
       <section id="policies" className="py-20 md:py-32 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Good to Know"
-            title="Policies & Information"
-            description="Everything you need to know before booking."
+            eyebrow={t("policies.title")}
+            title={t("policies.description")}
+            description=""
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -193,10 +194,10 @@ export default function PricingPage() {
                 <MapPin size={24} className="text-white" />
               </div>
               <h3 className="font-serif text-xl text-[#1A1A1A] mb-4">
-                Travel Policy
+                {tData("policies.travel.title")}
               </h3>
               <p className="text-[#6B6560] text-sm leading-relaxed">
-                {travelPolicy.description}
+                {tData("policies.travel.description")}
               </p>
             </motion.div>
 
@@ -212,10 +213,10 @@ export default function PricingPage() {
                 <CreditCard size={24} className="text-white" />
               </div>
               <h3 className="font-serif text-xl text-[#1A1A1A] mb-4">
-                Deposit Policy
+                {tData("policies.deposit.title")}
               </h3>
               <p className="text-[#6B6560] text-sm leading-relaxed">
-                {depositPolicy.description}
+                {tData("policies.deposit.description")}
               </p>
             </motion.div>
 
@@ -231,10 +232,10 @@ export default function PricingPage() {
                 <Calendar size={24} className="text-white" />
               </div>
               <h3 className="font-serif text-xl text-[#1A1A1A] mb-4">
-                Cancellation Policy
+                {tData("policies.cancellation.title")}
               </h3>
               <p className="text-[#6B6560] text-sm leading-relaxed">
-                {cancellationPolicy.description}
+                {tData("policies.cancellation.description")}
               </p>
             </motion.div>
           </div>
@@ -245,14 +246,14 @@ export default function PricingPage() {
       <AnimatedSection className="py-20 md:py-32 bg-[#1A1A1A]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <SectionHeading
-            eyebrow="Questions?"
-            title="Let's Discuss Your Vision"
-            description="Not sure which package is right for you? Get in touch and we'll create a custom quote tailored to your needs."
+            eyebrow={t("cta.title")}
+            title={t("cta.description")}
+            description=""
             light
           />
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/book" variant="secondary" size="lg">
-              Book a Consultation
+              {t("cta.button")}
             </Button>
             <Button
               href="/contact"
@@ -260,7 +261,7 @@ export default function PricingPage() {
               size="lg"
               className="border-white text-white hover:bg-white hover:text-[#1A1A1A]"
             >
-              Contact Us
+              {tCommon("contactUs")}
             </Button>
           </div>
         </div>

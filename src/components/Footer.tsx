@@ -1,7 +1,13 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Instagram, Clock, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
+  const t = useTranslations("footer");
+  const nav = useTranslations("nav");
+
   return (
     <footer className="bg-[#1A1A1A] text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -12,7 +18,7 @@ export default function Footer() {
               Beautiful <span className="text-[#C9A962]">Inside Out</span>
             </h3>
             <p className="text-[#A09A94] text-sm leading-relaxed mb-6">
-              Luxury mobile hair and makeup services for life&apos;s most beautiful moments.
+              {t("tagline")}
             </p>
             <div className="flex gap-4">
               <a
@@ -41,7 +47,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-sm uppercase tracking-wider text-[#C9A962] mb-6">
-              Quick Links
+              {t("quickLinks")}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -49,7 +55,7 @@ export default function Footer() {
                   href="/services"
                   className="text-[#A09A94] hover:text-white transition-colors duration-300"
                 >
-                  Services
+                  {nav("services")}
                 </Link>
               </li>
               <li>
@@ -57,7 +63,7 @@ export default function Footer() {
                   href="/portfolio"
                   className="text-[#A09A94] hover:text-white transition-colors duration-300"
                 >
-                  Portfolio
+                  {nav("portfolio")}
                 </Link>
               </li>
               <li>
@@ -65,7 +71,7 @@ export default function Footer() {
                   href="/pricing"
                   className="text-[#A09A94] hover:text-white transition-colors duration-300"
                 >
-                  Pricing
+                  {nav("pricing")}
                 </Link>
               </li>
               <li>
@@ -73,7 +79,7 @@ export default function Footer() {
                   href="/reviews"
                   className="text-[#A09A94] hover:text-white transition-colors duration-300"
                 >
-                  Reviews
+                  {nav("reviews")}
                 </Link>
               </li>
               <li>
@@ -81,7 +87,7 @@ export default function Footer() {
                   href="/book"
                   className="text-[#A09A94] hover:text-white transition-colors duration-300"
                 >
-                  Book Now
+                  {nav("bookNow")}
                 </Link>
               </li>
             </ul>
@@ -90,15 +96,15 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-sm uppercase tracking-wider text-[#C9A962] mb-6">
-              Contact
+              {t("contact")}
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
                 <span className="text-[#A09A94] text-sm">
-                  3434 W 26th St<br />
-                  Chicago, IL 60623<br />
-                  <span className="text-[#C9A962]/80">Serving Chicagoland & surrounding areas within 50 miles</span>
+                  {t("address")}<br />
+                  {t("city")}<br />
+                  <span className="text-[#C9A962]/80">{t("serviceArea")}</span>
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -125,22 +131,22 @@ export default function Footer() {
           {/* Hours */}
           <div>
             <h4 className="text-sm uppercase tracking-wider text-[#C9A962] mb-6">
-              Availability
+              {t("availability")}
             </h4>
             <div className="flex items-start gap-3 mb-4">
               <Clock size={18} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
               <div className="text-[#A09A94] text-sm">
-                <p className="mb-2">By Appointment Only</p>
-                <p>Available 7 days a week</p>
-                <p>including early mornings</p>
-                <p>for wedding parties</p>
+                <p className="mb-2">{t("byAppointment")}</p>
+                <p>{t("availableDays")}</p>
+                <p>{t("earlyMornings")}</p>
+                <p>{t("forWeddings")}</p>
               </div>
             </div>
             <Link
               href="/book"
               className="inline-block mt-4 px-6 py-2.5 border border-[#C9A962] text-[#C9A962] text-sm rounded-full hover:bg-[#C9A962] hover:text-white transition-all duration-300"
             >
-              Check Availability
+              {t("checkAvailability")}
             </Link>
           </div>
         </div>
@@ -149,20 +155,20 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#A09A94] text-sm">
-              &copy; {new Date().getFullYear()} Beautiful Inside Out. All rights reserved.
+              {t("copyright", { year: new Date().getFullYear() })}
             </p>
             <div className="flex gap-6">
               <Link
                 href="/contact"
                 className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
               >
-                Contact
+                {t("contact")}
               </Link>
               <Link
                 href="/pricing#policies"
                 className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
               >
-                Policies
+                {t("policies")}
               </Link>
             </div>
           </div>

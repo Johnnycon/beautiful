@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -15,6 +16,9 @@ import { testimonials } from "@/data/testimonials";
 import { CheckCircle, ArrowRight, Sparkles } from "lucide-react";
 
 export default function Home() {
+  const t = useTranslations("home");
+  const tServices = useTranslations("data.services");
+
   return (
     <>
       {/* Hero Section */}
@@ -51,25 +55,24 @@ export default function Home() {
               className="inline-flex items-center gap-2 text-[#E8D5A3] text-sm uppercase tracking-[0.2em] mb-6"
             >
               <Sparkles size={16} />
-              Luxury Mobile Beauty
+              {t("hero.eyebrow")}
             </motion.span>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white mb-6 leading-tight">
-              Camera-ready glam for life&apos;s{" "}
-              <span className="text-[#C9A962]">biggest days</span>
+              {t("hero.title")}{" "}
+              <span className="text-[#C9A962]">{t("hero.titleHighlight")}</span>
             </h1>
 
             <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed">
-              On-site hair and makeup styling with a calm, premium experience—from
-              first brush to final touch.
+              {t("hero.description")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button href="/book" variant="secondary" size="lg">
-                Book Your Date
+                {t("hero.bookButton")}
               </Button>
               <Button href="/portfolio" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#1A1A1A]">
-                View Portfolio
+                {t("hero.portfolioButton")}
               </Button>
             </div>
           </motion.div>
@@ -97,15 +100,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-[#A09A94]">
             <span className="text-sm uppercase tracking-wider">
-              Trusted for Weddings
+              {t("trust.weddings")}
             </span>
             <span className="hidden md:block w-1 h-1 rounded-full bg-[#C9A962]" />
             <span className="text-sm uppercase tracking-wider">
-              Quinceañeras
+              {t("trust.quinceaneras")}
             </span>
             <span className="hidden md:block w-1 h-1 rounded-full bg-[#C9A962]" />
             <span className="text-sm uppercase tracking-wider">
-              High-Profile Events
+              {t("trust.events")}
             </span>
           </div>
         </div>
@@ -115,17 +118,17 @@ export default function Home() {
       <AnimatedSection className="py-20 md:py-32 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Our Services"
-            title="Signature Beauty Services"
-            description="From bridal elegance to quinceañera glam, we bring luxury styling wherever your moment happens."
+            eyebrow={t("services.eyebrow")}
+            title={t("services.title")}
+            description={t("services.description")}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 6).map((service, index) => (
               <ServiceCard
                 key={service.id}
-                title={service.title}
-                description={service.shortDescription}
+                title={tServices(`${service.id}.title`)}
+                description={tServices(`${service.id}.shortDescription`)}
                 icon={service.icon}
                 href={`/services#${service.id}`}
                 index={index}
@@ -141,7 +144,7 @@ export default function Home() {
             className="text-center mt-12"
           >
             <Button href="/services" variant="outline">
-              View All Services
+              {t("services.viewAll")}
             </Button>
           </motion.div>
         </div>
@@ -151,9 +154,9 @@ export default function Home() {
       <AnimatedSection className="py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Our Work"
-            title="The Work Speaks for Itself"
-            description="Browse our portfolio of beautiful transformations for weddings, quinceañeras, and special events."
+            eyebrow={t("portfolio.eyebrow")}
+            title={t("portfolio.title")}
+            description={t("portfolio.description")}
           />
 
           <PortfolioGrid items={portfolioItems} limit={8} showFilters={false} />
@@ -166,7 +169,7 @@ export default function Home() {
             className="text-center mt-12"
           >
             <Button href="/portfolio" variant="primary">
-              See Full Portfolio
+              {t("portfolio.viewFull")}
             </Button>
           </motion.div>
         </div>
@@ -176,31 +179,28 @@ export default function Home() {
       <AnimatedSection className="py-20 md:py-32 bg-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="How It Works"
-            title="Booking Made Simple"
-            description="Three easy steps to secure your perfect beauty experience."
+            eyebrow={t("howItWorks.eyebrow")}
+            title={t("howItWorks.title")}
+            description={t("howItWorks.description")}
             light
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {[
               {
-                step: "01",
-                title: "Choose Your Service",
-                description:
-                  "Select from our signature services—bridal, quinceañera, event glam, or group booking.",
+                step: t("howItWorks.step1.number"),
+                title: t("howItWorks.step1.title"),
+                description: t("howItWorks.step1.description"),
               },
               {
-                step: "02",
-                title: "Pick Date & Location",
-                description:
-                  "Tell us when and where. We come to you—home, venue, hotel, wherever you need us.",
+                step: t("howItWorks.step2.number"),
+                title: t("howItWorks.step2.title"),
+                description: t("howItWorks.step2.description"),
               },
               {
-                step: "03",
-                title: "Confirm & Relax",
-                description:
-                  "Secure your spot with a deposit. We handle the rest so you can focus on your moment.",
+                step: t("howItWorks.step3.number"),
+                title: t("howItWorks.step3.title"),
+                description: t("howItWorks.step3.description"),
               },
             ].map((item, index) => (
               <motion.div
@@ -232,7 +232,7 @@ export default function Home() {
             className="text-center mt-16"
           >
             <Button href="/book" variant="secondary" size="lg">
-              Check Availability
+              {t("howItWorks.checkAvailability")}
             </Button>
           </motion.div>
         </div>
@@ -242,9 +242,9 @@ export default function Home() {
       <AnimatedSection className="py-20 md:py-32 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Reviews"
-            title="What Our Clients Say"
-            description="Real stories from brides, quinceañeras, and event guests who trusted us with their special moments."
+            eyebrow={t("testimonials.eyebrow")}
+            title={t("testimonials.title")}
+            description={t("testimonials.description")}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -265,7 +265,7 @@ export default function Home() {
             className="text-center mt-12"
           >
             <Button href="/reviews" variant="outline">
-              Read More Reviews
+              {t("testimonials.readMore")}
             </Button>
           </motion.div>
         </div>
@@ -292,7 +292,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#C9A962] rounded-full flex items-center justify-center text-white font-serif text-center p-4">
                 <span>
-                  10+ Years Experience
+                  {t("about.experience")}
                 </span>
               </div>
             </motion.div>
@@ -304,24 +304,20 @@ export default function Home() {
               transition={{ duration: 0.7 }}
             >
               <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-                About
+                {t("about.eyebrow")}
               </span>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] mb-6">
-                Beauty with a Personal Touch
+                {t("about.title")}
               </h2>
               <p className="text-[#6B6560] text-lg leading-relaxed mb-6">
-                I believe every special moment deserves beauty that feels both
-                luxurious and effortless. With over a decade of experience in
-                bridal and special event styling, I bring calm professionalism,
-                meticulous attention to detail, and a genuine passion for making
-                you feel your absolute best.
+                {t("about.description")}
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Licensed and certified professional",
-                  "Premium, hygienic product selection",
-                  "Punctual and reliable service",
-                  "Calm, stress-free experience",
+                  t("about.features.licensed"),
+                  t("about.features.premium"),
+                  t("about.features.punctual"),
+                  t("about.features.calm"),
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3 text-[#6B6560]">
                     <CheckCircle className="w-5 h-5 text-[#C9A962] flex-shrink-0" />
@@ -333,7 +329,7 @@ export default function Home() {
                 href="/contact"
                 className="inline-flex items-center gap-2 text-[#C9A962] font-medium hover:gap-3 transition-all duration-300"
               >
-                Meet Your Stylist <ArrowRight size={18} />
+                {t("about.meetStylist")} <ArrowRight size={18} />
               </Link>
             </motion.div>
           </div>
@@ -350,21 +346,20 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              Ready to Begin?
+              {t("cta.eyebrow")}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] mb-6">
-              Your date deserves perfect beauty
+              {t("cta.title")}
             </h2>
             <p className="text-[#6B6560] text-lg mb-10 max-w-2xl mx-auto">
-              Let&apos;s create something beautiful together. Book your
-              consultation today and secure your spot for your special day.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/book" variant="primary" size="lg">
-                Book Now
+                {t("cta.bookNow")}
               </Button>
               <Button href="/contact" variant="outline" size="lg">
-                Questions? Contact Us
+                {t("cta.contact")}
               </Button>
             </div>
           </motion.div>
