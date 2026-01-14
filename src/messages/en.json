@@ -367,6 +367,7 @@
           "Setting spray for all-day wear"
         ],
         "addOns": [
+          { "name": "Trial session" },
           { "name": "Damas (each)" },
           { "name": "Mother styling" },
           { "name": "Hair accessory placement" }
@@ -384,6 +385,7 @@
           "Lashes included"
         ],
         "addOns": [
+          { "name": "Trial session" },
           { "name": "Friend styling (each)" },
           { "name": "Mother styling" }
         ]

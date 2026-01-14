@@ -25,7 +25,7 @@ export const services: Service[] = [
       "False lashes included"
     ],
     duration: "2-3 hours",
-    startingPrice: 450,
+    startingPrice: 525,
     icon: "crown",
     addOns: [
       { name: "Additional bridesmaid", price: 150 },
@@ -46,9 +46,10 @@ export const services: Service[] = [
       "Setting spray for all-day wear"
     ],
     duration: "2 hours",
-    startingPrice: 275,
+    startingPrice: 425,
     icon: "sparkles",
     addOns: [
+      { name: "Trial session", price: 145 },
       { name: "Damas (each)", price: 125 },
       { name: "Mother styling", price: 150 },
       { name: "Hair accessory placement", price: 25 }
@@ -66,9 +67,10 @@ export const services: Service[] = [
       "Lashes included"
     ],
     duration: "1.5 hours",
-    startingPrice: 225,
+    startingPrice: 385,
     icon: "heart",
     addOns: [
+      { name: "Trial session", price: 145 },
       { name: "Friend styling (each)", price: 100 },
       { name: "Mother styling", price: 150 }
     ]
@@ -115,7 +117,7 @@ export const services: Service[] = [
       "Dramatic lashes"
     ],
     duration: "1 hour",
-    startingPrice: 125,
+    startingPrice: 165,
     icon: "star"
   },
   {

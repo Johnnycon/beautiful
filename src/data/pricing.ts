@@ -20,7 +20,7 @@ export const pricingPackages: PricingPackage[] = [
     id: "bridal-complete",
     name: "Bridal Complete",
     description: "The ultimate bridal experience from consultation to your perfect day",
-    price: 450,
+    price: 525,
     priceType: "starting",
     popular: true,
     features: [
@@ -38,7 +38,7 @@ export const pricingPackages: PricingPackage[] = [
     id: "quinceanera-package",
     name: "Quinceañera Package",
     description: "Make your milestone celebration absolutely unforgettable",
-    price: 275,
+    price: 425,
     priceType: "starting",
     features: [
       "Style consultation",
@@ -85,7 +85,7 @@ export const pricingPackages: PricingPackage[] = [
 export const addOns: AddOn[] = [
   {
     name: "Additional Person",
-    price: 125,
+    price: 135,
     description: "Hair and makeup for additional party member"
   },
   {
@@ -95,12 +95,12 @@ export const addOns: AddOn[] = [
   },
   {
     name: "Makeup Only Add-On",
-    price: 75,
+    price: 85,
     description: "Makeup for additional person (makeup only)"
   },
   {
     name: "Airbrush Upgrade",
-    price: 35,
+    price: 100,
     description: "Upgrade to airbrush foundation for flawless finish"
   },
   {

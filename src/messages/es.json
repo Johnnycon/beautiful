@@ -367,6 +367,7 @@
           "Spray fijador para todo el día"
         ],
         "addOns": [
+          { "name": "Sesión de prueba" },
           { "name": "Damas (cada una)" },
           { "name": "Estilismo para mamá" },
           { "name": "Colocación de accesorios de cabello" }
@@ -384,6 +385,7 @@
           "Pestañas incluidas"
         ],
         "addOns": [
+          { "name": "Sesión de prueba" },
           { "name": "Estilismo de amiga (cada una)" },
           { "name": "Estilismo para mamá" }
         ]
