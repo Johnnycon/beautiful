@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { Instagram, Clock, MapPin, Phone, Mail } from "lucide-react";
+import { Instagram, Clock, MapPin, Facebook } from "lucide-react";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -22,7 +22,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/lizbethbiso"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C9A962] transition-colors duration-300"
@@ -31,15 +31,13 @@ export default function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://tiktok.com"
+                href="https://www.facebook.com/beautifulio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C9A962] transition-colors duration-300"
-                aria-label="TikTok"
+                aria-label="Facebook"
               >
-                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                </svg>
+                <Facebook size={18} />
               </a>
             </div>
           </div>
@@ -108,21 +106,25 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-[#C9A962] flex-shrink-0" />
+                <Instagram size={18} className="text-[#C9A962] flex-shrink-0" />
                 <a
-                  href="tel:+13105551234"
+                  href="https://instagram.com/lizbethbiso"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
                 >
-                  (310) 555-1234
+                  @lizbethbiso
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-[#C9A962] flex-shrink-0" />
+                <Facebook size={18} className="text-[#C9A962] flex-shrink-0" />
                 <a
-                  href="mailto:hello@beautifulinsideout.com"
+                  href="https://www.facebook.com/beautifulio"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
                 >
-                  hello@beautifulinsideout.com
+                  @beautifulinsideout
                 </a>
               </li>
             </ul>

@@ -6,13 +6,12 @@ import { useTranslations } from "next-intl";
 import Button from "@/components/Button";
 import AnimatedSection from "@/components/AnimatedSection";
 import {
-  Phone,
-  Mail,
   MapPin,
   Instagram,
   Clock,
   Send,
   CheckCircle,
+  Facebook,
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -84,44 +83,6 @@ export default function ContactPage() {
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#FAF8F5] flex items-center justify-center flex-shrink-0">
-                    <Phone size={20} className="text-[#C9A962]" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-[#1A1A1A] mb-1">
-                      Phone / Text
-                    </h3>
-                    <a
-                      href="tel:+13105551234"
-                      className="text-[#6B6560] hover:text-[#C9A962] transition-colors"
-                    >
-                      (310) 555-1234
-                    </a>
-                    <p className="text-sm text-[#A09A94] mt-1">
-                      Text is preferred for quick inquiries
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#FAF8F5] flex items-center justify-center flex-shrink-0">
-                    <Mail size={20} className="text-[#C9A962]" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-[#1A1A1A] mb-1">Email</h3>
-                    <a
-                      href="mailto:hello@beautifulinsideout.com"
-                      className="text-[#6B6560] hover:text-[#C9A962] transition-colors"
-                    >
-                      hello@beautifulinsideout.com
-                    </a>
-                    <p className="text-sm text-[#A09A94] mt-1">
-                      {t("info.responseNote")}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#FAF8F5] flex items-center justify-center flex-shrink-0">
                     <Instagram size={20} className="text-[#C9A962]" />
                   </div>
                   <div>
@@ -129,7 +90,29 @@ export default function ContactPage() {
                       Instagram
                     </h3>
                     <a
-                      href="https://instagram.com"
+                      href="https://instagram.com/lizbethbiso"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#6B6560] hover:text-[#C9A962] transition-colors"
+                    >
+                      @lizbethbiso
+                    </a>
+                    <p className="text-sm text-[#A09A94] mt-1">
+                      DM us for quick questions
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF8F5] flex items-center justify-center flex-shrink-0">
+                    <Facebook size={20} className="text-[#C9A962]" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-[#1A1A1A] mb-1">
+                      Facebook
+                    </h3>
+                    <a
+                      href="https://www.facebook.com/beautifulio"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#6B6560] hover:text-[#C9A962] transition-colors"
@@ -137,7 +120,7 @@ export default function ContactPage() {
                       @beautifulinsideout
                     </a>
                     <p className="text-sm text-[#A09A94] mt-1">
-                      DM us for quick questions
+                      Follow us for updates
                     </p>
                   </div>
                 </div>
