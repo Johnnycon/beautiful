@@ -1,142 +1,59 @@
+import { Crown, Heart, Sparkles, Star, Sun, Users, Wind, type LucideIcon } from "lucide-react";
+
+// Copy (title, descriptions, includes, add-on names) lives in messages under `data.services.<id>`.
 export interface Service {
   id: string;
-  title: string;
-  shortDescription: string;
-  description: string;
-  includes: string[];
-  duration: string;
+  icon: LucideIcon;
+  image: string;
   startingPrice: number;
-  icon: string;
-  addOns?: { name: string; price: number }[];
+  // Index-aligned with `data.services.<id>.addOns` in messages.
+  addOnPrices?: number[];
 }
 
 export const services: Service[] = [
   {
     id: "bridal-hair-makeup",
-    title: "Bridal Hair + Makeup",
-    shortDescription: "Your perfect bridal look, flawlessly executed on your special day.",
-    description: "Our signature bridal service includes a personalized consultation, trial session, and day-of styling to ensure you look absolutely radiant walking down the aisle. We use only premium, long-lasting products that photograph beautifully and stay perfect through every tear of joy.",
-    includes: [
-      "Pre-wedding consultation",
-      "Trial session",
-      "Day-of hair styling",
-      "Day-of makeup application",
-      "Touch-up kit",
-      "False lashes included"
-    ],
-    duration: "2-3 hours",
+    icon: Crown,
+    image: "/images/gallery/gallery_12.JPG",
     startingPrice: 525,
-    icon: "crown",
-    addOns: [
-      { name: "Additional bridesmaid", price: 150 },
-      { name: "Mother of bride/groom", price: 175 },
-      { name: "Flower girl styling", price: 75 }
-    ]
+    addOnPrices: [150, 175, 75],
   },
   {
     id: "quinceanera-glam",
-    title: "Quinceañera Glam",
-    shortDescription: "Age-appropriate elegance for your momentous celebration.",
-    description: "Celebrate this beautiful milestone with a look that captures the magic of the moment. Our quinceañera package delivers camera-ready glamour that's both age-appropriate and absolutely stunning, ensuring you shine in every photo.",
-    includes: [
-      "Style consultation",
-      "Hair styling with accessories",
-      "Full makeup application",
-      "False lashes",
-      "Setting spray for all-day wear"
-    ],
-    duration: "2 hours",
+    icon: Sparkles,
+    image: "/images/gallery/gallery_2.JPG",
     startingPrice: 425,
-    icon: "sparkles",
-    addOns: [
-      { name: "Trial session", price: 145 },
-      { name: "Damas (each)", price: 125 },
-      { name: "Mother styling", price: 150 },
-      { name: "Hair accessory placement", price: 25 }
-    ]
+    addOnPrices: [145, 125, 150, 25],
   },
   {
     id: "sweet-16",
-    title: "Sweet 16 Styling",
-    shortDescription: "Chic and youthful glam for your sixteenth celebration.",
-    description: "Turn sixteen in style with a fresh, youthful look that's perfect for your celebration. We create age-appropriate glamour that makes you feel confident and beautiful while still being true to your personal style.",
-    includes: [
-      "Consultation",
-      "Hair styling",
-      "Makeup application",
-      "Lashes included"
-    ],
-    duration: "1.5 hours",
+    icon: Heart,
+    image: "https://images.unsplash.com/photo-1763959952707-7f4b2c3c2219?w=1200&q=80",
     startingPrice: 385,
-    icon: "heart",
-    addOns: [
-      { name: "Trial session", price: 145 },
-      { name: "Friend styling (each)", price: 100 },
-      { name: "Mother styling", price: 150 }
-    ]
+    addOnPrices: [145, 100, 150],
   },
   {
     id: "event-hair",
-    title: "Event Hair Styling",
-    shortDescription: "Elegant updos and styling for any special occasion.",
-    description: "Whether it's a gala, formal dinner, or special celebration, our event hair styling service delivers sophisticated, lasting styles. From romantic waves to elegant updos, we create the perfect hair look for your occasion.",
-    includes: [
-      "Consultation",
-      "Heat styling",
-      "Updo or down styling",
-      "Finishing products"
-    ],
-    duration: "45-60 minutes",
+    icon: Wind,
+    image: "/images/gallery/gallery_1.JPG",
     startingPrice: 125,
-    icon: "wind"
   },
   {
     id: "soft-glam",
-    title: "Soft Glam Makeup",
-    shortDescription: "Effortless, natural-looking beauty enhancement.",
-    description: "Our soft glam look enhances your natural beauty with a polished, radiant finish. Perfect for those who want to look like the best version of themselves—fresh, dewy, and naturally beautiful.",
-    includes: [
-      "Skin prep",
-      "Natural makeup application",
-      "Soft contouring",
-      "Natural lashes"
-    ],
-    duration: "45 minutes",
+    icon: Sun,
+    image: "/images/gallery/gallery_5.JPG",
     startingPrice: 95,
-    icon: "sun"
   },
   {
     id: "full-glam",
-    title: "Full Glam Makeup",
-    shortDescription: "Bold, camera-ready makeup for maximum impact.",
-    description: "When you want to make a statement, our full glam service delivers. Think dramatic eyes, flawless skin, sculpted features, and a look that commands attention and photographs like a dream.",
-    includes: [
-      "Full skin prep",
-      "Complete makeup application",
-      "Full contouring & highlighting",
-      "Dramatic lashes"
-    ],
-    duration: "1 hour",
+    icon: Star,
+    image: "/images/gallery/gallery_10.JPG",
     startingPrice: 165,
-    icon: "star"
   },
   {
     id: "group-booking",
-    title: "Group Bookings",
-    shortDescription: "Coordinated beauty services for your entire party.",
-    description: "Planning a bridal party, prom group, or special celebration with friends? Our group booking package ensures everyone is styled to perfection with seamless coordination and timing.",
-    includes: [
-      "Group consultation",
-      "Coordinated scheduling",
-      "On-site styling for all",
-      "Group discount applied"
-    ],
-    duration: "Varies by group size",
+    icon: Users,
+    image: "https://images.unsplash.com/photo-1638959882708-9503b1cd595f?w=1200&q=80",
     startingPrice: 400,
-    icon: "users"
-  }
+  },
 ];
-
-export const getServiceById = (id: string): Service | undefined => {
-  return services.find(service => service.id === id);
-};

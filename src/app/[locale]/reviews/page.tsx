@@ -1,142 +1,92 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import Button from "@/components/Button";
-import SectionHeading from "@/components/SectionHeading";
-import AnimatedSection from "@/components/AnimatedSection";
-import TestimonialCard from "@/components/TestimonialCard";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Star } from "lucide-react";
+import type { Locale } from "@/i18n/routing";
+import { getPageMetadata } from "@/lib/metadata";
 import { testimonials } from "@/data/testimonials";
-import { Star, Quote } from "lucide-react";
+import ClosingCta from "@/components/ClosingCta";
+import PageHeader, { container } from "@/components/PageHeader";
 
-export default function ReviewsPage() {
-  const t = useTranslations("reviews");
-  const tData = useTranslations("data.testimonials");
-  const tCommon = useTranslations("common");
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/reviews">): Promise<Metadata> {
+  const { locale } = await params;
+  return getPageMetadata(locale as Locale, "reviews");
+}
 
+export default async function ReviewsPage({ params }: PageProps<"/[locale]/reviews">) {
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+
+  const [t, tData] = await Promise.all([
+    getTranslations("reviews"),
+    getTranslations("data.testimonials"),
+  ]);
+  const [featured, ...others] = testimonials;
   const averageRating =
-    testimonials.reduce((acc, t) => acc + t.rating, 0) / testimonials.length;
+    testimonials.reduce((sum, { rating }) => sum + rating, 0) / testimonials.length;
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              {t("hero.eyebrow")}
+      <PageHeader title={t("hero.title")} description={t("hero.description")}>
+        <div className="mt-6 flex items-center gap-3">
+          <div className="flex gap-0.5 text-rouge" aria-hidden>
+            {Array.from({ length: 5 }, (_, i) => (
+              <Star key={i} size={16} className="fill-current" />
+            ))}
+          </div>
+          <p className="text-sm">
+            <span className="font-medium">{averageRating.toFixed(1)}</span>{" "}
+            <span className="text-slate">{t("hero.reviewCount", { count: testimonials.length })}</span>
+          </p>
+        </div>
+      </PageHeader>
+
+      {/* Featured */}
+      <section className="bg-petal py-20 md:py-32">
+        <figure className={`${container} max-w-[72rem]`}>
+          <blockquote className="font-serif text-[1.75rem] font-medium leading-[1.3] md:text-[2.75rem] md:leading-[1.25]">
+            &ldquo;{tData(`${featured.id}.quote`)}&rdquo;
+          </blockquote>
+          <figcaption className="mt-10">
+            <span className="font-medium">{tData(`${featured.id}.name`)}</span>
+            <span className="text-slate">
+              , {tData(`${featured.id}.eventType`)}, {tData(`${featured.id}.date`)}
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              {t("hero.title")}
-            </h1>
-            <p className="text-[#6B6560] text-lg leading-relaxed mb-8">
-              {t("hero.description")}
-            </p>
-
-            {/* Rating Summary */}
-            <div className="inline-flex items-center gap-4 bg-white rounded-full px-8 py-4 shadow-sm">
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={24}
-                    className="fill-[#C9A962] text-[#C9A962]"
-                  />
-                ))}
-              </div>
-              <div className="text-left">
-                <span className="block text-2xl font-serif text-[#1A1A1A]">
-                  {averageRating.toFixed(1)}
-                </span>
-                <span className="text-sm text-[#6B6560]">
-                  {t("hero.reviewCount")}
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          </figcaption>
+        </figure>
       </section>
 
-      {/* Featured Review */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative bg-[#1A1A1A] rounded-3xl p-8 md:p-12 text-center"
-          >
-            <Quote
-              size={48}
-              className="absolute top-8 left-8 text-[#C9A962] opacity-30"
-            />
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  size={20}
-                  className="fill-[#C9A962] text-[#C9A962]"
-                />
-              ))}
-            </div>
-            <blockquote className="font-serif text-2xl md:text-3xl text-white mb-8 leading-relaxed">
-              &ldquo;{tData("0.quote")}&rdquo;
-            </blockquote>
-            <div>
-              <p className="text-white font-medium">{tData("0.name")}</p>
-              <p className="text-[#A09A94]">
-                {tData("0.eventType")} • {tData("0.date")}
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* All Reviews */}
-      <section className="py-20 md:py-32 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading
-            eyebrow={t("all.eyebrow")}
-            title={t("all.title")}
-            description=""
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.slice(1).map((testimonial, index) => (
-              <TestimonialCard
+      {/* All reviews */}
+      <section className="py-24 md:py-32">
+        <div className={container}>
+          <h2 className="font-serif text-4xl md:text-5xl">{t("all.title")}</h2>
+          <div className="mt-12 gap-x-12 md:columns-2 lg:columns-3">
+            {others.map((testimonial) => (
+              <figure
                 key={testimonial.id}
-                testimonial={testimonial}
-                index={index}
-              />
+                className="mb-10 break-inside-avoid border-t border-crystal pt-6"
+              >
+                <blockquote className="text-lg leading-relaxed">
+                  &ldquo;{tData(`${testimonial.id}.quote`)}&rdquo;
+                </blockquote>
+                <figcaption className="mt-4 text-sm">
+                  <span className="font-medium">{tData(`${testimonial.id}.name`)}</span>
+                  <span className="text-slate">
+                    , {tData(`${testimonial.id}.eventType`)}, {tData(`${testimonial.id}.date`)}
+                  </span>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <AnimatedSection className="py-20 md:py-32 bg-[#F5E6E0]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <SectionHeading
-            eyebrow={t("cta.title")}
-            title={t("cta.description")}
-            description=""
-          />
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/book" variant="primary" size="lg">
-              {t("cta.button")}
-            </Button>
-            <Button href="/portfolio" variant="outline" size="lg">
-              {tCommon("viewAll")}
-            </Button>
-          </div>
-        </div>
-      </AnimatedSection>
+      <ClosingCta
+        title={t("cta.title")}
+        description={t("cta.description")}
+        buttonLabel={t("cta.button")}
+      />
     </>
   );
 }

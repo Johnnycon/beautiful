@@ -6,7 +6,7 @@ Luxury mobile hair & makeup website built with Next.js 16.
 
 - **Framework**: Next.js 16 (App Router)
 - **Styling**: Tailwind CSS v4
-- **Animations**: Framer Motion
+- **Animations**: Motion (`motion` package, formerly Framer Motion)
 - **Icons**: Lucide React
 - **i18n**: next-intl
 - **Language**: TypeScript
@@ -16,12 +16,27 @@ Luxury mobile hair & makeup website built with Next.js 16.
 ```
 src/
 ├── app/
-│   └── [locale]/  # Locale-wrapped pages (home, services, portfolio, pricing, reviews, book, contact)
+│   ├── [locale]/  # Locale-wrapped pages (home, services, portfolio, pricing, reviews, book, contact) + localized 404
+│   ├── sitemap.ts # sitemap.xml with hreflang alternates
+│   └── robots.ts  # robots.txt
 ├── components/    # Reusable UI components
-├── data/          # Static data (services, portfolio, testimonials, pricing)
+├── config/        # site.ts – business details, social links, site URL
+├── data/          # Non-translatable data (ids, prices, images, icons) for services, portfolio, testimonials, pricing
 ├── i18n/          # Internationalization config (routing, navigation, request)
-└── messages/      # Translation files (en.json, es.json)
+├── lib/           # metadata.ts (per-page SEO metadata), portfolio.ts
+├── messages/      # Translation files (en.json, es.json) – all user-facing copy lives here
+└── proxy.ts       # next-intl locale detection/routing (Next.js 16 "proxy", formerly middleware)
 ```
+
+## Architecture Conventions
+
+- **Pages are Server Components.** Each `page.tsx` calls `setRequestLocale(locale)` (enables static rendering) and exports `generateMetadata` via `getPageMetadata(locale, "<page>")`. Use `await getTranslations()` in pages and `useTranslations()` in non-async server components.
+- **Animations in server components** import `* as motion from "motion/react-client"`. Client components import from `"motion/react"`.
+- **Client components** are only used for interactivity: `Header`, `PortfolioGrid`, `BookingFlow`, `ContactForm`.
+- **Client translations are scoped.** The locale layout only sends the `nav`, `common`, `portfolio`, `book` and `contact` namespaces to the browser (`clientNamespaces` in `src/app/[locale]/layout.tsx`). If a client component needs another namespace, add it there, or translate on the server and pass strings as props (as done for portfolio items and booking service options).
+- **Links**: always use `Link` from `@/i18n/navigation` (not `next/link`) so links keep the current locale.
+- **Colors**: use theme tokens (`text-midnight`, `bg-pearl`, `text-rouge`, `border-crystal`, …) defined in `src/app/globals.css`, not hex values.
+- **Icons**: `lucide-react` v1 has no brand icons; use `InstagramIcon` / `FacebookIcon` from `src/components/icons/SocialIcons.tsx`.
 
 ## Commands
 
@@ -31,18 +46,25 @@ npm run build    # Production build
 npm run lint     # Run ESLint
 ```
 
-## Design System
+## Design System: "Call time"
 
-- **Colors**: Warm neutrals with gold accents (`#C9A962`)
-- **Typography**: Playfair Display (headings), Inter (body)
-- **Spacing**: Generous whitespace, luxury aesthetic
+The look comes from the morning of the event: vanity-mirror bulbs, satin gowns, pearl and crystal hairpieces, lipstick.
+
+- **Colors** (tokens in `src/app/globals.css`): `midnight` #141B34 (text, dark sections), `pearl` #EEF0F3 (page), `paper` #F7F8FA (alternate light), `petal` #E8C9CB (soft panels), `rouge` #A3243B (the only accent: actions, focus, active states), `crystal` #C9CED8 (hairlines), `slate`/`mist` (secondary text on light/dark), `bulb` (mirror bulbs only)
+- **Typography**: Bodoni Moda (headings) + Hanken Grotesk (body, UI). Bodoni's optical size is pinned to `opsz` 12 for all serif text and weight defaults to 500, because its automatic display cut has hairlines too thin to read. Sentence case everywhere; no all-caps eyebrow labels; never highlight a single word in a headline
+- **Contrast**: secondary text uses `slate` (≥5:1 on every light background, including petal); keep body text at 4.5:1 or better
+- **Signature**: the arched vanity mirror in the home hero (`MirrorHero`); bulbs light in sequence on load. It's the site's only automatic animation. The arch shape (`rounded-t-full`) repeats as a frame for key photos
+- **Structure**: hairline rules (`border-crystal`) and lists instead of cards; 12-column grid in `container` (from `PageHeader.tsx`); interior pages use `PageHeader` + `ClosingCta`
+- **Helpers**: `text-link` (underlined link with rouge rule) and `field` (form inputs) utilities in `globals.css`
+- **Placeholder images**: Unsplash images show an amber dot (`PlaceholderDot`) in dev or when `NEXT_PUBLIC_SHOW_PLACEHOLDER_MARKERS=true`, so stock photos can be tracked and replaced with real client work
 
 ## Key Components
 
-- `Header` - Sticky nav, changes style on scroll (white text on hero, dark when scrolled)
-- `Button` - Three variants: primary, secondary, outline
+- `Header` - Fixed nav; transparent over the home hero, pearl when scrolled; full-screen midnight menu on mobile
+- `Button` - Variants: primary (rouge), secondary (midnight), outline
+- `MirrorHero` - Home hero mirror with sequenced bulbs
 - `PortfolioGrid` - Filterable gallery with lightbox
-- `SectionHeading` - Consistent section titles with eyebrow text
+- `PageHeader` / `ClosingCta` - Opening and closing blocks for interior pages
 
 ## Internationalization (i18n)
 
@@ -56,31 +78,27 @@ The site supports English and Spanish for the Chicagoland Hispanic community.
 - `src/i18n/routing.ts` - Locale config (en default, es)
 - `src/i18n/navigation.ts` - Locale-aware Link, usePathname, useRouter
 - `src/i18n/request.ts` - Server-side message loading
-- `src/middleware.ts` - Locale detection and routing
+- `src/proxy.ts` - Locale detection and routing
 - `src/messages/en.json` - English translations
 - `src/messages/es.json` - Spanish translations
 
 ### Adding Translations
 1. Add keys to both `en.json` and `es.json` in `src/messages/`
-2. Use `useTranslations('namespace')` hook in components
-3. Access with `t('key')` or `t('nested.key')`
+2. Use `await getTranslations('namespace')` in pages, `useTranslations('namespace')` in components
+3. Access with `t('key')` or `t('nested.key')`; use `t.raw('key')` for arrays (e.g. service `includes`)
+4. Page titles/descriptions live under `metadata.<page>`
 
 ### Language Switcher
 Located in Header component - uses globe icon, switches between locales while preserving current path.
 
-### Components Using Translations
-- `Header` - Navigation labels, Book Now button
-- `Footer` - All text content, links
-
-### Remaining Work
-Page content (hero sections, descriptions) still has inline English. To fully translate:
-1. Extract text to translation files
-2. Update pages to use `useTranslations()` hook
-3. Translate data files (services, testimonials, pricing, portfolio)
+All page content, data (services, testimonials, pricing, portfolio) and metadata are translated.
 
 ## Notes
 
-- Images hosted on Unsplash (configured in `next.config.ts`)
+- Real client photos live in `public/images/gallery`; the hero and About images in `public/images/hero` are AI-generated (ChatGPT image generation) and should be swapped for real photos of Lizbeth when available
+- 9 portfolio slots and 2 service images still use Unsplash placeholders (allowed in `next.config.ts`)
+- `/pricing` permanently redirects to `/services#packages` (Pricing was merged into Services)
+- Set `NEXT_PUBLIC_SITE_URL` in production (canonical URLs, sitemap, OG tags) – see README
 - Forms submit to placeholder success pages (no backend)
 - Mobile-first responsive design
 - Target audience: US citizens, primarily Chicagoland area

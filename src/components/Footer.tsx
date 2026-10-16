@@ -1,179 +1,109 @@
-"use client";
-
-import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { Instagram, Clock, MapPin, Facebook } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/config/site";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
+
+const { instagram, facebook } = siteConfig.social;
 
 export default function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
 
+  const links = [
+    { href: "/services", label: nav("services") },
+    { href: "/portfolio", label: nav("portfolio") },
+    { href: "/reviews", label: nav("reviews") },
+    { href: "/contact", label: nav("contact") },
+  ];
+
   return (
-    <footer className="bg-[#1A1A1A] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div>
-            <h3 className="font-serif text-2xl mb-4">
-              Beautiful <span className="text-[#C9A962]">Inside Out</span>
-            </h3>
-            <p className="text-[#A09A94] text-sm leading-relaxed mb-6">
-              {t("tagline")}
+    <footer className="bg-midnight text-pearl">
+      <div className="mx-auto max-w-[88rem] px-6 pt-20 pb-10 md:px-10">
+        <div className="grid gap-12 border-t border-pearl/15 pt-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <p className="font-serif text-4xl leading-none tracking-[-0.01em] md:text-5xl">
+              Beautiful Inside Out
             </p>
-            <div className="flex gap-4">
+            <p className="mt-5 max-w-sm text-mist">{t("tagline")}</p>
+            <div className="mt-8 flex gap-3">
               <a
-                href="https://instagram.com/lizbethbiso"
+                href={instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C9A962] transition-colors duration-300"
-                aria-label="Instagram"
+                aria-label={`Instagram ${instagram.handle}`}
+                className="flex size-11 items-center justify-center rounded-full border border-pearl/20 transition-colors hover:border-pearl hover:bg-pearl hover:text-midnight"
               >
-                <Instagram size={18} />
+                <InstagramIcon size={18} strokeWidth={1.5} />
               </a>
               <a
-                href="https://www.facebook.com/beautifulio"
+                href={facebook.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C9A962] transition-colors duration-300"
-                aria-label="Facebook"
+                aria-label={`Facebook ${facebook.handle}`}
+                className="flex size-11 items-center justify-center rounded-full border border-pearl/20 transition-colors hover:border-pearl hover:bg-pearl hover:text-midnight"
               >
-                <Facebook size={18} />
+                <FacebookIcon size={18} strokeWidth={1.5} />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm uppercase tracking-wider text-[#C9A962] mb-6">
+          <nav aria-labelledby="footer-explore" className="md:col-span-2">
+            <h2 id="footer-explore" className="font-sans text-sm text-mist">
               {t("quickLinks")}
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/services"
-                  className="text-[#A09A94] hover:text-white transition-colors duration-300"
-                >
-                  {nav("services")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/portfolio"
-                  className="text-[#A09A94] hover:text-white transition-colors duration-300"
-                >
-                  {nav("portfolio")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/pricing"
-                  className="text-[#A09A94] hover:text-white transition-colors duration-300"
-                >
-                  {nav("pricing")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/reviews"
-                  className="text-[#A09A94] hover:text-white transition-colors duration-300"
-                >
-                  {nav("reviews")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/book"
-                  className="text-[#A09A94] hover:text-white transition-colors duration-300"
-                >
-                  {nav("bookNow")}
-                </Link>
-              </li>
+            </h2>
+            <ul className="mt-4 space-y-2">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:underline underline-offset-4">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-sm uppercase tracking-wider text-[#C9A962] mb-6">
-              {t("contact")}
-            </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
-                <span className="text-[#A09A94] text-sm">
-                  {t("address")}<br />
-                  {t("city")}<br />
-                  <span className="text-[#C9A962]/80">{t("serviceArea")}</span>
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Instagram size={18} className="text-[#C9A962] flex-shrink-0" />
-                <a
-                  href="https://instagram.com/lizbethbiso"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
-                >
-                  @lizbethbiso
+          <div className="md:col-span-3">
+            <h2 className="font-sans text-sm text-mist">{t("contact")}</h2>
+            <address className="mt-4 not-italic">
+              {t("address")}
+              <br />
+              {t("city")}
+            </address>
+            <p className="mt-3 text-sm text-mist">{t("serviceArea")}</p>
+            <ul className="mt-4 space-y-1 text-sm">
+              <li>
+                <a href={instagram.url} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">
+                  Instagram {instagram.handle}
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Facebook size={18} className="text-[#C9A962] flex-shrink-0" />
-                <a
-                  href="https://www.facebook.com/beautifulio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
-                >
-                  @beautifulio
+              <li>
+                <a href={facebook.url} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">
+                  Facebook {facebook.handle}
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Hours */}
-          <div>
-            <h4 className="text-sm uppercase tracking-wider text-[#C9A962] mb-6">
-              {t("availability")}
-            </h4>
-            <div className="flex items-start gap-3 mb-4">
-              <Clock size={18} className="text-[#C9A962] mt-0.5 flex-shrink-0" />
-              <div className="text-[#A09A94] text-sm">
-                <p className="mb-2">{t("byAppointment")}</p>
-                <p>{t("availableDays")}</p>
-                <p>{t("earlyMornings")}</p>
-                <p>{t("forWeddings")}</p>
-              </div>
-            </div>
+          <div className="md:col-span-2">
+            <h2 className="font-sans text-sm text-mist">{t("availability")}</h2>
+            <p className="mt-4">{t("byAppointment")}</p>
+            <p className="mt-1 text-sm text-mist">
+              {t("availableDays")}, {t("earlyMornings")} {t("forWeddings")}
+            </p>
             <Link
               href="/book"
-              className="inline-block mt-4 px-6 py-2.5 border border-[#C9A962] text-[#C9A962] text-sm rounded-full hover:bg-[#C9A962] hover:text-white transition-all duration-300"
+              className="mt-5 inline-block text-petal underline decoration-1 underline-offset-4 hover:text-pearl"
             >
               {t("checkAvailability")}
             </Link>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#A09A94] text-sm">
-              {t("copyright", { year: new Date().getFullYear() })}
-            </p>
-            <div className="flex gap-6">
-              <Link
-                href="/contact"
-                className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
-              >
-                {t("contact")}
-              </Link>
-              <Link
-                href="/pricing#policies"
-                className="text-[#A09A94] text-sm hover:text-white transition-colors duration-300"
-              >
-                {t("policies")}
-              </Link>
-            </div>
-          </div>
+        <div className="mt-16 flex flex-col gap-3 text-sm text-mist md:flex-row md:justify-between">
+          <p>{t("copyright", { year: new Date().getFullYear() })}</p>
+          <Link href="/services#policies" className="hover:text-pearl">
+            {t("policies")}
+          </Link>
         </div>
       </div>
     </footer>

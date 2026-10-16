@@ -1,66 +1,93 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import "../globals.css";
+import { siteConfig } from "@/config/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
+import "../globals.css";
 
-type Props = {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-};
+// Bodoni's optical-size axis keeps hairlines crisp at display sizes
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  axes: ["opsz"],
+  variable: "--font-bodoni",
+  display: "swap",
+});
+
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-hanken",
+  display: "swap",
+});
+
+// Only these namespaces are used by client components; everything else is
+// translated on the server and never shipped to the browser.
+const clientNamespaces = ["nav", "common", "portfolio", "book", "contact"] as const;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export const viewport: Viewport = {
+  themeColor: "#141B34",
+};
+
+export async function generateMetadata({
+  params,
+}: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
-
-  const titles: Record<string, string> = {
-    en: "Beautiful Inside Out | Luxury Mobile Hair & Makeup",
-    es: "Beautiful Inside Out | Maquillaje y Peinado de Lujo a Domicilio"
-  };
-
-  const descriptions: Record<string, string> = {
-    en: "Premium on-site hair and makeup services for weddings, quinceañeras, sweet 16s, and special events in Chicagoland.",
-    es: "Servicios premium de maquillaje y peinado a domicilio para bodas, quinceañeras, sweet 16 y eventos especiales en Chicago."
-  };
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
-    title: titles[locale] || titles.en,
-    description: descriptions[locale] || descriptions.en,
-    keywords: locale === "es"
-      ? "maquillaje de lujo, maquillaje de boda, quinceañera glam, belleza móvil, peinado nupcial, sweet 16 maquillaje, Chicago"
-      : "luxury hair makeup, wedding makeup, quinceañera glam, mobile beauty, bridal hair, sweet 16 makeup, Chicago",
-    openGraph: {
-      title: titles[locale] || titles.en,
-      description: descriptions[locale] || descriptions.en,
-      type: "website",
-      locale: locale === "es" ? "es_US" : "en_US",
+    metadataBase: new URL(siteConfig.url),
+    title: {
+      default: t("home.title"),
+      template: `%s | ${siteConfig.name}`,
     },
+    description: t("home.description"),
+    applicationName: siteConfig.name,
+    formatDetection: { telephone: false },
   };
 }
 
-export default async function LocaleLayout({ children, params }: Props) {
+export default async function LocaleLayout({
+  children,
+  params,
+}: LayoutProps<"/[locale]">) {
   const { locale } = await params;
-
-  // Validate locale
-  if (!routing.locales.includes(locale as "en" | "es")) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  // Get messages for the locale
-  const messages = await getMessages();
+  // Enables static rendering for every page under this layout
+  setRequestLocale(locale);
+
+  const [messages, t, tMeta] = await Promise.all([
+    getMessages(),
+    getTranslations("common"),
+    getTranslations("metadata"),
+  ]);
+  const clientMessages = Object.fromEntries(
+    clientNamespaces.map((namespace) => [namespace, messages[namespace]])
+  );
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${bodoni.variable} ${hanken.variable}`}>
       <body className="antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <StructuredData locale={locale} description={tMeta("home.description")} />
+        <NextIntlClientProvider messages={clientMessages}>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-midnight focus:text-pearl"
+          >
+            {t("skipToContent")}
+          </a>
           <Header />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

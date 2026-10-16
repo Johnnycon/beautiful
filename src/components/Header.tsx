@@ -1,173 +1,163 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const locale = useLocale();
   const t = useTranslations("nav");
 
-  // Check if on homepage (pathname is "/" regardless of locale)
-  const isHomePage = pathname === "/";
-
-  // Use dark header style when scrolled OR when not on homepage
-  const showDarkHeader = isScrolled || !isHomePage;
-
-  // Get the alternate locale
+  // The home page opens on the dark mirror hero, so the header starts transparent there
+  const isOverHero = pathname === "/" && !isScrolled && !isMenuOpen;
   const alternateLocale = locale === "en" ? "es" : "en";
 
   const navLinks = [
-    { href: "/", label: t("home") },
     { href: "/services", label: t("services") },
     { href: "/portfolio", label: t("portfolio") },
-    { href: "/pricing", label: t("pricing") },
     { href: "/reviews", label: t("reviews") },
+    { href: "/contact", label: t("contact") },
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => e.key === "Escape" && setIsMenuOpen(false);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isMenuOpen]);
+
+  const tone = isOverHero || isMenuOpen ? "text-pearl" : "text-midnight";
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        showDarkHeader
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        isMenuOpen
+          ? "bg-midnight"
+          : isOverHero
+            ? "bg-transparent"
+            : "bg-pearl/92 backdrop-blur-md border-b border-crystal/70"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="relative z-10">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span
-              className={`font-serif text-xl md:text-2xl tracking-wide transition-colors duration-500 ${
-                showDarkHeader ? "text-[#1A1A1A]" : "text-white"
-              }`}
-            >
-              Beautiful{" "}
-              <span className="text-[#C9A962]">Inside Out</span>
-            </span>
-          </motion.div>
+      <nav
+        aria-label="Main"
+        className={`mx-auto flex h-18 max-w-[88rem] items-center justify-between px-6 md:px-10 ${tone}`}
+      >
+        <Link href="/" className="font-serif text-[1.375rem] tracking-[-0.01em] whitespace-nowrap">
+          Beautiful Inside Out
         </Link>
 
-        {/* Desktop Navigation */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:flex items-center gap-8"
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm tracking-wide transition-colors duration-300 ${
-                showDarkHeader
-                  ? "text-[#6B6560] hover:text-[#C9A962]"
-                  : "text-white/90 hover:text-[#C9A962]"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-
-          {/* Language Switcher */}
-          <Link
-            href={pathname}
-            locale={alternateLocale}
-            className={`flex items-center gap-1.5 text-sm tracking-wide transition-colors duration-300 ${
-              showDarkHeader
-                ? "text-[#6B6560] hover:text-[#C9A962]"
-                : "text-white/90 hover:text-[#C9A962]"
-            }`}
-          >
-            <Globe size={16} />
-            <span className="uppercase">{alternateLocale}</span>
-          </Link>
-
-          <Link
-            href="/book"
-            className={`ml-4 px-6 py-2.5 text-sm tracking-wide rounded-full transition-all duration-300 transform hover:scale-105 ${
-              showDarkHeader
-                ? "bg-[#1A1A1A] text-white hover:bg-[#C9A962]"
-                : "bg-[#C9A962] text-white hover:bg-[#A68B4B]"
-            }`}
-          >
-            {t("bookNow")}
-          </Link>
-        </motion.div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden relative z-10 p-2 transition-colors duration-300 ${
-            showDarkHeader || isMobileMenuOpen ? "text-[#1A1A1A]" : "text-white"
-          }`}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-0 left-0 right-0 bg-white shadow-lg md:hidden pt-20 pb-8"
-            >
-              <div className="flex flex-col items-center gap-6">
-                {navLinks.map((link) => (
+        {/* Desktop */}
+        <div className="hidden items-center gap-9 md:flex">
+          <ul className="flex items-center gap-7 text-[0.9375rem]">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
                   <Link
-                    key={link.href}
                     href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-lg tracking-wide text-[#6B6560] hover:text-[#C9A962] transition-colors duration-300"
+                    aria-current={isActive ? "page" : undefined}
+                    className={`underline-offset-[6px] decoration-1 hover:underline ${
+                      isActive ? "underline decoration-rouge" : ""
+                    }`}
                   >
                     {link.label}
                   </Link>
-                ))}
+                </li>
+              );
+            })}
+          </ul>
+          <Link
+            href={pathname}
+            locale={alternateLocale}
+            hrefLang={alternateLocale}
+            lang={alternateLocale}
+            className="text-[0.9375rem] opacity-80 hover:opacity-100"
+          >
+            {t("switchLanguage")}
+          </Link>
+          <Link
+            href="/book"
+            className="rounded-[3px] bg-rouge px-5 py-2.5 text-[0.9375rem] font-medium text-pearl transition-colors hover:bg-rouge-deep"
+          >
+            {t("bookNow")}
+          </Link>
+        </div>
 
-                {/* Mobile Language Switcher */}
-                <Link
-                  href={pathname}
-                  locale={alternateLocale}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-2 text-lg tracking-wide text-[#6B6560] hover:text-[#C9A962] transition-colors duration-300"
-                >
-                  <Globe size={18} />
-                  <span>{alternateLocale === "es" ? "Español" : "English"}</span>
-                </Link>
-
-                <Link
-                  href="/book"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-4 px-8 py-3 bg-[#1A1A1A] text-white text-sm tracking-wide rounded-full hover:bg-[#C9A962] transition-all duration-300"
-                >
-                  {t("bookNow")}
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Mobile */}
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label={isMenuOpen ? t("closeMenu") : t("openMenu")}
+          className="-mr-2 p-2 md:hidden"
+        >
+          {isMenuOpen ? <X size={26} strokeWidth={1.5} /> : <Menu size={26} strokeWidth={1.5} />}
+        </button>
       </nav>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-x-0 top-18 bottom-0 flex flex-col justify-between bg-midnight px-6 pt-8 pb-10 text-pearl md:hidden"
+          >
+            <ul className="space-y-1">
+              {[{ href: "/", label: t("home") }, ...navLinks].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={pathname === link.href ? "page" : undefined}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 font-serif text-[2.5rem] leading-tight aria-[current=page]:text-petal"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="flex items-center justify-between gap-4 border-t border-pearl/15 pt-6">
+              <Link
+                href={pathname}
+                locale={alternateLocale}
+                hrefLang={alternateLocale}
+                lang={alternateLocale}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-mist"
+              >
+                {t("switchLanguage")}
+              </Link>
+              <Link
+                href="/book"
+                onClick={() => setIsMenuOpen(false)}
+                className="rounded-[3px] bg-rouge px-6 py-3 font-medium text-pearl"
+              >
+                {t("bookNow")}
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

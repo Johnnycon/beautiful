@@ -1,74 +1,104 @@
 {
   "metadata": {
-    "title": "Beautiful Inside Out | Maquillaje y Peinado de Lujo a Domicilio",
-    "description": "Servicios de maquillaje y peinado a domicilio para bodas, quinceañeras y eventos especiales en el área de Chicago."
+    "home": {
+      "title": "Beautiful Inside Out | Maquillaje y Peinado de Lujo a Domicilio en Chicago",
+      "description": "Maquillaje y peinado premium a domicilio para bodas, quinceañeras, sweet 16 y eventos especiales en todo el área de Chicago. Nosotras vamos a ti."
+    },
+    "services": {
+      "title": "Servicios y Precios",
+      "description": "Maquillaje y peinado nupcial, quinceañera, sweet 16 y eventos en el área de Chicago: servicios, paquetes, extras y políticas con precios transparentes."
+    },
+    "portfolio": {
+      "title": "Portafolio",
+      "description": "Explora looks de novia, quinceañera, sweet 16, glam, natural y recogidos creados por Beautiful Inside Out en el área de Chicago."
+    },
+    "reviews": {
+      "title": "Reseñas de Clientes",
+      "description": "Lee las reseñas de novias, quinceañeras y clientas de eventos que confiaron en Beautiful Inside Out para su maquillaje y peinado."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "¿Preguntas sobre maquillaje y peinado para tu boda, quinceañera o evento? Comunícate con Beautiful Inside Out."
+    },
+    "book": {
+      "title": "Reserva Tu Fecha",
+      "description": "Solicita tu cita de maquillaje y peinado a domicilio en el área de Chicago. Confirmamos disponibilidad y enviamos cotización en 24 horas."
+    },
+    "notFound": {
+      "title": "Página No Encontrada"
+    }
   },
   "nav": {
     "home": "Inicio",
     "services": "Servicios",
     "portfolio": "Portafolio",
-    "pricing": "Precios",
     "reviews": "Reseñas",
-    "bookNow": "Reservar"
+    "bookNow": "Reservar",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "switchLanguage": "English",
+    "contact": "Contacto"
   },
   "home": {
     "hero": {
-      "eyebrow": "Belleza de Lujo a Domicilio",
-      "title": "Glamour perfecto para los",
-      "titleHighlight": "días más importantes",
+      "title": "Glamour perfecto para los días más importantes",
       "description": "Maquillaje y peinado a domicilio con una experiencia tranquila y premium—desde el primer toque hasta el resultado final.",
-      "bookButton": "Reserva Tu Fecha",
-      "portfolioButton": "Ver Portafolio"
-    },
-    "trust": {
-      "weddings": "Especialistas en Bodas",
-      "quinceaneras": "Quinceañeras",
-      "events": "Eventos de Alto Perfil"
+      "bookButton": "Reserva tu fecha",
+      "portfolioButton": "Ver portafolio",
+      "meta": "A domicilio en todo el área de Chicago.",
+      "imageAlt": "Una novia con bata de satín azul medianoche, chongo bajo y pasadores de cristal, reflejada en un espejo de tocador"
     },
     "services": {
-      "eyebrow": "Nuestros Servicios",
-      "title": "Servicios de Belleza Exclusivos",
+      "title": "Servicios de belleza exclusivos",
       "description": "Desde la elegancia nupcial hasta el glamour de quinceañera, llevamos el estilo de lujo a donde sea tu momento especial.",
-      "viewAll": "Ver Todos los Servicios"
+      "viewAll": "Ver todos los servicios",
+      "from": "Desde ${price}"
     },
     "portfolio": {
-      "eyebrow": "Nuestro Trabajo",
-      "title": "El Trabajo Habla por Sí Solo",
-      "description": "Explora nuestro portafolio de hermosas transformaciones para bodas, quinceañeras y eventos especiales.",
-      "viewFull": "Ver Portafolio Completo"
+      "title": "El trabajo habla por sí solo",
+      "description": "Bodas, quinceañeras y eventos especiales, a domicilio en todo el área de Chicago.",
+      "viewFull": "Ver el portafolio completo"
     },
-    "howItWorks": {
-      "eyebrow": "Cómo Funciona",
-      "title": "Reservar es Muy Fácil",
-      "description": "Tres simples pasos para asegurar tu experiencia de belleza perfecta.",
-      "step1": {
-        "number": "01",
-        "title": "Elige Tu Servicio",
-        "description": "Selecciona de nuestros servicios exclusivos—nupcial, quinceañera, glam para eventos o reserva grupal."
-      },
-      "step2": {
-        "number": "02",
-        "title": "Escoge Fecha y Lugar",
-        "description": "Dinos cuándo y dónde. Vamos a ti—casa, salón de eventos, hotel, donde nos necesites."
-      },
-      "step3": {
-        "number": "03",
-        "title": "Confirma y Relájate",
-        "description": "Asegura tu lugar con un depósito. Nosotros nos encargamos del resto para que disfrutes tu momento."
-      },
-      "checkAvailability": "Ver Disponibilidad"
+    "morning": {
+      "title": "La mañana del evento",
+      "description": "Una mañana de boda típica, desde la primera silla hasta las primeras fotos. Planeamos el horario contigo con anticipación, para que nadie ande con prisas.",
+      "steps": [
+        {
+          "time": "5:30 a. m.",
+          "title": "Llegamos y montamos",
+          "description": "Luces, kit y una estación limpia, listos 30 minutos antes de la primera silla."
+        },
+        {
+          "time": "6:00 a. m.",
+          "title": "Preparación de la piel",
+          "description": "Limpiamos, hidratamos y preparamos para que el maquillaje dure entre abrazos y lágrimas de felicidad."
+        },
+        {
+          "time": "6:30 a. m.",
+          "title": "Tu cortejo, y luego tú",
+          "description": "Damas, madrinas y mamás van primero. Tú vas al final, para que tu look esté impecable en las fotos."
+        },
+        {
+          "time": "10:30 a. m.",
+          "title": "Detalles finales",
+          "description": "Pestañas, spray fijador y tu velo, tiara o accesorios colocados a la perfección."
+        },
+        {
+          "time": "11:15 a. m.",
+          "title": "Retoques antes de las fotos",
+          "description": "Nos quedamos hasta las primeras fotos, y te llevas un kit de retoque para el resto del día."
+        }
+      ]
     },
     "testimonials": {
-      "eyebrow": "Reseñas",
-      "title": "Lo Que Dicen Nuestras Clientas",
-      "description": "Historias reales de novias, quinceañeras e invitadas que confiaron en nosotros para sus momentos especiales.",
-      "readMore": "Leer Más Reseñas"
+      "title": "Lo que dicen nuestras clientas",
+      "rating": "Calificación de {rating} de {count} clientas",
+      "readMore": "Leer todas las reseñas"
     },
     "about": {
-      "eyebrow": "Conoce a Lizbeth",
-      "experience": "11+ Años de Experiencia",
-      "title": "Dueña de Beautiful Inside Out",
-      "description": "¡Hola, soy Lizbeth! He sido Maquillista y Estilista por más de 11 años, y todavía amo lo que hago tanto como cuando empecé. Mi pasión es ayudar a novias, Quinceañeras y cualquier persona celebrando un momento especial a sentirse absolutamente increíble.",
+      "title": "Conoce a Lizbeth",
+      "role": "Dueña de Beautiful Inside Out, más de 11 años en maquillaje y peinado",
+      "description": "¡Hola, soy Lizbeth! He sido maquillista y estilista por más de 11 años, y todavía amo lo que hago tanto como cuando empecé. Mi pasión es ayudar a novias, quinceañeras y cualquier persona celebrando un momento especial a sentirse absolutamente increíble.",
       "description2": "Creo firmemente en nunca dejar de aprender—tomo cursos cada año para mantenerme al día con las últimas técnicas. Tu look merece ideas frescas y cuidado experto.",
       "description3": "En Beautiful Inside Out, cada clienta recibe toda mi atención porque sé lo importante que es sentirse escuchada y cuidada en tu gran día. La calidad no es solo una meta; es una promesa. No puedo esperar para ayudarte a celebrar la hermosa persona que ya eres.",
       "features": {
@@ -76,35 +106,102 @@
         "punctual": "Servicio puntual y confiable",
         "calm": "Experiencia tranquila y sin estrés"
       },
-      "meetStylist": "Conectemos"
+      "meetStylist": "Conectemos",
+      "imageAlt": "Las manos de una maquillista aplicando iluminador en el pómulo de una clienta"
+    },
+    "area": {
+      "title": "Dónde trabajamos",
+      "description": "Vamos a donde estés, hasta 50 millas de Chicago. El traslado dentro de 25 millas es gratis.",
+      "neighborhoodsTitle": "Barrios de Chicago",
+      "suburbsTitle": "Suburbios",
+      "neighborhoods": [
+        "Little Village",
+        "Pilsen",
+        "Back of the Yards",
+        "Brighton Park",
+        "Archer Heights",
+        "Gage Park",
+        "Bridgeport",
+        "Garfield Ridge",
+        "Logan Square",
+        "Humboldt Park",
+        "Hermosa",
+        "Belmont Cragin"
+      ],
+      "suburbs": [
+        "Cicero",
+        "Berwyn",
+        "Oak Park",
+        "Oak Lawn",
+        "Evergreen Park",
+        "Summit",
+        "Melrose Park",
+        "Bolingbrook",
+        "Naperville",
+        "Aurora",
+        "Joliet",
+        "Elgin",
+        "Schaumburg",
+        "Waukegan"
+      ],
+      "ask": "¿No ves tu ciudad?",
+      "askLink": "Pregúntanos"
     },
     "cta": {
-      "eyebrow": "¿Lista para Comenzar?",
       "title": "Tu fecha merece belleza perfecta",
       "description": "Creemos algo hermoso juntas. Reserva tu consulta hoy y asegura tu lugar para tu día especial.",
-      "bookNow": "Reservar Ahora",
+      "bookNow": "Reservar ahora",
       "contact": "¿Preguntas? Contáctanos"
+    },
+    "howItWorks": {
+      "title": "Cómo reservar",
+      "steps": [
+        {
+          "title": "Elige tu servicio",
+          "description": "Nupcial, quinceañera, glam para eventos o reserva grupal."
+        },
+        {
+          "title": "Escoge fecha y lugar",
+          "description": "Casa, salón, hotel—vamos a ti."
+        },
+        {
+          "title": "Confirma y relájate",
+          "description": "Un depósito asegura tu lugar. Nosotros nos encargamos del resto."
+        }
+      ]
     }
   },
   "services": {
     "hero": {
-      "eyebrow": "Lo Que Ofrecemos",
-      "title": "Servicios",
+      "title": "Servicios y precios",
       "description": "Servicios de belleza completos diseñados para tu ocasión especial. Cada servicio incluye productos premium y atención personalizada."
     },
-    "includes": "Qué Incluye",
-    "addOns": "Complementos Populares",
-    "startingAt": "Desde",
-    "bookService": "Reservar Este Servicio",
+    "includes": "Qué incluye",
+    "addOns": "Complementos populares",
+    "bookService": "Reservar este servicio",
     "cta": {
-      "title": "¿Lista para Reservar Tu Servicio?",
+      "title": "¿Lista para reservar tu servicio?",
       "description": "Hablemos de tu visión y creemos el look perfecto para tu día especial.",
-      "button": "Ver Disponibilidad"
+      "button": "Ver disponibilidad"
+    },
+    "from": "Desde ${price}",
+    "duration": "Duración",
+    "packages": {
+      "title": "Paquetes",
+      "description": "Precios transparentes para servicios premium. Todos los paquetes incluyen traslado dentro de 25 millas de Chicago.",
+      "popular": "Más popular"
+    },
+    "extras": {
+      "title": "Extras",
+      "description": "Personaliza tu paquete con estas adiciones populares."
+    },
+    "policies": {
+      "title": "Políticas de reservación",
+      "description": "Información importante sobre depósitos, traslados y cancelaciones."
     }
   },
   "portfolio": {
     "hero": {
-      "eyebrow": "Nuestro Trabajo",
       "title": "Portafolio",
       "description": "Explora nuestra colección de hermosas transformaciones. Cada look está diseñado especialmente para cada persona."
     },
@@ -118,100 +215,69 @@
       "updos": "Peinados"
     },
     "cta": {
-      "title": "¿Te Gusta Lo Que Ves?",
+      "title": "¿Te gusta lo que ves?",
       "description": "Creemos tu look perfecto. Reserva una consulta para hablar de tu visión.",
-      "button": "Reserva Tu Look"
-    }
-  },
-  "pricing": {
-    "hero": {
-      "eyebrow": "Inversión",
-      "title": "Precios",
-      "description": "Precios transparentes para servicios premium. Todos los paquetes incluyen traslado dentro de 25 millas de Chicago."
-    },
-    "popular": "Más Popular",
-    "includes": "Incluye",
-    "addOns": {
-      "title": "Mejora Tu Experiencia",
-      "description": "Personaliza tu paquete con estas adiciones populares."
-    },
-    "policies": {
-      "title": "Políticas de Reservación",
-      "description": "Información importante sobre depósitos, traslados y cancelaciones."
-    },
-    "cta": {
-      "title": "¿Lista para Reservar?",
-      "description": "Asegura tu fecha con un depósito. Nosotros nos encargamos de todo lo demás.",
-      "button": "Ver Disponibilidad"
+      "button": "Reserva tu look"
     }
   },
   "reviews": {
     "hero": {
-      "eyebrow": "Testimonios",
-      "title": "Lo Que Dicen Nuestras Clientas",
+      "title": "Lo que dicen nuestras clientas",
       "description": "Historias reales de clientas reales. Cada reseña refleja nuestro compromiso de hacerte sentir hermosa y segura en tu día especial.",
-      "rating": "5.0",
-      "reviewCount": "12 reseñas"
-    },
-    "featured": {
-      "eyebrow": "Reseña Destacada"
+      "reviewCount": "{count} reseñas"
     },
     "all": {
-      "eyebrow": "Todas las Reseñas",
-      "title": "Más Clientas Felices"
+      "title": "Más clientas felices"
     },
     "cta": {
-      "title": "¿Lista para Ser Nuestra Próxima Clienta Feliz?",
+      "title": "¿Lista para ser nuestra próxima clienta feliz?",
       "description": "Reserva tu consulta y creemos algo hermoso juntas.",
-      "button": "Reservar Ahora"
+      "button": "Reservar ahora"
     }
   },
   "contact": {
     "hero": {
-      "eyebrow": "Contáctanos",
       "title": "Contacto",
       "description": "¿Tienes preguntas? Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible."
     },
     "form": {
       "title": "Enviar un Mensaje",
-      "name": "Tu Nombre",
+      "name": "Tu nombre",
       "namePlaceholder": "María García",
-      "email": "Correo Electrónico",
+      "email": "Correo electrónico",
       "emailPlaceholder": "maria@ejemplo.com",
-      "phone": "Número de Teléfono",
+      "phone": "Número de teléfono",
       "phonePlaceholder": "(312) 555-1234",
-      "eventType": "Tipo de Evento",
+      "eventType": "Tipo de evento",
       "eventTypePlaceholder": "Selecciona tipo de evento",
       "eventTypes": {
         "wedding": "Boda",
         "quinceanera": "Quinceañera",
         "sweet16": "Sweet 16",
-        "prom": "Prom / Graduación",
-        "corporate": "Evento Corporativo",
-        "photoshoot": "Sesión de Fotos",
+        "prom": "Prom / graduación",
+        "corporate": "Evento corporativo",
+        "photoshoot": "Sesión de fotos",
         "other": "Otro"
       },
-      "message": "Tu Mensaje",
+      "message": "Tu mensaje",
       "messagePlaceholder": "Cuéntanos sobre tu evento, la fecha que tienes en mente y cualquier pregunta...",
-      "submit": "Enviar Mensaje",
-      "successTitle": "¡Mensaje Enviado!",
+      "submit": "Enviar mensaje",
+      "successTitle": "¡Mensaje enviado!",
       "successMessage": "Gracias por contactarnos. Te responderemos dentro de 24-48 horas.",
-      "backToHome": "Volver al Inicio"
+      "backToHome": "Volver al inicio"
     },
     "info": {
-      "serviceArea": "Área de Servicio",
+      "serviceArea": "Área de servicio",
       "serviceAreaValue": "Chicago y alrededores",
       "serviceAreaNote": "Viajamos hasta 50 millas desde Chicago",
       "availability": "Disponibilidad",
       "availabilityValue": "Solo con cita",
       "availabilityNote": "7 días a la semana, incluyendo temprano por la mañana",
-      "response": "Tiempo de Respuesta",
-      "responseValue": "Dentro de 24 horas",
-      "responseNote": "Usualmente mucho más rápido en horario de oficina"
+      "instagramNote": "Envíanos un DM para preguntas rápidas",
+      "facebookNote": "Síguenos para novedades"
     },
     "faq": {
-      "eyebrow": "Preguntas Frecuentes",
-      "title": "Preguntas Comunes",
+      "title": "Preguntas comunes",
       "questions": {
         "advance": {
           "q": "¿Con cuánta anticipación debo reservar?",
@@ -232,112 +298,108 @@
       }
     },
     "cta": {
-      "title": "¿Lista para Reservar?",
+      "title": "¿Lista para reservar?",
       "description": "Salta el formulario y reserva tu cita directamente."
     }
   },
   "book": {
     "hero": {
-      "eyebrow": "Reservar",
-      "title": "Reserva Tu Fecha",
+      "title": "Reserva tu fecha",
       "description": "Completa el formulario para solicitar tu reservación. Confirmaremos disponibilidad y te enviaremos una cotización detallada dentro de 24 horas."
     },
     "steps": {
-      "event": "Detalles del Evento",
+      "event": "Detalles del evento",
       "services": "Servicios",
       "contact": "Contacto",
       "review": "Revisar"
     },
     "form": {
-      "eventType": "Tipo de Evento",
-      "eventDate": "Fecha del Evento",
-      "eventTime": "Hora de Inicio",
+      "eventDate": "Fecha del evento",
+      "eventTime": "Hora de inicio",
       "selectTime": "Selecciona una hora",
-      "location": "Lugar del Evento",
+      "location": "Lugar del evento",
       "locationPlaceholder": "ej., Hotel Grand, Chicago o 123 Calle Principal...",
-      "partySize": "Número de Personas",
+      "partySize": "Número de personas",
       "person": "persona",
       "people": "personas",
-      "selectServices": "Selecciona Servicios",
-      "servicesNote": "Selecciona todos los servicios que te interesan",
+      "selectServices": "Selecciona servicios",
       "startingAt": "Desde",
-      "name": "Nombre Completo",
+      "name": "Nombre completo",
       "namePlaceholder": "Tu nombre completo",
-      "email": "Correo Electrónico",
+      "email": "Correo electrónico",
       "emailPlaceholder": "tu@correo.com",
-      "phone": "Número de Teléfono",
+      "phone": "Número de teléfono",
       "phonePlaceholder": "(312) 555-1234",
-      "notes": "Notas Adicionales",
+      "notes": "Notas adicionales",
       "notesPlaceholder": "Cualquier solicitud especial, fotos de inspiración o preguntas...",
       "review": {
-        "title": "Revisa Tu Solicitud de Reservación",
-        "eventDetails": "Detalles del Evento",
-        "selectedServices": "Servicios Seleccionados",
-        "contactInfo": "Información de Contacto",
-        "notes": "Notas Adicionales"
+        "title": "Revisa tu solicitud de reservación",
+        "eventDetails": "Detalles del evento",
+        "selectedServices": "Servicios seleccionados",
+        "contactInfo": "Información de contacto",
+        "notes": "Notas adicionales"
       },
       "back": "Atrás",
       "next": "Siguiente",
-      "submit": "Enviar Solicitud",
+      "submit": "Enviar solicitud",
       "notSelected": "No seleccionado",
       "timeNotSelected": "Hora no seleccionada",
       "notProvided": "No proporcionado"
     },
     "success": {
-      "title": "¡Solicitud de Reservación Recibida!",
+      "title": "¡Solicitud de reservación recibida!",
       "description": "Gracias por tu solicitud. Revisaremos los detalles y confirmaremos disponibilidad dentro de 24-48 horas.",
-      "nextSteps": "Próximos Pasos",
+      "nextSteps": "Próximos pasos",
       "step1": "Revisaremos tu solicitud y verificaremos disponibilidad",
       "step2": "Recibirás un correo de confirmación con los siguientes pasos",
       "step3": "Se requiere un depósito del 30% para asegurar tu fecha",
       "step4": "Para reservas nupciales, programaremos tu sesión de prueba",
-      "backToHome": "Volver al Inicio",
-      "viewPortfolio": "Ver Portafolio"
+      "backToHome": "Volver al inicio",
+      "viewPortfolio": "Ver portafolio"
     },
     "info": {
       "quickResponse": {
-        "title": "Respuesta Rápida",
+        "title": "Respuesta rápida",
         "description": "Respondemos a todas las consultas dentro de 24-48 horas"
       },
       "secureBooking": {
-        "title": "Reservación Segura",
+        "title": "Reservación segura",
         "description": "Tu información está segura y nunca se comparte"
       },
       "weComeToYou": {
-        "title": "Vamos a Ti",
+        "title": "Vamos a ti",
         "description": "Servicio móvil a tu ubicación"
       }
     }
   },
   "footer": {
     "tagline": "Servicios de maquillaje y peinado de lujo a domicilio para los momentos más hermosos de tu vida.",
-    "quickLinks": "Enlaces Rápidos",
+    "quickLinks": "Explora",
     "contact": "Contacto",
     "address": "3434 W 26th St",
     "city": "Chicago, IL 60623",
     "serviceArea": "Servicio en Chicago y alrededores dentro de 50 millas",
     "availability": "Disponibilidad",
-    "byAppointment": "Solo con Cita",
+    "byAppointment": "Solo con cita",
     "availableDays": "Disponible 7 días a la semana",
     "earlyMornings": "incluyendo temprano por la mañana",
     "forWeddings": "para fiestas de bodas",
-    "checkAvailability": "Ver Disponibilidad",
+    "checkAvailability": "Ver disponibilidad",
     "copyright": "© {year} Beautiful Inside Out. Todos los derechos reservados.",
     "policies": "Políticas"
   },
   "common": {
-    "learnMore": "Más Información",
-    "bookNow": "Reservar Ahora",
+    "bookNow": "Reservar ahora",
     "contactUs": "Contáctanos",
-    "viewAll": "Ver Todo",
     "close": "Cerrar",
     "previous": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "skipToContent": "Saltar al contenido"
   },
   "data": {
     "services": {
       "bridal-hair-makeup": {
-        "title": "Peinado + Maquillaje Nupcial",
+        "title": "Peinado y Maquillaje Nupcial",
         "shortDescription": "Tu look nupcial perfecto, ejecutado impecablemente en tu día especial.",
         "description": "Nuestro servicio nupcial exclusivo incluye una consulta personalizada, sesión de prueba y estilismo el día de la boda para asegurar que te veas absolutamente radiante al caminar hacia el altar. Usamos solo productos premium de larga duración que fotografían hermoso y se mantienen perfectos a través de cada lágrima de alegría.",
         "duration": "2-3 horas",
@@ -350,9 +412,15 @@
           "Pestañas postizas incluidas"
         ],
         "addOns": [
-          { "name": "Dama de honor adicional" },
-          { "name": "Madre de la novia/novio" },
-          { "name": "Estilismo para niña de las flores" }
+          {
+            "name": "Dama de honor adicional"
+          },
+          {
+            "name": "Madre de la novia/novio"
+          },
+          {
+            "name": "Estilismo para niña de las flores"
+          }
         ]
       },
       "quinceanera-glam": {
@@ -368,10 +436,18 @@
           "Spray fijador para todo el día"
         ],
         "addOns": [
-          { "name": "Sesión de prueba" },
-          { "name": "Damas (cada una)" },
-          { "name": "Estilismo para mamá" },
-          { "name": "Colocación de accesorios de cabello" }
+          {
+            "name": "Sesión de prueba"
+          },
+          {
+            "name": "Damas (cada una)"
+          },
+          {
+            "name": "Estilismo para mamá"
+          },
+          {
+            "name": "Colocación de accesorios de cabello"
+          }
         ]
       },
       "sweet-16": {
@@ -386,9 +462,15 @@
           "Pestañas incluidas"
         ],
         "addOns": [
-          { "name": "Sesión de prueba" },
-          { "name": "Estilismo de amiga (cada una)" },
-          { "name": "Estilismo para mamá" }
+          {
+            "name": "Sesión de prueba"
+          },
+          {
+            "name": "Estilismo de amiga (cada una)"
+          },
+          {
+            "name": "Estilismo para mamá"
+          }
         ]
       },
       "event-hair": {
@@ -441,73 +523,73 @@
       }
     },
     "testimonials": {
-      "0": {
+      "1": {
         "name": "María G.",
         "eventType": "Novia",
         "quote": "Me sentí como la versión más hermosa de mí misma en mi día de boda. La atención al detalle fue impecable, y mi maquillaje duró a través de cada lágrima de felicidad. No podría haber pedido una mejor experiencia.",
         "date": "Octubre 2024"
       },
-      "1": {
+      "2": {
         "name": "Sofía R.",
         "eventType": "Quinceañera",
         "quote": "¡Mi quinceañera fue absolutamente mágica! El maquillaje fue apropiado para mi edad pero aún glamuroso, y mi cabello se mantuvo perfecto toda la noche. Cada foto salió increíble.",
         "date": "Septiembre 2024"
       },
-      "2": {
+      "3": {
         "name": "Jennifer L.",
         "eventType": "Madre de la Novia",
         "quote": "Profesional, puntual e increíblemente talentosa. Nos hizo sentir hermosas y tranquilas tanto a mí como a mi hija durante una mañana tan emotiva. ¡Totalmente recomendado!",
         "date": "Agosto 2024"
       },
-      "3": {
+      "4": {
         "name": "Isabella M.",
         "eventType": "Sweet 16",
         "quote": "Estaba nerviosa por hacerme el maquillaje profesionalmente por primera vez, pero ella me hizo sentir muy cómoda. ¡Amé mi look y me sentí muy segura en mi fiesta!",
         "date": "Julio 2024"
       },
-      "4": {
+      "5": {
         "name": "Carmen D.",
         "eventType": "Novia",
         "quote": "Desde la prueba hasta el día de la boda, todo fue perfecto. Escuchó exactamente lo que quería y superó mis expectativas. ¡Mi cortejo nupcial también se veía impresionante!",
         "date": "Junio 2024"
       },
-      "5": {
+      "6": {
         "name": "Ashley T.",
         "eventType": "Invitada",
         "quote": "Reservé para una gala de etiqueta y recibí tantos cumplidos. El glam fue sofisticado y se mantuvo impecable toda la noche. ¡Definitivamente reservaré de nuevo!",
         "date": "Mayo 2024"
       },
-      "6": {
+      "7": {
         "name": "Daniela V.",
         "eventType": "Quinceañera",
         "quote": "Ella entendió exactamente lo que quería para mi quinceañera. El peinado fue absolutamente impresionante y el maquillaje me hizo sentir como una princesa. ¡El mejor día de mi vida!",
         "date": "Abril 2024"
       },
-      "7": {
+      "8": {
         "name": "Michelle K.",
         "eventType": "Novia",
         "quote": "La experiencia de lujo de principio a fin valió cada centavo. Llegó a tiempo, me mantuvo tranquila y me hizo ver absolutamente radiante. ¡Mi esposo lloró cuando me vio!",
         "date": "Marzo 2024"
       },
-      "8": {
+      "9": {
         "name": "Olivia S.",
         "eventType": "Prom",
         "quote": "¡Me sentí como una celebridad en la noche de prom! El look soft glam fue exactamente lo que quería—elegante pero aún juvenil. ¡Todas mis amigas preguntaron quién hizo mi maquillaje!",
         "date": "Mayo 2024"
       },
-      "9": {
+      "10": {
         "name": "Rosa H.",
         "eventType": "Madre de la Novia",
         "quote": "Ella tiene un don para hacerte sentir hermosa a cualquier edad. Mi maquillaje fue sofisticado y atemporal, y me sentí segura al lado de mi hija en su gran día.",
         "date": "Febrero 2024"
       },
-      "10": {
+      "11": {
         "name": "Victoria P.",
         "eventType": "Novia",
         "quote": "La prueba me quitó todas las preocupaciones. El día de la boda, recreó el look perfectamente e incluso hizo algunas mejoras. ¡Ejecución absolutamente impecable!",
         "date": "Enero 2024"
       },
-      "11": {
+      "12": {
         "name": "Alejandra M.",
         "eventType": "Quinceañera",
         "quote": "El look de quinceañera de mi hija fue más que hermoso. Profesional, paciente y muy talentosa. ¡Ya reservamos para la quinceañera de mi otra hija el próximo año!",
@@ -515,13 +597,95 @@
       }
     },
     "portfolio": {
-      "categories": {
-        "bridal": "Nupcial",
-        "quinceanera": "Quinceañera",
-        "sweet16": "Sweet 16",
-        "glam": "Glam",
-        "natural": "Natural",
-        "updos": "Peinados"
+      "items": {
+        "1": {
+          "title": "Elegancia de Cristal",
+          "description": "Elegante chongo bajo con un deslumbrante tocado de cristal"
+        },
+        "2": {
+          "title": "Romance de Jardín",
+          "description": "Recogido trenzado y romántico con delicados detalles florales"
+        },
+        "3": {
+          "title": "Look de Boda en Jardín",
+          "description": "Rizos suaves con acabado de piel luminosa"
+        },
+        "18": {
+          "title": "Novia Bohemia",
+          "description": "Ondas naturales con maquillaje natural"
+        },
+        "4": {
+          "title": "Sueño Azul Real",
+          "description": "Brillante vestido azul de gala con elegante tiara"
+        },
+        "5": {
+          "title": "Elegancia Dorada",
+          "description": "Impresionante vestido azul y dorado con maquillaje glam dramático"
+        },
+        "6": {
+          "title": "Princesa Lavanda",
+          "description": "Soñador vestido de tul lavanda con soft glam"
+        },
+        "7": {
+          "title": "Rizos en Cascada",
+          "description": "Hermosos rizos semirrecogidos con tiara dorada"
+        },
+        "20": {
+          "title": "Rizos de Princesa",
+          "description": "Rizos voluminosos en cascada con detalle de corona"
+        },
+        "8": {
+          "title": "Dulce y Sofisticada",
+          "description": "Belleza fresca con ondas suaves"
+        },
+        "9": {
+          "title": "Glam Juvenil",
+          "description": "Brillo y destello apropiados para su edad"
+        },
+        "10": {
+          "title": "Soft Glam Perfecto",
+          "description": "Piel luminosa impecable con ojos ahumados suaves"
+        },
+        "11": {
+          "title": "Elegancia de Noche",
+          "description": "Ojos ahumados con facciones esculpidas"
+        },
+        "12": {
+          "title": "Audaz y Hermosa",
+          "description": "Maquillaje llamativo con cabello liso y pulido"
+        },
+        "19": {
+          "title": "Noche de Gala",
+          "description": "El glamour del viejo Hollywood reinventado"
+        },
+        "13": {
+          "title": "Fresca y Radiante",
+          "description": "Hermoso glam natural con piel impecable"
+        },
+        "14": {
+          "title": "Belleza Natural",
+          "description": "Piel radiante con un realce suave"
+        },
+        "15": {
+          "title": "Suave y Sencillo",
+          "description": "Ondas naturales con maquillaje casi imperceptible"
+        },
+        "16": {
+          "title": "Chongo Alto Texturizado",
+          "description": "Elegante recogido alto con hermosa textura y mechones sueltos"
+        },
+        "17": {
+          "title": "Chongo Bajo Romántico",
+          "description": "Recogido suave y romántico con rizos delicados"
+        },
+        "21": {
+          "title": "Elegancia Trenzada",
+          "description": "Elaborado recogido trenzado con pasadores de flores de cristal"
+        },
+        "22": {
+          "title": "Chignon Clásico",
+          "description": "Chignon bajo atemporal con acabado pulido"
+        }
       }
     },
     "pricing": {
@@ -580,25 +744,46 @@
         }
       },
       "addOns": [
-        { "name": "Persona Adicional", "description": "Cabello y maquillaje para miembro adicional del grupo" },
-        { "name": "Solo Cabello Adicional", "description": "Estilismo para persona adicional (solo cabello)" },
-        { "name": "Solo Maquillaje Adicional", "description": "Maquillaje para persona adicional (solo maquillaje)" },
-        { "name": "Mejora a Aerógrafo", "description": "Mejora a base con aerógrafo para acabado impecable" },
-        { "name": "Mejora de Pestañas Premium", "description": "Mejora a pestañas individuales de lujo" },
-        { "name": "Kit de Retoque", "description": "Kit de retoque personalizado para llevar contigo" },
-        { "name": "Inicio Temprano (antes de 6am)", "description": "Para servicios que comienzan antes de las 6:00 AM" }
+        {
+          "name": "Persona Adicional",
+          "description": "Cabello y maquillaje para miembro adicional del grupo"
+        },
+        {
+          "name": "Solo Cabello Adicional",
+          "description": "Estilismo para persona adicional (solo cabello)"
+        },
+        {
+          "name": "Solo Maquillaje Adicional",
+          "description": "Maquillaje para persona adicional (solo maquillaje)"
+        },
+        {
+          "name": "Mejora a Aerógrafo",
+          "description": "Mejora a base con aerógrafo para acabado impecable"
+        },
+        {
+          "name": "Mejora de Pestañas Premium",
+          "description": "Mejora a pestañas individuales de lujo"
+        },
+        {
+          "name": "Kit de Retoque",
+          "description": "Kit de retoque personalizado para llevar contigo"
+        },
+        {
+          "name": "Inicio Temprano (antes de 6am)",
+          "description": "Para servicios que comienzan antes de las 6:00 AM"
+        }
       ],
       "policies": {
         "travel": {
-          "title": "Política de Traslado",
+          "title": "Política de traslado",
           "description": "El traslado dentro de 25 millas es gratis. Más allá de eso, se aplica una tarifa de $0.65 por milla."
         },
         "deposit": {
-          "title": "Política de Depósito",
+          "title": "Política de depósito",
           "description": "Se requiere un depósito no reembolsable del 30% para asegurar tu reservación. El saldo restante se debe el día de tu cita."
         },
         "cancellation": {
-          "title": "Política de Cancelación",
+          "title": "Política de cancelación",
           "description": "Las cancelaciones hechas 14+ días antes de tu cita reciben un reembolso completo del depósito. Las cancelaciones dentro de 7-14 días reciben un reembolso del 50%. Las cancelaciones dentro de 7 días no son reembolsables."
         }
       }
@@ -607,5 +792,10 @@
       "title": "Síguenos",
       "description": "Ve momentos detrás de cámaras, inspiración diaria y más de nuestro trabajo en Instagram."
     }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, no pudimos encontrar la página que buscas.",
+    "backHome": "Volver al inicio"
   }
 }
