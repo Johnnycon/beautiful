@@ -1,7 +1,4 @@
-"use client";
-
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 
 interface ButtonProps {
   href?: string;
@@ -14,6 +11,18 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
+const variants = {
+  primary: "bg-rouge text-pearl hover:bg-rouge-deep",
+  secondary: "bg-midnight text-pearl hover:bg-midnight-soft",
+  outline: "border border-current hover:bg-midnight hover:text-pearl hover:border-midnight",
+};
+
+const sizes = {
+  sm: "px-5 py-2.5 text-sm",
+  md: "px-7 py-3.5 text-[0.9375rem]",
+  lg: "px-8 py-4 text-base",
+};
+
 export default function Button({
   href,
   variant = "primary",
@@ -24,48 +33,19 @@ export default function Button({
   type = "button",
   disabled = false,
 }: ButtonProps) {
-  const baseStyles =
-    "inline-flex items-center justify-center font-medium tracking-wide rounded-full transition-all duration-300 transform";
-
-  const variants = {
-    primary:
-      "bg-[#1A1A1A] text-white hover:bg-[#C9A962] hover:scale-105 active:scale-100",
-    secondary:
-      "bg-[#C9A962] text-white hover:bg-[#A68B4B] hover:scale-105 active:scale-100",
-    outline:
-      "border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white hover:scale-105 active:scale-100",
-  };
-
-  const sizes = {
-    sm: "px-5 py-2 text-sm",
-    md: "px-7 py-3 text-sm",
-    lg: "px-10 py-4 text-base",
-  };
-
-  const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className} ${
-    disabled ? "opacity-50 cursor-not-allowed" : ""
-  }`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-[3px] font-medium tracking-[0.01em] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (
-      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-        <Link href={href} className={combinedClassName}>
-          {children}
-        </Link>
-      </motion.div>
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
     );
   }
 
   return (
-    <motion.button
-      whileHover={!disabled ? { scale: 1.02 } : {}}
-      whileTap={!disabled ? { scale: 0.98 } : {}}
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={combinedClassName}
-    >
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {children}
-    </motion.button>
+    </button>
   );
 }

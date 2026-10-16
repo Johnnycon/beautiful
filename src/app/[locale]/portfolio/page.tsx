@@ -1,99 +1,69 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import Button from "@/components/Button";
-import SectionHeading from "@/components/SectionHeading";
-import AnimatedSection from "@/components/AnimatedSection";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { getPageMetadata } from "@/lib/metadata";
+import { getTranslatedPortfolioItems } from "@/lib/portfolio";
+import { siteConfig } from "@/config/site";
+import ClosingCta from "@/components/ClosingCta";
+import PageHeader, { container } from "@/components/PageHeader";
 import PortfolioGrid from "@/components/PortfolioGrid";
-import { portfolioItems } from "@/data/portfolio";
-import { Instagram } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/SocialIcons";
 
-export default function PortfolioPage() {
-  const t = useTranslations("portfolio");
-  const tCommon = useTranslations("common");
-  const tInstagram = useTranslations("data.instagram");
+const { instagram } = siteConfig.social;
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/portfolio">): Promise<Metadata> {
+  const { locale } = await params;
+  return getPageMetadata(locale as Locale, "portfolio");
+}
+
+export default async function PortfolioPage({ params }: PageProps<"/[locale]/portfolio">) {
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+
+  const [t, tInstagram, portfolioItems] = await Promise.all([
+    getTranslations("portfolio"),
+    getTranslations("data.instagram"),
+    getTranslatedPortfolioItems(),
+  ]);
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <span className="text-[#C9A962] text-sm uppercase tracking-[0.2em] mb-4 block">
-              {t("hero.eyebrow")}
-            </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6">
-              {t("hero.title")}
-            </h1>
-            <p className="text-[#6B6560] text-lg leading-relaxed">
-              {t("hero.description")}
-            </p>
-          </motion.div>
+      <PageHeader title={t("hero.title")} description={t("hero.description")} />
+
+      <section className="pb-24 md:pb-32">
+        <div className={container}>
+          <PortfolioGrid items={portfolioItems} />
         </div>
       </section>
 
-      {/* Portfolio Grid */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <PortfolioGrid items={portfolioItems} showFilters={true} />
-        </div>
-      </section>
-
-      {/* Instagram CTA */}
-      <AnimatedSection className="py-20 md:py-32 bg-[#FAF8F5]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737] flex items-center justify-center mx-auto mb-6">
-              <Instagram size={28} className="text-white" />
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#1A1A1A] mb-4">
-              {tInstagram("title")}
-            </h2>
-            <p className="text-[#6B6560] text-lg mb-8 max-w-xl mx-auto">
-              {tInstagram("description")}
-            </p>
-            <a
-              href="https://instagram.com/lizbethbiso"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#1A1A1A] text-white rounded-full hover:bg-[#C9A962] transition-colors duration-300"
-            >
-              <Instagram size={20} />
-              @lizbethbiso
-            </a>
-          </motion.div>
-        </div>
-      </AnimatedSection>
-
-      {/* Final CTA */}
-      <AnimatedSection className="py-20 md:py-32 bg-[#F5E6E0]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <SectionHeading
-            eyebrow={t("cta.title")}
-            title={t("cta.description")}
-            description=""
-          />
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/book" variant="primary" size="lg">
-              {t("cta.button")}
-            </Button>
-            <Button href="/services" variant="outline" size="lg">
-              {tCommon("viewAll")}
-            </Button>
+      {/* Instagram */}
+      <section className="bg-petal py-20 md:py-28">
+        <div className={`${container} grid gap-8 md:grid-cols-12 md:items-center`}>
+          <div className="md:col-span-6">
+            <h2 className="font-serif text-4xl md:text-5xl">{tInstagram("title")}</h2>
+            <p className="mt-4 max-w-md text-slate">{tInstagram("description")}</p>
           </div>
+          <a
+            href={instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 md:col-span-5 md:col-start-8 md:justify-end"
+          >
+            <InstagramIcon size={28} strokeWidth={1.5} />
+            <span className="font-serif text-3xl underline decoration-rouge decoration-1 underline-offset-8 group-hover:text-rouge md:text-4xl">
+              {instagram.handle}
+            </span>
+          </a>
         </div>
-      </AnimatedSection>
+      </section>
+
+      <ClosingCta
+        title={t("cta.title")}
+        description={t("cta.description")}
+        buttonLabel={t("cta.button")}
+      />
     </>
   );
 }
