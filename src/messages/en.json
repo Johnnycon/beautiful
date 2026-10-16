@@ -41,12 +41,23 @@
   },
   "home": {
     "hero": {
-      "title": "Camera-ready glam for life's biggest days",
-      "description": "On-site hair and makeup styling with a calm, premium experience—from first brush to final touch.",
+      "title": "Ready before the photographer is",
+      "description": "Bridal, quinceañera and event hair and makeup by Lizbeth, at your home, venue or hotel anywhere in Chicagoland.",
       "bookButton": "Book your date",
       "portfolioButton": "View portfolio",
-      "meta": "On-site across Chicagoland. Hablamos español.",
-      "imageAlt": "A bride in a midnight-blue satin robe with a low chignon and crystal pins, reflected in a vanity mirror"
+      "language": "Hablamos español",
+      "reflections": {
+        "bridal": {
+          "label": "Bridal",
+          "alt": "A bride in a midnight-blue satin robe with soft-glam makeup, a low chignon and a pearl and crystal hairpiece, looking down"
+        },
+        "quinceanera": {
+          "label": "Quinceañera",
+          "alt": "A smiling quinceañera with light-brown hair and a crystal tiara, in a deep red ballgown with a crystal-embroidered neckline, in a party hall lit by chandeliers"
+        },
+        "pause": "Pause the mirror",
+        "play": "Play the mirror"
+      }
     },
     "services": {
       "title": "Signature beauty services",
@@ -98,16 +109,16 @@
     "about": {
       "title": "Meet Lizbeth",
       "role": "Owner of Beautiful Inside Out, 11+ years doing hair and makeup",
-      "description": "Hi, I'm Lizbeth! I've been a makeup artist and hair stylist for over 11 years, and I still love what I do just as much as when I started. My passion is helping brides, quinceañeras, and anyone celebrating a special moment feel absolutely amazing.",
-      "description2": "I'm a big believer in never stopping learning—I take courses every year to stay current on the latest techniques. Your look deserves fresh ideas and expert care.",
-      "description3": "At Beautiful Inside Out, every client gets my full attention because I know how important it is to feel heard and taken care of on your big day. Quality isn't just a goal; it's a promise. I can't wait to help you celebrate the beautiful person you already are.",
+      "description": "Hi, I’m Lizbeth! I’ve been a makeup artist and hair stylist for over 11 years, and I still love what I do just as much as when I started. My passion is helping brides, quinceañeras, and anyone celebrating a special moment feel absolutely amazing.",
+      "description2": "I’m a big believer in never stopping learning. I take courses every year to stay current on the latest techniques. Your look deserves fresh ideas and expert care.",
+      "description3": "At Beautiful Inside Out, every client gets my full attention because I know how important it is to feel heard and taken care of on your big day. Quality isn’t just a goal; it’s a promise. I can’t wait to help you celebrate the beautiful person you already are.",
       "features": {
         "premium": "Premium, hygienic product selection",
         "punctual": "Punctual and reliable service",
         "calm": "Calm, stress-free experience"
       },
-      "meetStylist": "Let's connect",
-      "imageAlt": "A makeup artist's hands applying highlighter to a client's cheekbone"
+      "meetStylist": "Let’s connect",
+      "imageAlt": "A makeup artist’s hands applying highlighter to a client’s cheekbone"
     },
     "area": {
       "title": "Where we work",
@@ -144,12 +155,12 @@
         "Schaumburg",
         "Waukegan"
       ],
-      "ask": "Don't see your town?",
+      "ask": "Don’t see your town?",
       "askLink": "Ask us"
     },
     "cta": {
       "title": "Your date deserves perfect beauty",
-      "description": "Let's create something beautiful together. Book your consultation today and secure your spot for your special day.",
+      "description": "Let’s create something beautiful together. Book your consultation today and secure your spot for your special day.",
       "bookNow": "Book now",
       "contact": "Questions? Contact us"
     },
@@ -162,7 +173,7 @@
         },
         {
           "title": "Pick date and location",
-          "description": "Home, venue, hotel—we come to you."
+          "description": "We come to your home, venue or hotel."
         },
         {
           "title": "Confirm and relax",
@@ -176,12 +187,12 @@
       "title": "Services and pricing",
       "description": "Comprehensive beauty services tailored to your special occasion. Every service includes premium products and personalized attention."
     },
-    "includes": "What's included",
+    "includes": "What’s included",
     "addOns": "Popular add-ons",
     "bookService": "Book this service",
     "cta": {
       "title": "Ready to book your service?",
-      "description": "Let's discuss your vision and create the perfect look for your special day.",
+      "description": "Let’s discuss your vision and create the perfect look for your special day.",
       "button": "Check availability"
     },
     "from": "From ${price}",
@@ -216,7 +227,7 @@
     },
     "cta": {
       "title": "Love what you see?",
-      "description": "Let's create your perfect look. Book a consultation to discuss your vision.",
+      "description": "Let’s create your perfect look. Book a consultation to discuss your vision.",
       "button": "Book your look"
     }
   },
@@ -231,14 +242,14 @@
     },
     "cta": {
       "title": "Ready to become our next happy client?",
-      "description": "Book your consultation and let's create something beautiful together.",
+      "description": "Book your consultation and let’s create something beautiful together.",
       "button": "Book now"
     }
   },
   "contact": {
     "hero": {
       "title": "Contact us",
-      "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+      "description": "Have questions? We’d love to hear from you. Send us a message and we’ll respond as soon as possible."
     },
     "form": {
       "title": "Send a message",
@@ -263,7 +274,7 @@
       "messagePlaceholder": "Tell us about your event, the date you have in mind, and any questions...",
       "submit": "Send message",
       "successTitle": "Message sent!",
-      "successMessage": "Thank you for reaching out. We'll get back to you within 24-48 hours.",
+      "successMessage": "Thank you for reaching out. We’ll get back to you within 24-48 hours.",
       "backToHome": "Back to home"
     },
     "info": {
@@ -305,7 +316,7 @@
   "book": {
     "hero": {
       "title": "Reserve your date",
-      "description": "Complete the form below to request your booking. We'll confirm availability and send you a detailed quote within 24 hours."
+      "description": "Complete the form below to request your booking. We’ll confirm availability and send you a detailed quote within 24 hours."
     },
     "steps": {
       "event": "Event details",
@@ -348,12 +359,12 @@
     },
     "success": {
       "title": "Booking request received!",
-      "description": "Thank you for your booking request. We'll review your details and confirm availability within 24-48 hours.",
+      "description": "Thank you for your booking request. We’ll review your details and confirm availability within 24-48 hours.",
       "nextSteps": "What happens next",
-      "step1": "We'll review your booking request and check availability",
-      "step2": "You'll receive a confirmation email with next steps",
+      "step1": "We’ll review your booking request and check availability",
+      "step2": "You’ll receive a confirmation email with next steps",
       "step3": "A 30% deposit will be required to secure your date",
-      "step4": "For bridal bookings, we'll schedule your trial session",
+      "step4": "For bridal bookings, we’ll schedule your trial session",
       "backToHome": "Back to home",
       "viewPortfolio": "View portfolio"
     },
@@ -373,7 +384,7 @@
     }
   },
   "footer": {
-    "tagline": "Luxury mobile hair and makeup services for life's most beautiful moments.",
+    "tagline": "Luxury mobile hair and makeup services for life’s most beautiful moments.",
     "quickLinks": "Explore",
     "contact": "Contact",
     "address": "3434 W 26th St",
@@ -426,7 +437,7 @@
       "quinceanera-glam": {
         "title": "Quinceañera Glam",
         "shortDescription": "Age-appropriate elegance for your momentous celebration.",
-        "description": "Celebrate this beautiful milestone with a look that captures the magic of the moment. Our quinceañera package delivers camera-ready glamour that's both age-appropriate and absolutely stunning, ensuring you shine in every photo.",
+        "description": "Celebrate this beautiful milestone with a look that captures the magic of the moment. Our quinceañera package delivers camera-ready glamour that’s both age-appropriate and absolutely stunning, ensuring you shine in every photo.",
         "duration": "2 hours",
         "includes": [
           "Style consultation",
@@ -453,7 +464,7 @@
       "sweet-16": {
         "title": "Sweet 16 Styling",
         "shortDescription": "Chic and youthful glam for your sixteenth celebration.",
-        "description": "Turn sixteen in style with a fresh, youthful look that's perfect for your celebration. We create age-appropriate glamour that makes you feel confident and beautiful while still being true to your personal style.",
+        "description": "Turn sixteen in style with a fresh, youthful look that’s perfect for your celebration. We create age-appropriate glamour that makes you feel confident and beautiful while still being true to your personal style.",
         "duration": "1.5 hours",
         "includes": [
           "Consultation",
@@ -476,7 +487,7 @@
       "event-hair": {
         "title": "Event Hair Styling",
         "shortDescription": "Elegant updos and styling for any special occasion.",
-        "description": "Whether it's a gala, formal dinner, or special celebration, our event hair styling service delivers sophisticated, lasting styles. From romantic waves to elegant updos, we create the perfect hair look for your occasion.",
+        "description": "Whether it’s a gala, formal dinner, or special celebration, our event hair styling service delivers sophisticated, lasting styles. From romantic waves to elegant updos, we create the perfect hair look for your occasion.",
         "duration": "45-60 minutes",
         "includes": [
           "Consultation",
@@ -488,7 +499,7 @@
       "soft-glam": {
         "title": "Soft Glam Makeup",
         "shortDescription": "Effortless, natural-looking beauty enhancement.",
-        "description": "Our soft glam look enhances your natural beauty with a polished, radiant finish. Perfect for those who want to look like the best version of themselves—fresh, dewy, and naturally beautiful.",
+        "description": "Our soft glam look enhances your natural beauty with a polished, radiant finish. Perfect for those who want to look like the best version of themselves: fresh, dewy, and naturally beautiful.",
         "duration": "45 minutes",
         "includes": [
           "Skin prep",
@@ -526,7 +537,7 @@
       "1": {
         "name": "Maria G.",
         "eventType": "Bride",
-        "quote": "I felt like the most beautiful version of myself on my wedding day. The attention to detail was impeccable, and my makeup lasted through every happy tear. I couldn't have asked for a better experience.",
+        "quote": "I felt like the most beautiful version of myself on my wedding day. The attention to detail was impeccable, and my makeup lasted through every happy tear. I couldn’t have asked for a better experience.",
         "date": "October 2024"
       },
       "2": {
@@ -574,7 +585,7 @@
       "9": {
         "name": "Olivia S.",
         "eventType": "Prom",
-        "quote": "I felt like a celebrity on prom night! The soft glam look was exactly what I wanted—elegant but still youthful. All my friends asked who did my makeup!",
+        "quote": "I felt like a celebrity on prom night! The soft glam look was exactly what I wanted: elegant but still youthful. All my friends asked who did my makeup!",
         "date": "May 2024"
       },
       "10": {
@@ -592,7 +603,7 @@
       "12": {
         "name": "Alejandra M.",
         "eventType": "Quinceañera",
-        "quote": "My daughter's quinceañera look was beyond beautiful. Professional, patient, and so talented. We've already booked for my other daughter's quinceañera next year!",
+        "quote": "My daughter’s quinceañera look was beyond beautiful. Professional, patient, and so talented. We’ve already booked for my other daughter’s quinceañera next year!",
         "date": "December 2023"
       }
     },
@@ -795,7 +806,7 @@
   },
   "notFound": {
     "title": "Page not found",
-    "description": "Sorry, we couldn't find the page you're looking for.",
+    "description": "Sorry, we couldn’t find the page you’re looking for.",
     "backHome": "Back to home"
   }
 }
