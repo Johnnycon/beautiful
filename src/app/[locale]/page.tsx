@@ -51,12 +51,10 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
   return (
     <>
       {/* Hero: the vanity mirror */}
-      <section className="relative overflow-hidden bg-midnight text-pearl">
-        <div
-          className={`${container} grid min-h-[min(100svh,58rem)] items-center gap-14 pt-28 pb-16 md:grid-cols-12 md:gap-8 md:pt-24`}
-        >
-          <div className="order-2 md:order-1 md:col-span-6 lg:col-span-6">
-            <h1 className="font-serif text-[2.75rem] leading-[1.04] tracking-[-0.015em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+      <section className="relative overflow-hidden bg-midnight pb-16 text-pearl md:pb-24">
+        <div className={`${container} grid pt-24 md:grid-cols-12 md:items-center md:gap-x-8 md:pt-32`}>
+          <div className="order-2 pt-12 md:order-1 md:col-span-7 md:pt-0">
+            <h1 className="font-serif text-[2.5rem] leading-[1.04] tracking-[-0.015em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
               {t("hero.title")}
             </h1>
             <p className="mt-7 max-w-md text-lg text-mist">{t("hero.description")}</p>
@@ -68,10 +66,56 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
                 {t("hero.portfolioButton")}
               </Link>
             </div>
-            <p className="mt-12 text-sm text-mist">{t("hero.meta")}</p>
+            <ul className="mt-12 flex flex-col gap-3 text-[0.9375rem] sm:flex-row sm:items-center sm:gap-6">
+              <li>
+                <Link href="/reviews" className="group flex items-center gap-2.5">
+                  <span className="flex gap-0.5 text-petal" aria-hidden>
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <Star key={i} size={14} className="fill-current" />
+                    ))}
+                  </span>
+                  <span className="underline-offset-[6px] decoration-1 group-hover:underline">
+                    {t("testimonials.rating", {
+                      rating: averageRating.toFixed(1),
+                      count: testimonials.length,
+                    })}
+                  </span>
+                </Link>
+              </li>
+              <li className="sm:border-l sm:border-pearl/20 sm:pl-6">
+                {locale === "en" ? (
+                  <Link
+                    href="/"
+                    locale="es"
+                    hrefLang="es"
+                    lang="es"
+                    className="underline-offset-[6px] decoration-1 hover:underline"
+                  >
+                    {t("hero.language")}
+                  </Link>
+                ) : (
+                  t("hero.language")
+                )}
+              </li>
+            </ul>
           </div>
-          <div className="order-1 mx-auto w-[min(66vw,22rem)] pt-6 md:order-2 md:col-span-5 md:col-start-8 md:w-full md:max-w-[30rem] md:pt-0">
-            <MirrorHero src="/images/hero/mirror.jpg" alt={t("hero.imageAlt")} />
+          <div className="order-1 mx-auto w-[min(66vw,22rem)] md:order-2 md:col-span-5 md:col-start-8 md:w-full md:max-w-[28rem] md:justify-self-end">
+            <MirrorHero
+              reflections={[
+                {
+                  src: "/images/hero/bride-at-vanity.jpg",
+                  alt: t("hero.reflections.bridal.alt"),
+                  label: t("hero.reflections.bridal.label"),
+                },
+                {
+                  src: "/images/hero/quinceanera-salon.jpg",
+                  alt: t("hero.reflections.quinceanera.alt"),
+                  label: t("hero.reflections.quinceanera.label"),
+                },
+              ]}
+              pauseLabel={t("hero.reflections.pause")}
+              playLabel={t("hero.reflections.play")}
+            />
           </div>
         </div>
       </section>

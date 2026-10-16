@@ -41,12 +41,23 @@
   },
   "home": {
     "hero": {
-      "title": "Glamour perfecto para los días más importantes",
-      "description": "Maquillaje y peinado a domicilio con una experiencia tranquila y premium—desde el primer toque hasta el resultado final.",
+      "title": "Lista antes que el fotógrafo",
+      "description": "Maquillaje y peinado para novias, quinceañeras y eventos por Lizbeth, en tu casa, salón u hotel en todo el área de Chicago.",
       "bookButton": "Reserva tu fecha",
       "portfolioButton": "Ver portafolio",
-      "meta": "A domicilio en todo el área de Chicago.",
-      "imageAlt": "Una novia con bata de satín azul medianoche, chongo bajo y pasadores de cristal, reflejada en un espejo de tocador"
+      "language": "Atención en español e inglés",
+      "reflections": {
+        "bridal": {
+          "label": "Novia",
+          "alt": "Una novia con bata de satín azul medianoche, maquillaje soft glam, chongo bajo y un tocado de perlas y cristales, mirando hacia abajo"
+        },
+        "quinceanera": {
+          "label": "Quinceañera",
+          "alt": "Una quinceañera sonriente con cabello castaño claro y tiara de cristales, con vestido de gala rojo profundo y escote bordado con cristales, en un salón iluminado por candelabros"
+        },
+        "pause": "Pausar el espejo",
+        "play": "Reproducir el espejo"
+      }
     },
     "services": {
       "title": "Servicios de belleza exclusivos",
@@ -99,7 +110,7 @@
       "title": "Conoce a Lizbeth",
       "role": "Dueña de Beautiful Inside Out, más de 11 años en maquillaje y peinado",
       "description": "¡Hola, soy Lizbeth! He sido maquillista y estilista por más de 11 años, y todavía amo lo que hago tanto como cuando empecé. Mi pasión es ayudar a novias, quinceañeras y cualquier persona celebrando un momento especial a sentirse absolutamente increíble.",
-      "description2": "Creo firmemente en nunca dejar de aprender—tomo cursos cada año para mantenerme al día con las últimas técnicas. Tu look merece ideas frescas y cuidado experto.",
+      "description2": "Creo firmemente en nunca dejar de aprender. Tomo cursos cada año para mantenerme al día con las últimas técnicas. Tu look merece ideas frescas y cuidado experto.",
       "description3": "En Beautiful Inside Out, cada clienta recibe toda mi atención porque sé lo importante que es sentirse escuchada y cuidada en tu gran día. La calidad no es solo una meta; es una promesa. No puedo esperar para ayudarte a celebrar la hermosa persona que ya eres.",
       "features": {
         "premium": "Productos premium e higiénicos",
@@ -162,7 +173,7 @@
         },
         {
           "title": "Escoge fecha y lugar",
-          "description": "Casa, salón, hotel—vamos a ti."
+          "description": "Vamos a tu casa, salón u hotel."
         },
         {
           "title": "Confirma y relájate",
@@ -488,7 +499,7 @@
       "soft-glam": {
         "title": "Maquillaje Soft Glam",
         "shortDescription": "Realce de belleza natural sin esfuerzo.",
-        "description": "Nuestro look soft glam realza tu belleza natural con un acabado pulido y radiante. Perfecto para quienes quieren verse como la mejor versión de sí mismas—frescas, luminosas y naturalmente hermosas.",
+        "description": "Nuestro look soft glam realza tu belleza natural con un acabado pulido y radiante. Perfecto para quienes quieren verse como la mejor versión de sí mismas: frescas, luminosas y naturalmente hermosas.",
         "duration": "45 minutos",
         "includes": [
           "Preparación de piel",
@@ -574,7 +585,7 @@
       "9": {
         "name": "Olivia S.",
         "eventType": "Prom",
-        "quote": "¡Me sentí como una celebridad en la noche de prom! El look soft glam fue exactamente lo que quería—elegante pero aún juvenil. ¡Todas mis amigas preguntaron quién hizo mi maquillaje!",
+        "quote": "¡Me sentí como una celebridad en la noche de prom! El look soft glam fue exactamente lo que quería: elegante pero aún juvenil. ¡Todas mis amigas preguntaron quién hizo mi maquillaje!",
         "date": "Mayo 2024"
       },
       "10": {

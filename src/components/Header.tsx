@@ -93,7 +93,12 @@ export default function Header() {
           </Link>
           <Link
             href="/book"
-            className="rounded-[3px] bg-rouge px-5 py-2.5 text-[0.9375rem] font-medium text-pearl transition-colors hover:bg-rouge-deep"
+            className={`rounded-[3px] border px-5 py-2.5 text-[0.9375rem] font-medium transition-colors ${
+              // Over the hero, which has its own booking button, this steps back to an outline
+              isOverHero
+                ? "border-pearl/50 text-pearl hover:border-pearl hover:bg-pearl hover:text-midnight"
+                : "border-rouge bg-rouge text-pearl hover:border-rouge-deep hover:bg-rouge-deep"
+            }`}
           >
             {t("bookNow")}
           </Link>
