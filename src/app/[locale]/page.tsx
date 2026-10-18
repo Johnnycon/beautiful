@@ -66,38 +66,21 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
                 {t("hero.portfolioButton")}
               </Link>
             </div>
-            <ul className="mt-12 flex flex-col gap-3 text-[0.9375rem] sm:flex-row sm:items-center sm:gap-6">
-              <li>
-                <Link href="/reviews" className="group flex items-center gap-2.5">
-                  <span className="flex gap-0.5 text-petal" aria-hidden>
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <Star key={i} size={14} className="fill-current" />
-                    ))}
-                  </span>
-                  <span className="underline-offset-[6px] decoration-1 group-hover:underline">
-                    {t("testimonials.rating", {
-                      rating: averageRating.toFixed(1),
-                      count: testimonials.length,
-                    })}
-                  </span>
+            <p className="mt-12 text-[0.9375rem]">
+              {locale === "en" ? (
+                <Link
+                  href="/"
+                  locale="es"
+                  hrefLang="es"
+                  lang="es"
+                  className="underline-offset-[6px] decoration-1 hover:underline"
+                >
+                  {t("hero.language")}
                 </Link>
-              </li>
-              <li className="sm:border-l sm:border-pearl/20 sm:pl-6">
-                {locale === "en" ? (
-                  <Link
-                    href="/"
-                    locale="es"
-                    hrefLang="es"
-                    lang="es"
-                    className="underline-offset-[6px] decoration-1 hover:underline"
-                  >
-                    {t("hero.language")}
-                  </Link>
-                ) : (
-                  t("hero.language")
-                )}
-              </li>
-            </ul>
+              ) : (
+                t("hero.language")
+              )}
+            </p>
           </div>
           <div className="order-1 mx-auto w-[min(66vw,22rem)] md:order-2 md:col-span-5 md:col-start-8 md:w-full md:max-w-[28rem] md:justify-self-end">
             <MirrorHero
@@ -230,7 +213,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
       </section>
 
       {/* Reviews */}
-      <section className="bg-petal py-24 md:py-36">
+      <section id="reviews" className="bg-petal py-24 md:py-36">
         <div className={`${container} grid gap-16 md:grid-cols-12`}>
           <figure className="md:col-span-7">
             <h2 className="font-sans text-base text-slate">{t("testimonials.title")}</h2>
@@ -269,9 +252,6 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
                 </li>
               ))}
             </ul>
-            <Link href="/reviews" className="text-link mt-8 inline-block hover:text-rouge">
-              {t("testimonials.readMore")}
-            </Link>
           </div>
         </div>
       </section>

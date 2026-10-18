@@ -8,7 +8,6 @@ export type PageKey =
   | "home"
   | "services"
   | "portfolio"
-  | "reviews"
   | "contact"
   | "book";
 
@@ -16,7 +15,6 @@ export const pagePaths: Record<PageKey, string> = {
   home: "/",
   services: "/services",
   portfolio: "/portfolio",
-  reviews: "/reviews",
   contact: "/contact",
   book: "/book",
 };

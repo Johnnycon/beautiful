@@ -12,7 +12,6 @@ export default function Footer() {
   const links = [
     { href: "/services", label: nav("services") },
     { href: "/portfolio", label: nav("portfolio") },
-    { href: "/reviews", label: nav("reviews") },
     { href: "/contact", label: nav("contact") },
   ];
 

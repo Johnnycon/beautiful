@@ -5,11 +5,14 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  // Pricing was merged into the Services page
+  // Pricing was merged into the Services page; the Reviews page was dropped
+  // in favour of the reviews on the home page
   async redirects() {
     return [
       { source: "/pricing", destination: "/services#packages", permanent: true },
       { source: "/es/pricing", destination: "/es/services#packages", permanent: true },
+      { source: "/reviews", destination: "/#reviews", permanent: true },
+      { source: "/es/reviews", destination: "/es#reviews", permanent: true },
     ];
   },
   images: {
