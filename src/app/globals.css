@@ -87,6 +87,10 @@
     outline: none;
     box-shadow: 0 0 0 3px rgb(163 36 59 / 0.18);
   }
+
+  &[aria-invalid="true"] {
+    border-color: var(--color-rouge);
+  }
 }
 
 /* Element defaults live in the base layer so utilities can override them */

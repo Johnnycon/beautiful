@@ -21,9 +21,9 @@ src/
 │   └── robots.ts  # robots.txt
 ├── components/    # Reusable UI components
 ├── config/        # site.ts – business details, social links, site URL
-├── data/          # Non-translatable data (ids, prices, images, icons) for services, portfolio, testimonials, pricing
+├── data/          # Non-translatable data (ids, prices, images, icons) for services, portfolio, testimonials, pricing; booking.ts (occasions, needs, bookingHref)
 ├── i18n/          # Internationalization config (routing, navigation, request)
-├── lib/           # metadata.ts (per-page SEO metadata), portfolio.ts
+├── lib/           # metadata.ts (per-page SEO metadata), portfolio.ts, forms.ts (inline validation, phone/email helpers)
 ├── messages/      # Translation files (en.json, es.json) – all user-facing copy lives here
 └── proxy.ts       # next-intl locale detection/routing (Next.js 16 "proxy", formerly middleware)
 ```
@@ -55,7 +55,7 @@ The look comes from the morning of the event: vanity-mirror bulbs, satin gowns, 
 - **Contrast**: secondary text uses `slate` (≥5:1 on every light background, including petal); keep body text at 4.5:1 or better
 - **Signature**: the arched vanity mirror in the home hero (`MirrorHero`); bulbs light in sequence on load, then the reflection slowly dissolves between a bride and a quinceañera (the two main audiences), with named labels and a pause button below instead of dots. Rotation holds on hover, stops once a label is chosen, and is off for reduced-motion users. These are the site's only automatic animations. The arch shape (`rounded-t-full`) repeats as a frame for key photos
 - **Structure**: hairline rules (`border-crystal`) and lists instead of cards; 12-column grid in `container` (from `PageHeader.tsx`); interior pages use `PageHeader` + `ClosingCta`
-- **Helpers**: `text-link` (underlined link with rouge rule) and `field` (form inputs) utilities in `globals.css`
+- **Helpers**: `text-link` (underlined link with rouge rule) and `field` (form inputs; rouge border when `aria-invalid`) utilities in `globals.css`
 - **Placeholder images**: Unsplash images show an amber dot (`PlaceholderDot`) in dev or when `NEXT_PUBLIC_SHOW_PLACEHOLDER_MARKERS=true`, so stock photos can be tracked and replaced with real client work
 
 ## Key Components
@@ -65,6 +65,9 @@ The look comes from the morning of the event: vanity-mirror bulbs, satin gowns, 
 - `MirrorHero` - Home hero mirror with sequenced bulbs and rotating bridal / quinceañera reflections
 - `PortfolioGrid` - Filterable gallery with lightbox
 - `PageHeader` / `ClosingCta` - Opening and closing blocks for interior pages
+- `BookingFlow` - Three-step date request (event → date & place → details, with an editable summary); the confirmation is a status tracker: requested → checking availability → not booked yet
+- `ContactForm` - Message form; the confirmation names the reply email, lets them edit it, and links to a prefilled date request
+- `FormParts` - Shared form pieces: `ChoiceTile` (radio drawn as a tile), `FieldHint`, `FieldError`, `OptionalTag`
 
 ## Internationalization (i18n)
 
@@ -102,5 +105,6 @@ All page content, data (services, testimonials, pricing, portfolio) and metadata
 - `/reviews` permanently redirects to `/#reviews` (the Reviews page was dropped; reviews live on the home page only)
 - Set `NEXT_PUBLIC_SITE_URL` in production (canonical URLs, sitemap, OG tags) – see README
 - Forms submit to placeholder success pages (no backend)
+- `/book` is a date *request*, not a booking: no prices, and copy makes clear availability is confirmed afterwards (we don't publish a calendar). Response time is promised as "within 24 hours" everywhere; keep it consistent. `/book?occasion=…&need=…` prefills it (`bookingHref` in `src/data/booking.ts`); an unfinished request is kept in sessionStorage. Both forms validate inline with translated messages via `useFormErrors` (`src/lib/forms.ts`)
 - Mobile-first responsive design
 - Target audience: US citizens, primarily Chicagoland area
