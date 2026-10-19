@@ -16,7 +16,7 @@ Luxury mobile hair & makeup website built with Next.js 16.
 ```
 src/
 ├── app/
-│   ├── [locale]/  # Locale-wrapped pages (home, services, portfolio, pricing, reviews, book, contact) + localized 404
+│   ├── [locale]/  # Locale-wrapped pages (home, services, portfolio, book, contact) + localized 404
 │   ├── sitemap.ts # sitemap.xml with hreflang alternates
 │   └── robots.ts  # robots.txt
 ├── components/    # Reusable UI components
@@ -99,6 +99,7 @@ All page content, data (services, testimonials, pricing, portfolio) and metadata
 - Spare generated images, their prompts and framing guides are kept in `assets/generated/` (not deployed; see its README). They're not client work, so never use them as portfolio pieces
 - 9 portfolio slots and 2 service images still use Unsplash placeholders (allowed in `next.config.ts`)
 - `/pricing` permanently redirects to `/services#packages` (Pricing was merged into Services)
+- `/reviews` permanently redirects to `/#reviews` (the Reviews page was dropped; reviews live on the home page only)
 - Set `NEXT_PUBLIC_SITE_URL` in production (canonical URLs, sitemap, OG tags) – see README
 - Forms submit to placeholder success pages (no backend)
 - Mobile-first responsive design

@@ -12,10 +12,6 @@
       "title": "Portfolio",
       "description": "Browse bridal, quinceañera, sweet 16, glam, natural, and updo looks created by Beautiful Inside Out in the Chicago area."
     },
-    "reviews": {
-      "title": "Client Reviews",
-      "description": "Read reviews from brides, quinceañeras, and event clients who trusted Beautiful Inside Out with their hair and makeup."
-    },
     "contact": {
       "title": "Contact",
       "description": "Questions about hair and makeup for your wedding, quinceañera, or event? Get in touch with Beautiful Inside Out."
@@ -32,7 +28,6 @@
     "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
-    "reviews": "Reviews",
     "bookNow": "Book now",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -103,8 +98,7 @@
     },
     "testimonials": {
       "title": "What our clients say",
-      "rating": "Rated {rating} by {count} clients",
-      "readMore": "Read all reviews"
+      "rating": "Rated {rating} by {count} clients"
     },
     "about": {
       "title": "Meet Lizbeth",
@@ -229,21 +223,6 @@
       "title": "Love what you see?",
       "description": "Let’s create your perfect look. Book a consultation to discuss your vision.",
       "button": "Book your look"
-    }
-  },
-  "reviews": {
-    "hero": {
-      "title": "What our clients say",
-      "description": "Real stories from real clients. Every review reflects our commitment to making you feel beautiful and confident on your special day.",
-      "reviewCount": "{count} reviews"
-    },
-    "all": {
-      "title": "More happy clients"
-    },
-    "cta": {
-      "title": "Ready to become our next happy client?",
-      "description": "Book your consultation and let’s create something beautiful together.",
-      "button": "Book now"
     }
   },
   "contact": {

@@ -12,10 +12,6 @@
       "title": "Portafolio",
       "description": "Explora looks de novia, quinceañera, sweet 16, glam, natural y recogidos creados por Beautiful Inside Out en el área de Chicago."
     },
-    "reviews": {
-      "title": "Reseñas de Clientes",
-      "description": "Lee las reseñas de novias, quinceañeras y clientas de eventos que confiaron en Beautiful Inside Out para su maquillaje y peinado."
-    },
     "contact": {
       "title": "Contacto",
       "description": "¿Preguntas sobre maquillaje y peinado para tu boda, quinceañera o evento? Comunícate con Beautiful Inside Out."
@@ -32,7 +28,6 @@
     "home": "Inicio",
     "services": "Servicios",
     "portfolio": "Portafolio",
-    "reviews": "Reseñas",
     "bookNow": "Reservar",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
@@ -103,8 +98,7 @@
     },
     "testimonials": {
       "title": "Lo que dicen nuestras clientas",
-      "rating": "Calificación de {rating} de {count} clientas",
-      "readMore": "Leer todas las reseñas"
+      "rating": "Calificación de {rating} de {count} clientas"
     },
     "about": {
       "title": "Conoce a Lizbeth",
@@ -229,21 +223,6 @@
       "title": "¿Te gusta lo que ves?",
       "description": "Creemos tu look perfecto. Reserva una consulta para hablar de tu visión.",
       "button": "Reserva tu look"
-    }
-  },
-  "reviews": {
-    "hero": {
-      "title": "Lo que dicen nuestras clientas",
-      "description": "Historias reales de clientas reales. Cada reseña refleja nuestro compromiso de hacerte sentir hermosa y segura en tu día especial.",
-      "reviewCount": "{count} reseñas"
-    },
-    "all": {
-      "title": "Más clientas felices"
-    },
-    "cta": {
-      "title": "¿Lista para ser nuestra próxima clienta feliz?",
-      "description": "Reserva tu consulta y creemos algo hermoso juntas.",
-      "button": "Reservar ahora"
     }
   },
   "contact": {
