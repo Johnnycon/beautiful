@@ -17,8 +17,8 @@
       "description": "Questions about hair and makeup for your wedding, quinceañera, or event? Get in touch with Beautiful Inside Out."
     },
     "book": {
-      "title": "Book Your Date",
-      "description": "Request your on-site hair and makeup appointment in Chicagoland. We confirm availability and send a quote within 24 hours."
+      "title": "Request Your Date",
+      "description": "Request on-site hair and makeup for your wedding, quinceañera or event in Chicagoland. We confirm availability and send a personal quote within 24 hours."
     },
     "notFound": {
       "title": "Page Not Found"
@@ -228,7 +228,7 @@
   "contact": {
     "hero": {
       "title": "Contact us",
-      "description": "Have questions? We’d love to hear from you. Send us a message and we’ll respond as soon as possible."
+      "description": "Questions about your look, your date or anything else? Send a message and we’ll get back to you within 24 hours."
     },
     "form": {
       "title": "Send a message",
@@ -238,23 +238,31 @@
       "emailPlaceholder": "jane@example.com",
       "phone": "Phone number",
       "phonePlaceholder": "(312) 555-1234",
-      "eventType": "Event type",
-      "eventTypePlaceholder": "Select event type",
-      "eventTypes": {
-        "wedding": "Wedding",
-        "quinceanera": "Quinceañera",
-        "sweet16": "Sweet 16",
-        "prom": "Prom",
-        "corporate": "Corporate event",
-        "photoshoot": "Photoshoot",
-        "other": "Other"
-      },
+      "eventType": "Occasion",
+      "eventTypePlaceholder": "Choose one",
       "message": "Your message",
       "messagePlaceholder": "Tell us about your event, the date you have in mind, and any questions...",
       "submit": "Send message",
-      "successTitle": "Message sent!",
-      "successMessage": "Thank you for reaching out. We’ll get back to you within 24-48 hours.",
-      "backToHome": "Back to home"
+      "optional": "Optional",
+      "responseTime": "We read every message and reply within 24 hours."
+    },
+    "errors": {
+      "name": "Let us know your name.",
+      "email": "We need an email to reply to you.",
+      "emailInvalid": "That email looks incomplete. Check it for typos.",
+      "phoneInvalid": "Enter a 10-digit phone number, or leave it blank.",
+      "subject": "Choose the closest occasion, or Something else.",
+      "message": "Write us a short message."
+    },
+    "success": {
+      "title": "Thank you, {name}",
+      "message": "Your message is on its way. We’ll reply to <strong>{email}</strong> within 24 hours.",
+      "wrongEmail": "Not the right email?",
+      "edit": "Edit your message",
+      "dateTitle": "Already have a date in mind?",
+      "dateDescription": "Request it now and we’ll check availability while we reply. It’s not a commitment.",
+      "requestDate": "Request a date",
+      "viewPortfolio": "Browse the portfolio"
     },
     "info": {
       "serviceArea": "Service area",
@@ -288,78 +296,147 @@
       }
     },
     "cta": {
-      "title": "Ready to book?",
-      "description": "Skip the form and book your appointment directly."
+      "title": "Have a date in mind?",
+      "description": "Request it in about two minutes. We’ll let you know if it’s open, with no commitment."
     }
   },
   "book": {
     "hero": {
-      "title": "Reserve your date",
-      "description": "Complete the form below to request your booking. We’ll confirm availability and send you a detailed quote within 24 hours."
+      "title": "Request your date",
+      "description": "Tell us about your day and the date you have in mind. We don’t publish our calendar, so this is a request, not a reservation: we’ll check availability and get back to you within 24 hours."
     },
     "steps": {
-      "event": "Event details",
-      "services": "Services",
-      "contact": "Contact",
-      "review": "Review"
+      "event": {
+        "label": "Your event",
+        "title": "Tell us about your event"
+      },
+      "when": {
+        "label": "Date & place",
+        "title": "When and where"
+      },
+      "contact": {
+        "label": "Your details",
+        "title": "How can we reach you?"
+      }
     },
     "form": {
-      "eventDate": "Event date",
-      "eventTime": "Start time",
-      "selectTime": "Select a time",
-      "location": "Event location",
-      "locationPlaceholder": "e.g., The Grand Hotel, Chicago or 123 Main St...",
-      "partySize": "Party size",
-      "person": "person",
-      "people": "people",
-      "selectServices": "Select services",
-      "startingAt": "Starting at",
-      "name": "Full name",
-      "namePlaceholder": "Your full name",
-      "email": "Email address",
-      "emailPlaceholder": "your@email.com",
-      "phone": "Phone number",
-      "phonePlaceholder": "(312) 555-1234",
-      "notes": "Additional notes",
-      "notesPlaceholder": "Any special requests, inspiration photos, or questions...",
-      "review": {
-        "title": "Review your booking request",
-        "eventDetails": "Event details",
-        "selectedServices": "Selected services",
-        "contactInfo": "Contact information",
-        "notes": "Additional notes"
+      "occasion": "What are you celebrating?",
+      "need": "What would you like?",
+      "needs": {
+        "hairAndMakeup": "Hair & makeup",
+        "makeup": "Makeup only",
+        "hair": "Hair only"
       },
+      "partySize": "How many people are getting ready?",
+      "partySizeHint": "Including you. A rough number is fine; we’ll confirm it together.",
+      "people": "{count, plural, one {# person} other {# people}}",
+      "peopleOrMore": "{count}+ people",
+      "fewer": "Fewer people",
+      "more": "More people",
+      "date": "Date you have in mind",
+      "dateHint": "Picking a date doesn’t reserve it. We’ll check whether it’s open and confirm with you before anything is booked.",
+      "dateSoon": "That’s coming up soon. We’ll do our best; for the quickest answer, also <link>send us a DM on Instagram</link>.",
+      "readyBy": "What time should everyone be ready?",
+      "readyByHint": "We plan the start time backwards from this.",
+      "notSure": "Not sure yet",
+      "location": "Where will you be getting ready?",
+      "locationHint": "A city is fine for now.",
+      "locationPlaceholder": "e.g., Cicero, or The Drake Hotel",
+      "name": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "(312) 555-1234",
+      "contactMethod": "Best way to reach you",
+      "contactMethods": {
+        "text": "Text",
+        "call": "Call",
+        "email": "Email"
+      },
+      "notes": "Anything else we should know?",
+      "notesPlaceholder": "Looks you love, inspiration links, questions…",
+      "optional": "Optional",
+      "reassurance": "Sending a request doesn’t commit you to anything. Nothing is booked or charged until we’ve confirmed your date and quote together.",
       "back": "Back",
-      "next": "Next step",
-      "submit": "Submit booking request",
-      "notSelected": "Not selected",
-      "timeNotSelected": "Time not selected",
-      "notProvided": "Not provided"
+      "next": "Continue",
+      "submit": "Send request"
+    },
+    "summary": {
+      "title": "Your request",
+      "event": "Event",
+      "when": "When",
+      "where": "Where",
+      "readyBy": "Ready by {time}",
+      "timeOpen": "Time to be decided",
+      "edit": "Edit",
+      "editLabel": "Edit {section}"
+    },
+    "errors": {
+      "occasion": "Choose what you’re celebrating.",
+      "date": "Choose a date, even if it’s tentative.",
+      "dateInvalid": "That date has passed. Choose an upcoming one.",
+      "location": "Let us know where. A city is enough.",
+      "name": "Let us know your name.",
+      "email": "We need an email to reply to you.",
+      "emailInvalid": "That email looks incomplete. Check it for typos.",
+      "phone": "Add a phone number so we can reach you.",
+      "phoneInvalid": "Enter a 10-digit phone number, area code included."
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "send": {
+        "title": "You send a request",
+        "description": "About two minutes. No payment, no commitment."
+      },
+      "check": {
+        "title": "We check our calendar",
+        "description": "We don’t publish our schedule, so we’ll confirm whether your date is open within 24 hours."
+      },
+      "quote": {
+        "title": "You get a personal quote",
+        "description": "Every look is priced for your day and your party, so you’ll know exactly what to expect."
+      },
+      "hold": {
+        "title": "A deposit holds your date",
+        "description": "Only once everything feels right."
+      },
+      "question": "Have a question first?",
+      "contact": "Send us a message"
     },
     "success": {
-      "title": "Booking request received!",
-      "description": "Thank you for your booking request. We’ll review your details and confirm availability within 24-48 hours.",
-      "nextSteps": "What happens next",
-      "step1": "We’ll review your booking request and check availability",
-      "step2": "You’ll receive a confirmation email with next steps",
-      "step3": "A 30% deposit will be required to secure your date",
-      "step4": "For bridal bookings, we’ll schedule your trial session",
+      "sent": "Thank you, {name}. Your request is sent.",
+      "title": "We’re checking your date",
+      "state": {
+        "done": "done",
+        "current": "in progress",
+        "todo": "not yet"
+      },
+      "stages": {
+        "requested": {
+          "label": "Requested"
+        },
+        "checking": {
+          "label": "Checking availability",
+          "title": {
+            "text": "We’ll text you within 24 hours",
+            "call": "We’ll call you within 24 hours",
+            "email": "We’ll email you within 24 hours"
+          },
+          "description": {
+            "text": "At {contact}, to let you know whether your date is open, with a personal quote.",
+            "call": "At {contact}, to let you know whether your date is open, with a personal quote.",
+            "email": "At {contact}, to let you know whether your date is open, with a personal quote."
+          }
+        },
+        "booked": {
+          "label": "Booked",
+          "title": "Not booked yet",
+          "description": "Once everything feels right, a 30% deposit holds your date.",
+          "trial": "For weddings, we’ll also schedule your trial."
+        }
+      },
       "backToHome": "Back to home",
-      "viewPortfolio": "View portfolio"
-    },
-    "info": {
-      "quickResponse": {
-        "title": "Quick response",
-        "description": "We respond to all inquiries within 24-48 hours"
-      },
-      "secureBooking": {
-        "title": "Secure booking",
-        "description": "Your information is safe and never shared"
-      },
-      "weComeToYou": {
-        "title": "We come to you",
-        "description": "Mobile service to your location"
-      }
+      "viewPortfolio": "Browse the portfolio"
     }
   },
   "footer": {
@@ -384,7 +461,17 @@
     "close": "Close",
     "previous": "Previous",
     "next": "Next",
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "requestDate": "Request a date",
+    "occasions": {
+      "wedding": "Wedding",
+      "quinceanera": "Quinceañera",
+      "sweet16": "Sweet 16",
+      "prom": "Prom",
+      "photoshoot": "Photoshoot",
+      "corporate": "Corporate event",
+      "other": "Something else"
+    }
   },
   "data": {
     "services": {

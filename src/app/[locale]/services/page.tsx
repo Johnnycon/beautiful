@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { getPageMetadata } from "@/lib/metadata";
+import { bookingHref } from "@/data/booking";
 import { services } from "@/data/services";
 import { addOnPrices, pricingPackages } from "@/data/pricing";
 import { Link } from "@/i18n/navigation";
@@ -101,7 +102,7 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
                 </div>
 
                 <Link
-                  href="/book"
+                  href={bookingHref(service.booking)}
                   className="text-link mt-10 inline-block hover:text-rouge"
                 >
                   {t("bookService")}

@@ -22,6 +22,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
   setRequestLocale(locale as Locale);
 
   const t = await getTranslations("contact");
+  const tCommon = await getTranslations("common");
 
   const details = [
     {
@@ -87,7 +88,12 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
         </div>
       </section>
 
-      <ClosingCta title={t("cta.title")} description={t("cta.description")} showContactLink={false} />
+      <ClosingCta
+        title={t("cta.title")}
+        description={t("cta.description")}
+        buttonLabel={tCommon("requestDate")}
+        showContactLink={false}
+      />
     </>
   );
 }

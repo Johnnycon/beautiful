@@ -17,8 +17,8 @@
       "description": "¿Preguntas sobre maquillaje y peinado para tu boda, quinceañera o evento? Comunícate con Beautiful Inside Out."
     },
     "book": {
-      "title": "Reserva Tu Fecha",
-      "description": "Solicita tu cita de maquillaje y peinado a domicilio en el área de Chicago. Confirmamos disponibilidad y enviamos cotización en 24 horas."
+      "title": "Solicita Tu Fecha",
+      "description": "Solicita maquillaje y peinado a domicilio para tu boda, quinceañera o evento en el área de Chicago. Confirmamos disponibilidad y enviamos una cotización personal en 24 horas."
     },
     "notFound": {
       "title": "Página No Encontrada"
@@ -228,33 +228,41 @@
   "contact": {
     "hero": {
       "title": "Contacto",
-      "description": "¿Tienes preguntas? Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible."
+      "description": "¿Preguntas sobre tu look, tu fecha o cualquier otra cosa? Envíanos un mensaje y te responderemos dentro de 24 horas."
     },
     "form": {
-      "title": "Enviar un Mensaje",
+      "title": "Enviar un mensaje",
       "name": "Tu nombre",
       "namePlaceholder": "María García",
       "email": "Correo electrónico",
       "emailPlaceholder": "maria@ejemplo.com",
       "phone": "Número de teléfono",
       "phonePlaceholder": "(312) 555-1234",
-      "eventType": "Tipo de evento",
-      "eventTypePlaceholder": "Selecciona tipo de evento",
-      "eventTypes": {
-        "wedding": "Boda",
-        "quinceanera": "Quinceañera",
-        "sweet16": "Sweet 16",
-        "prom": "Prom / graduación",
-        "corporate": "Evento corporativo",
-        "photoshoot": "Sesión de fotos",
-        "other": "Otro"
-      },
+      "eventType": "Ocasión",
+      "eventTypePlaceholder": "Elige una",
       "message": "Tu mensaje",
       "messagePlaceholder": "Cuéntanos sobre tu evento, la fecha que tienes en mente y cualquier pregunta...",
       "submit": "Enviar mensaje",
-      "successTitle": "¡Mensaje enviado!",
-      "successMessage": "Gracias por contactarnos. Te responderemos dentro de 24-48 horas.",
-      "backToHome": "Volver al inicio"
+      "optional": "Opcional",
+      "responseTime": "Leemos cada mensaje y respondemos dentro de 24 horas."
+    },
+    "errors": {
+      "name": "Dinos tu nombre.",
+      "email": "Necesitamos un correo para responderte.",
+      "emailInvalid": "Ese correo parece incompleto. Revisa que esté bien escrito.",
+      "phoneInvalid": "Escribe un teléfono de 10 dígitos, o déjalo en blanco.",
+      "subject": "Elige la ocasión más cercana, u Otra ocasión.",
+      "message": "Escríbenos un mensaje breve."
+    },
+    "success": {
+      "title": "Gracias, {name}",
+      "message": "Tu mensaje va en camino. Te responderemos a <strong>{email}</strong> dentro de 24 horas.",
+      "wrongEmail": "¿No es el correo correcto?",
+      "edit": "Edita tu mensaje",
+      "dateTitle": "¿Ya tienes una fecha en mente?",
+      "dateDescription": "Solicítala ahora y verificaremos la disponibilidad mientras te respondemos. No es un compromiso.",
+      "requestDate": "Solicitar una fecha",
+      "viewPortfolio": "Ver el portafolio"
     },
     "info": {
       "serviceArea": "Área de servicio",
@@ -288,78 +296,147 @@
       }
     },
     "cta": {
-      "title": "¿Lista para reservar?",
-      "description": "Salta el formulario y reserva tu cita directamente."
+      "title": "¿Tienes una fecha en mente?",
+      "description": "Solicítala en unos dos minutos. Te diremos si está libre, sin compromiso."
     }
   },
   "book": {
     "hero": {
-      "title": "Reserva tu fecha",
-      "description": "Completa el formulario para solicitar tu reservación. Confirmaremos disponibilidad y te enviaremos una cotización detallada dentro de 24 horas."
+      "title": "Solicita tu fecha",
+      "description": "Cuéntanos sobre tu día y la fecha que tienes en mente. No publicamos nuestra agenda, así que esto es una solicitud, no una reservación: verificaremos la disponibilidad y te responderemos dentro de 24 horas."
     },
     "steps": {
-      "event": "Detalles del evento",
-      "services": "Servicios",
-      "contact": "Contacto",
-      "review": "Revisar"
+      "event": {
+        "label": "Tu evento",
+        "title": "Cuéntanos sobre tu evento"
+      },
+      "when": {
+        "label": "Fecha y lugar",
+        "title": "Cuándo y dónde"
+      },
+      "contact": {
+        "label": "Tus datos",
+        "title": "¿Cómo te contactamos?"
+      }
     },
     "form": {
-      "eventDate": "Fecha del evento",
-      "eventTime": "Hora de inicio",
-      "selectTime": "Selecciona una hora",
-      "location": "Lugar del evento",
-      "locationPlaceholder": "ej., Hotel Grand, Chicago o 123 Calle Principal...",
-      "partySize": "Número de personas",
-      "person": "persona",
-      "people": "personas",
-      "selectServices": "Selecciona servicios",
-      "startingAt": "Desde",
-      "name": "Nombre completo",
-      "namePlaceholder": "Tu nombre completo",
+      "occasion": "¿Qué estás celebrando?",
+      "need": "¿Qué te gustaría?",
+      "needs": {
+        "hairAndMakeup": "Peinado y maquillaje",
+        "makeup": "Solo maquillaje",
+        "hair": "Solo peinado"
+      },
+      "partySize": "¿Cuántas personas se van a arreglar?",
+      "partySizeHint": "Incluyéndote. Un número aproximado está bien; lo confirmamos juntos.",
+      "people": "{count, plural, one {# persona} other {# personas}}",
+      "peopleOrMore": "{count}+ personas",
+      "fewer": "Menos personas",
+      "more": "Más personas",
+      "date": "Fecha que tienes en mente",
+      "dateHint": "Elegir una fecha no la reserva. Verificaremos si está libre y lo confirmaremos contigo antes de reservar nada.",
+      "dateSoon": "Esa fecha está muy cerca. Haremos lo posible; para una respuesta más rápida, <link>envíanos también un DM en Instagram</link>.",
+      "readyBy": "¿A qué hora debe estar todo listo?",
+      "readyByHint": "Planeamos la hora de inicio a partir de esta.",
+      "notSure": "Aún no lo sé",
+      "location": "¿Dónde se van a arreglar?",
+      "locationHint": "Por ahora basta con la ciudad.",
+      "locationPlaceholder": "ej., Cicero, o el Hotel Drake",
+      "name": "Tu nombre",
       "email": "Correo electrónico",
       "emailPlaceholder": "tu@correo.com",
-      "phone": "Número de teléfono",
+      "phone": "Teléfono",
       "phonePlaceholder": "(312) 555-1234",
-      "notes": "Notas adicionales",
-      "notesPlaceholder": "Cualquier solicitud especial, fotos de inspiración o preguntas...",
-      "review": {
-        "title": "Revisa tu solicitud de reservación",
-        "eventDetails": "Detalles del evento",
-        "selectedServices": "Servicios seleccionados",
-        "contactInfo": "Información de contacto",
-        "notes": "Notas adicionales"
+      "contactMethod": "Mejor forma de contactarte",
+      "contactMethods": {
+        "text": "Mensaje",
+        "call": "Llamada",
+        "email": "Correo"
       },
+      "notes": "¿Algo más que debamos saber?",
+      "notesPlaceholder": "Looks que te encantan, enlaces de inspiración, preguntas…",
+      "optional": "Opcional",
+      "reassurance": "Enviar una solicitud no te compromete a nada. No se reserva ni se cobra nada hasta que confirmemos juntos tu fecha y tu cotización.",
       "back": "Atrás",
-      "next": "Siguiente",
-      "submit": "Enviar solicitud",
-      "notSelected": "No seleccionado",
-      "timeNotSelected": "Hora no seleccionada",
-      "notProvided": "No proporcionado"
+      "next": "Continuar",
+      "submit": "Enviar solicitud"
+    },
+    "summary": {
+      "title": "Tu solicitud",
+      "event": "Evento",
+      "when": "Cuándo",
+      "where": "Dónde",
+      "readyBy": "Todo listo: {time}",
+      "timeOpen": "Hora por definir",
+      "edit": "Editar",
+      "editLabel": "Editar {section}"
+    },
+    "errors": {
+      "occasion": "Elige qué estás celebrando.",
+      "date": "Elige una fecha, aunque sea tentativa.",
+      "dateInvalid": "Esa fecha ya pasó. Elige una próxima.",
+      "location": "Dinos dónde. Basta con la ciudad.",
+      "name": "Dinos tu nombre.",
+      "email": "Necesitamos un correo para responderte.",
+      "emailInvalid": "Ese correo parece incompleto. Revisa que esté bien escrito.",
+      "phone": "Agrega un teléfono para poder contactarte.",
+      "phoneInvalid": "Escribe un teléfono de 10 dígitos, con código de área."
+    },
+    "howItWorks": {
+      "title": "Cómo funciona",
+      "send": {
+        "title": "Envías una solicitud",
+        "description": "Toma unos dos minutos. Sin pago y sin compromiso."
+      },
+      "check": {
+        "title": "Revisamos nuestra agenda",
+        "description": "No publicamos nuestro calendario, así que te confirmaremos si tu fecha está libre dentro de 24 horas."
+      },
+      "quote": {
+        "title": "Recibes una cotización personal",
+        "description": "Cada look se cotiza según tu día y tu grupo, para que sepas exactamente qué esperar."
+      },
+      "hold": {
+        "title": "Un depósito aparta tu fecha",
+        "description": "Solo cuando todo te parezca bien."
+      },
+      "question": "¿Tienes preguntas primero?",
+      "contact": "Envíanos un mensaje"
     },
     "success": {
-      "title": "¡Solicitud de reservación recibida!",
-      "description": "Gracias por tu solicitud. Revisaremos los detalles y confirmaremos disponibilidad dentro de 24-48 horas.",
-      "nextSteps": "Próximos pasos",
-      "step1": "Revisaremos tu solicitud y verificaremos disponibilidad",
-      "step2": "Recibirás un correo de confirmación con los siguientes pasos",
-      "step3": "Se requiere un depósito del 30% para asegurar tu fecha",
-      "step4": "Para reservas nupciales, programaremos tu sesión de prueba",
+      "sent": "Gracias, {name}. Tu solicitud fue enviada.",
+      "title": "Estamos revisando tu fecha",
+      "state": {
+        "done": "listo",
+        "current": "en proceso",
+        "todo": "pendiente"
+      },
+      "stages": {
+        "requested": {
+          "label": "Solicitada"
+        },
+        "checking": {
+          "label": "Revisando disponibilidad",
+          "title": {
+            "text": "Te enviaremos un mensaje dentro de 24 horas",
+            "call": "Te llamaremos dentro de 24 horas",
+            "email": "Te escribiremos por correo dentro de 24 horas"
+          },
+          "description": {
+            "text": "Al {contact}, para decirte si tu fecha está libre, con una cotización personal.",
+            "call": "Al {contact}, para decirte si tu fecha está libre, con una cotización personal.",
+            "email": "A {contact}, para decirte si tu fecha está libre, con una cotización personal."
+          }
+        },
+        "booked": {
+          "label": "Reservada",
+          "title": "Aún no está reservada",
+          "description": "Cuando todo te parezca bien, un depósito del 30% aparta tu fecha.",
+          "trial": "Para bodas, también programaremos tu prueba."
+        }
+      },
       "backToHome": "Volver al inicio",
-      "viewPortfolio": "Ver portafolio"
-    },
-    "info": {
-      "quickResponse": {
-        "title": "Respuesta rápida",
-        "description": "Respondemos a todas las consultas dentro de 24-48 horas"
-      },
-      "secureBooking": {
-        "title": "Reservación segura",
-        "description": "Tu información está segura y nunca se comparte"
-      },
-      "weComeToYou": {
-        "title": "Vamos a ti",
-        "description": "Servicio móvil a tu ubicación"
-      }
+      "viewPortfolio": "Ver el portafolio"
     }
   },
   "footer": {
@@ -384,7 +461,17 @@
     "close": "Cerrar",
     "previous": "Anterior",
     "next": "Siguiente",
-    "skipToContent": "Saltar al contenido"
+    "skipToContent": "Saltar al contenido",
+    "requestDate": "Solicitar una fecha",
+    "occasions": {
+      "wedding": "Boda",
+      "quinceanera": "Quinceañera",
+      "sweet16": "Sweet 16",
+      "prom": "Prom / graduación",
+      "photoshoot": "Sesión de fotos",
+      "corporate": "Evento corporativo",
+      "other": "Otra ocasión"
+    }
   },
   "data": {
     "services": {
