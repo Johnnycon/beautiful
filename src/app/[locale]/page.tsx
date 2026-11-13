@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Star } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { getPageMetadata } from "@/lib/metadata";
 import { getTranslatedPortfolioItems } from "@/lib/portfolio";
+import { siteConfig } from "@/config/site";
 import { bookingHref } from "@/data/booking";
-import Button from "@/components/Button";
 import ClosingCta from "@/components/ClosingCta";
+import DateRequestBar from "@/components/DateRequestBar";
 import LightUp from "@/components/LightUp";
-import MirrorHero from "@/components/MirrorHero";
 import ServiceMenu from "@/components/ServiceMenu";
 import WorkReel from "@/components/WorkReel";
 import { services } from "@/data/services";
@@ -52,60 +52,105 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
   const averageRating =
     testimonials.reduce((sum, { rating }) => sum + rating, 0) / testimonials.length;
   const morningSteps = t.raw("morning.steps") as MorningStep[];
+  // The hero photograph is art-directed: a tall crop on phones, a wide one on desktop
+  const {
+    props: { srcSet: heroWide },
+  } = getImageProps({ alt: "", sizes: "100vw", width: 1536, height: 1024, src: "/images/hero/setup-wide.jpg" });
+  const {
+    props: { srcSet: heroTall, src: heroSrc },
+  } = getImageProps({ alt: "", sizes: "100vw", width: 1024, height: 1536, src: "/images/hero/setup-tall.jpg" });
+  const priceOf = (id: string) => services.find((service) => service.id === id)!.startingPrice;
   const areaGroups = t.raw("area.groups") as AreaGroup[];
 
   return (
     <>
-      {/* Hero: the vanity mirror */}
-      <section className="satin overflow-hidden pb-16 text-pearl md:pb-24">
-        <div className={`${container} grid pt-24 md:grid-cols-12 md:items-center md:gap-x-8 md:pt-32`}>
-          <div className="order-2 pt-12 md:order-1 md:col-span-7 md:pt-0">
-            <h1 className="font-serif text-[2.5rem] leading-[1.04] tracking-[-0.015em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
-              {t("hero.title")}
-            </h1>
-            <p className="mt-7 max-w-md text-lg text-mist">{t("hero.description")}</p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Button href="/book" size="lg">
-                {tCommon("requestDate")}
-              </Button>
-              <Link href="/portfolio" className="text-link hover:text-petal">
-                {t("hero.portfolioButton")}
-              </Link>
-            </div>
-            <p className="mt-12 text-[0.9375rem]">
-              {locale === "en" ? (
-                <Link
-                  href="/"
-                  locale="es"
-                  hrefLang="es"
-                  lang="es"
-                  className="underline-offset-[6px] decoration-1 hover:underline"
-                >
-                  {t("hero.language")}
-                </Link>
-              ) : (
-                t("hero.language")
-              )}
-            </p>
-          </div>
-          <div className="order-1 mx-auto w-[min(66vw,22rem)] md:order-2 md:col-span-5 md:col-start-8 md:w-full md:max-w-[28rem] md:justify-self-end">
-            <MirrorHero
-              reflections={[
-                {
-                  src: "/images/hero/bride-at-vanity.jpg",
-                  alt: t("hero.reflections.bridal.alt"),
-                  label: t("hero.reflections.bridal.label"),
-                },
-                {
-                  src: "/images/hero/quinceanera-salon.jpg",
-                  alt: t("hero.reflections.quinceanera.alt"),
-                  label: t("hero.reflections.quinceanera.label"),
-                },
-              ]}
-              pauseLabel={t("hero.reflections.pause")}
-              playLabel={t("hero.reflections.play")}
+      {/* Hero: built around what a visitor who already knows Lizbeth's work came to
+          find out (does she come to me, for my event, for about how much) and the
+          ask itself. One wide photograph of her set-up waiting in a client's home
+          runs across the top; the date request sits on its lower edge. */}
+      <section className="satin overflow-hidden text-pearl">
+        <div className="relative isolate">
+          {/* The photograph dissolves into the satin at its lower edge */}
+          <div className="absolute inset-x-0 top-0 -z-10 h-[40svh] [mask-image:linear-gradient(to_bottom,#000_50%,transparent)] lg:h-full lg:[mask-image:linear-gradient(to_bottom,#000_76%,transparent)]">
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={heroWide} sizes="100vw" />
+              <img
+                src={heroSrc}
+                srcSet={heroTall}
+                sizes="100vw"
+                alt={t("hero.imageAlt")}
+                fetchPriority="high"
+                decoding="async"
+                className="absolute inset-0 size-full object-cover object-[50%_12%] lg:object-[50%_30%]"
+              />
+            </picture>
+            {/* Shade behind the header and, on desktop, behind the headline */}
+            <div aria-hidden className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-ink/60 to-transparent" />
+            <div
+              aria-hidden
+              className="absolute inset-y-0 left-0 w-[62%] bg-linear-to-r from-ink/85 via-ink/50 to-transparent max-lg:hidden"
             />
           </div>
+
+          <div
+            className={`${container} flex flex-col justify-end pt-[31svh] pb-6 lg:min-h-[min(74svh,44rem)] lg:pt-36 lg:pb-24`}
+          >
+            <h1 className="font-serif text-[clamp(2rem,9vw,2.5rem)] leading-[1.04] tracking-[-0.015em] sm:text-6xl lg:max-w-[21ch] lg:text-[clamp(3.25rem,4.9vw,4.75rem)]">
+              {t("hero.title")}
+            </h1>
+            <p className="mt-4 max-w-md text-mist lg:mt-6 lg:text-lg">{t("hero.description")}</p>
+          </div>
+        </div>
+
+        <div className={`${container} pb-10 lg:pb-12`}>
+          {/* On desktop the bar straddles the photograph's lower edge */}
+          <DateRequestBar className="relative z-10 max-w-3xl lg:-mt-10">
+            {locale === "en" ? (
+              <Link
+                href="/"
+                locale="es"
+                hrefLang="es"
+                lang="es"
+                className="underline-offset-[6px] decoration-1 hover:underline"
+              >
+                {t("hero.language")}
+              </Link>
+            ) : (
+              <span>{t("hero.language")}</span>
+            )}
+          </DateRequestBar>
+
+          {/* The answers people come for, as one quiet rule under the ask */}
+          <dl className="mt-10 grid gap-x-8 border-t border-pearl/15 sm:grid-cols-3 lg:mt-12">
+            <div className="border-b border-pearl/15 py-4 sm:border-b-0 sm:py-5">
+              <dt className="text-[0.8125rem] text-mist">{t("hero.facts.prices")}</dt>
+              <dd className="mt-0.5">
+                <Link href="/services" className="underline-offset-[6px] decoration-1 hover:underline">
+                  {t("hero.facts.pricesValue", {
+                    bridal: priceOf("bridal-hair-makeup"),
+                    quinceanera: priceOf("quinceanera-glam"),
+                  })}
+                </Link>
+              </dd>
+            </div>
+            <div className="border-b border-pearl/15 py-4 sm:border-b-0 sm:py-5">
+              <dt className="text-[0.8125rem] text-mist">{t("hero.facts.experience")}</dt>
+              <dd className="mt-0.5">{t("hero.facts.experienceValue")}</dd>
+            </div>
+            <div className="py-4 sm:py-5">
+              <dt className="text-[0.8125rem] text-mist">{t("hero.facts.instagram")}</dt>
+              <dd className="mt-0.5">
+                <a
+                  href={siteConfig.social.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-[6px] decoration-1 hover:underline"
+                >
+                  {siteConfig.social.instagram.handle}
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -245,7 +290,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
       <section className="py-24 md:py-36">
         <div className={`${container} grid gap-14 md:grid-cols-12 md:items-center`}>
           <div className="relative mx-auto w-full max-w-sm md:col-span-5 md:max-w-[30rem]">
-            {/* Fine outer rule, like the mirror's frame */}
+            {/* Fine outer rule around the arch */}
             <div aria-hidden className="absolute -inset-3 rounded-t-full border border-crystal" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-t-full">
               <Image

@@ -1,14 +1,14 @@
 # Generated images (not deployed)
 
-Spare AI-generated images from the home hero redesign (October 2026), kept for future use: About, Services, social posts, or a different reflection in the hero mirror. Nothing in this folder is used by the site, and it isn't deployed (only `public/` is served).
+Spare AI-generated images from the home hero redesign (October 2026), kept for future use: About, Services, social posts, or a different portrait in the home hero. Nothing in this folder is used by the site, and it isn't deployed (only `public/` is served).
 
 **These are AI-generated people, not clients.** Don't use them as portfolio pieces, in reviews, or anywhere that implies they're Lizbeth's real work. Real client photos live in `public/images/gallery`.
 
-All images were made with ChatGPT image generation (via the Codex CLI) at 1086 × 1448 (3:4) and saved here as JPG. The two hero images in use are `public/images/hero/bride-at-vanity.jpg` and `public/images/hero/quinceanera-salon.jpg`.
+All images were made with ChatGPT image generation (via the Codex CLI). The portraits are 1086 × 1448 (3:4), saved as JPG. The home hero now uses the set-up scene below; no portrait is in use on the site.
 
 ## Bride
 
-All the same woman: midnight-blue satin robe, low chignon, pearl and crystal hairpiece, soft-glam makeup, dim navy room. The hero uses a pulled-back version of `looking-down`.
+All the same woman: midnight-blue satin robe, low chignon, pearl and crystal hairpiece, soft-glam makeup, dim navy room. None is in use: the home hero stopped showing a portrait in November 2026.
 
 | File | Notes | Prompt |
 |---|---|---|
@@ -17,6 +17,7 @@ All the same woman: midnight-blue satin robe, low chignon, pearl and crystal hai
 | `bride/bride-robe-eyes-to-camera.jpg` | Three-quarter view, eye contact | `prompts/bride-portraits.md` (A) |
 | `bride/bride-robe-touching-earring.jpg` | Near profile, hand at a drop earring | `prompts/bride-portraits.md` (C) |
 | `bride/bride-robe-half-smile.jpg` | Facing camera, soft half-smile | `prompts/bride-portraits.md` (D) |
+| `bride/bride-robe-looking-down-former-hero.jpg` | The pulled-back `looking-down` as it was used in the hero until November 2026 | `prompts/bride-pull-back.md` |
 
 ## Quinceañera
 
@@ -29,6 +30,17 @@ Deep rouge ballgown with a high illusion neckline and a crystal tiara. All in th
 | `quinceanera/quince-mexican-american-navy-room.jpg` | Updo with loose curls | `prompts/quince-by-ethnicity.md` |
 | `quinceanera/quince-guatemalan-american-navy-room.jpg` | Updo with loose curls | `prompts/quince-by-ethnicity.md` |
 | `quinceanera/quince-fringe-black-curls-navy-room.jpg` | Curtain fringe, long black curls, lilac makeup, open smile | `prompts/quince-fringe.md` |
+
+## Set-up scene (in use)
+
+Lizbeth's chair, lights and open kit waiting in a living room at dawn, with a gown by the window and no people. The home hero uses JPG copies in `public/images/hero`.
+
+| File | Notes | Prompt |
+|---|---|---|
+| `setup/setup-wide.png` | Landscape 1536 × 1024; the left 45% is dark wall for the headline | `prompts/setup-scene.md` |
+| `setup/setup-tall.png` | Portrait 1024 × 1536; the bottom third is dark | `prompts/setup-scene.md` |
+
+The former hero quinceañera (party hall, smiling at the camera) is kept as `quinceanera/quince-party-hall-former-hero.jpg`; its prompt is `prompts/quince-party-hall.md`.
 
 ## Making more
 

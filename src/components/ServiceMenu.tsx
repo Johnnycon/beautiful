@@ -13,7 +13,7 @@ export interface ServiceMenuItem {
   image: string;
 }
 
-// The home page's service list. Beside it stands an arched "mirror" that shows
+// The home page's service list. Beside it stands an arched frame that shows
 // the service being pointed at or focused; on phones each row carries its own
 // small arch instead.
 export default function ServiceMenu({ intro, items }: { intro: ReactNode; items: ServiceMenuItem[] }) {
@@ -25,7 +25,7 @@ export default function ServiceMenu({ intro, items }: { intro: ReactNode; items:
         <div className="md:sticky md:top-28">
           {intro}
           <div aria-hidden className="relative mt-12 hidden w-full max-w-[21rem] md:block">
-            {/* Fine outer rule, like the mirror's frame */}
+            {/* Fine outer rule around the arch */}
             <div className="absolute -inset-2.5 rounded-t-full border border-crystal" />
             <div className="relative aspect-[3/4] overflow-hidden rounded-t-full bg-crystal/40">
               {items.map((item) => (

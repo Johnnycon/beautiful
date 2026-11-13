@@ -36,21 +36,16 @@
   },
   "home": {
     "hero": {
-      "title": "Ready before the photographer is",
-      "description": "Bridal, quinceañera and event hair and makeup by Lizbeth, at your home, venue or hotel anywhere in Chicagoland.",
-      "portfolioButton": "View portfolio",
+      "title": "Hair and makeup that comes to you",
+      "description": "For weddings, quinceañeras and events anywhere in Chicagoland. Lizbeth brings the lights, the kit and the chair to your home, venue or hotel.",
+      "imageAlt": "A makeup chair, lights and an open kit set up in a living room at dawn, with a white gown hanging by the window",
       "language": "Hablamos español",
-      "reflections": {
-        "bridal": {
-          "label": "Bridal",
-          "alt": "A bride in a midnight-blue satin robe with soft-glam makeup, a low chignon and a pearl and crystal hairpiece, looking down"
-        },
-        "quinceanera": {
-          "label": "Quinceañera",
-          "alt": "A smiling quinceañera with light-brown hair and a crystal tiara, in a deep red ballgown with a crystal-embroidered neckline, in a party hall lit by chandeliers"
-        },
-        "pause": "Pause the mirror",
-        "play": "Play the mirror"
+      "facts": {
+        "prices": "Starting prices",
+        "pricesValue": "Bridal from ${bridal} · Quinceañera from ${quinceanera}",
+        "experience": "Experience",
+        "experienceValue": "11+ years of hair and makeup",
+        "instagram": "See her work on Instagram"
       }
     },
     "services": {

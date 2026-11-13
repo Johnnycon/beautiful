@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 // Marks its children as lit (`data-lit`) the first time they scroll into view,
-// so a row of bulbs can switch on in sequence with CSS, the way the hero
-// mirror does on load. Style descendants with `group-data-lit:…`.
+// so a row of bulbs can switch on in sequence with CSS. Style descendants with
+// `group-data-lit:…`.
 export default function LightUp({ className = "", children }: { className?: string; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [isLit, setIsLit] = useState(false);
