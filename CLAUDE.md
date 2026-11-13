@@ -23,7 +23,7 @@ src/
 ├── config/        # site.ts – business details, social links, site URL
 ├── data/          # Non-translatable data (ids, prices, images, icons) for services, portfolio, testimonials, pricing; booking.ts (occasions, needs, bookingHref)
 ├── i18n/          # Internationalization config (routing, navigation, request)
-├── lib/           # metadata.ts (per-page SEO metadata), portfolio.ts, forms.ts (inline validation, phone/email helpers)
+├── lib/           # metadata.ts (per-page SEO metadata), portfolio.ts, forms.ts (inline validation, phone/email/date helpers)
 ├── messages/      # Translation files (en.json, es.json) – all user-facing copy lives here
 └── proxy.ts       # next-intl locale detection/routing (Next.js 16 "proxy", formerly middleware)
 ```
@@ -32,8 +32,8 @@ src/
 
 - **Pages are Server Components.** Each `page.tsx` calls `setRequestLocale(locale)` (enables static rendering) and exports `generateMetadata` via `getPageMetadata(locale, "<page>")`. Use `await getTranslations()` in pages and `useTranslations()` in non-async server components.
 - **Animations in server components** import `* as motion from "motion/react-client"`. Client components import from `"motion/react"`.
-- **Client components** are only used for interactivity: `Header`, `MirrorHero`, `PortfolioGrid`, `BookingFlow`, `ContactForm`.
-- **Client translations are scoped.** The locale layout only sends the `nav`, `common`, `portfolio`, `book` and `contact` namespaces to the browser (`clientNamespaces` in `src/app/[locale]/layout.tsx`). If a client component needs another namespace, add it there, or translate on the server and pass strings as props (as done for portfolio items and booking service options).
+- **Client components** are only used for interactivity: `Header`, `MirrorHero`, `DateRequestBar`, `MobileRequestBar`, `ServiceMenu`, `WorkReel`, `LightUp`, `PortfolioGrid`, `BookingFlow`, `ContactForm`.
+- **Client translations are scoped.** The locale layout only sends the `nav`, `common`, `portfolio`, `book` and `contact` namespaces to the browser (`clientNamespaces` in `src/app/[locale]/layout.tsx`). If a client component needs another namespace, add it there, or translate on the server and pass strings as props (as done for portfolio items, the home services menu and the work reel).
 - **Links**: always use `Link` from `@/i18n/navigation` (not `next/link`) so links keep the current locale.
 - **Colors**: use theme tokens (`text-midnight`, `bg-pearl`, `text-rouge`, `border-crystal`, …) defined in `src/app/globals.css`, not hex values.
 - **Icons**: `lucide-react` v1 has no brand icons; use `InstagramIcon` / `FacebookIcon` from `src/components/icons/SocialIcons.tsx`.
@@ -50,21 +50,27 @@ npm run lint     # Run ESLint
 
 The look comes from the morning of the event: vanity-mirror bulbs, satin gowns, pearl and crystal hairpieces, lipstick.
 
-- **Colors** (tokens in `src/app/globals.css`): `midnight` #141B34 (text, dark sections), `pearl` #EEF0F3 (page), `paper` #F7F8FA (alternate light), `petal` #E8C9CB (soft panels), `rouge` #A3243B (the only accent: actions, focus, active states), `crystal` #C9CED8 (hairlines), `slate`/`mist` (secondary text on light/dark), `bulb` (mirror bulbs only)
-- **Typography**: Bodoni Moda (headings) + Hanken Grotesk (body, UI). Bodoni's optical size is pinned to `opsz` 12 for all serif text and weight defaults to 500, because its automatic display cut has hairlines too thin to read. Sentence case everywhere; no all-caps eyebrow labels; never highlight a single word in a headline
+- **Colors** (tokens in `src/app/globals.css`): `midnight` #141B34 (text, dark sections), `ink` #0C1124 (the deep end of satin sections, footer), `pearl` #EEF0F3 (page), `paper` #F7F8FA (alternate light), `petal` #E8C9CB (soft panels), `rouge` #A3243B (the only accent: actions, focus, active states), `crystal` #C9CED8 (hairlines), `slate`/`mist` (secondary text on light/dark), `bulb` (mirror bulbs only)
+- **Typography**: Bodoni Moda (headings) + Hanken Grotesk (body, UI). Bodoni's optical size is pinned to `opsz` 12 for all serif text and weight defaults to 500, because its automatic display cut has hairlines too thin to read. Bodoni italic is reserved for quoted words (the featured review), clock times and step numerals. Sentence case everywhere; no all-caps eyebrow labels; never highlight a single word in a headline
 - **Contrast**: secondary text uses `slate` (≥5:1 on every light background, including petal); keep body text at 4.5:1 or better
-- **Signature**: the arched vanity mirror in the home hero (`MirrorHero`); bulbs light in sequence on load, then the reflection slowly dissolves between a bride and a quinceañera (the two main audiences), with named labels and a pause button below instead of dots. Rotation holds on hover, stops once a label is chosen, and is off for reduced-motion users. These are the site's only automatic animations. The arch shape (`rounded-t-full`) repeats as a frame for key photos
+- **Signature**: the arched vanity mirror in the home hero (`MirrorHero`); bulbs light in sequence on load, then the reflection slowly dissolves between a bride and a quinceañera (the two main audiences), with named labels and a pause button below instead of dots. Rotation holds on hover, stops once a label is chosen, and is off for reduced-motion users. The one echo of it is the "morning of" timeline, whose bulbs switch on in sequence the first time it scrolls into view (`LightUp`). These are the site's only automatic animations. The arch shape (`rounded-t-full`) repeats as a frame for key photos, usually with a fine outer rule (`absolute -inset-2.5 rounded-t-full border border-crystal`) like the mirror's frame
+- **Dark sections are satin, not flat**: use the `satin` utility (deep fall-off, soft sheen bands, warm bulb spill, fine grain) instead of `bg-midnight` for full-width dark bands. Every page opens on one (home hero, `PageHeader`, the booking confirmation, the 404) so the header can sit transparent over it, and closes on one (`ClosingCta`) above the `ink` footer
 - **Structure**: hairline rules (`border-crystal`) and lists instead of cards; 12-column grid in `container` (from `PageHeader.tsx`); interior pages use `PageHeader` + `ClosingCta`
-- **Helpers**: `text-link` (underlined link with rouge rule) and `field` (form inputs; rouge border when `aria-invalid`) utilities in `globals.css`
+- **Helpers**: `text-link` (underlined link with rouge rule; hover `text-rouge` on light, `text-petal` on dark), `field` (form inputs; rouge border when `aria-invalid`), `satin`, `bleed-pad` (lines a full-bleed strip up with the container) and `no-scrollbar` utilities in `globals.css`. Focus rings are rouge on light and petal inside dark sections
 - **Placeholder images**: Unsplash images show an amber dot (`PlaceholderDot`) in dev or when `NEXT_PUBLIC_SHOW_PLACEHOLDER_MARKERS=true`, so stock photos can be tracked and replaced with real client work
 
 ## Key Components
 
-- `Header` - Fixed nav; transparent over the home hero, pearl when scrolled; full-screen midnight menu on mobile
+- `Header` - Fixed nav; transparent over each page's dark opening band, pearl when scrolled; full-screen midnight menu on mobile
 - `Button` - Variants: primary (rouge), secondary (midnight), outline
 - `MirrorHero` - Home hero mirror with sequenced bulbs and rotating bridal / quinceañera reflections
 - `PortfolioGrid` - Filterable gallery with lightbox
-- `PageHeader` / `ClosingCta` - Opening and closing blocks for interior pages
+- `DateRequestBar` - The first two answers of a date request (occasion, date) as one bar for dark sections; hands them to `/book`. Lives in `ClosingCta` only: the home hero stays a headline, one button and one link (a bar plus a row of facts there read as busy)
+- `MobileRequestBar` - Phone-only bar with "Request a date" and an Instagram DM link; appears once the hero has scrolled away, steps aside near the page end, and is absent on `/book`
+- `ServiceMenu` - Home services list with an arched preview that follows hover/focus (each row carries its own small arch on phones)
+- `WorkReel` - Full-bleed strip of tall portfolio photos: swiped on phones, stepped with arrows on desktop, ending in a link to the portfolio
+- `LightUp` - Sets `data-lit` on first scroll into view so bulbs can switch on with CSS (`group-data-lit:animate-bulb-on`)
+- `PageHeader` / `ClosingCta` - Opening and closing satin bands for interior pages; `ClosingCta` carries the `DateRequestBar` and also closes the home page (with the "how it works" steps as children)
 - `BookingFlow` - Three-step date request (event → date & place → details, with an editable summary); the confirmation is a status tracker: requested → checking availability → not booked yet
 - `ContactForm` - Message form; the confirmation names the reply email, lets them edit it, and links to a prefilled date request
 - `FormParts` - Shared form pieces: `ChoiceTile` (radio drawn as a tile), `FieldHint`, `FieldError`, `OptionalTag`
@@ -105,6 +111,6 @@ All page content, data (services, testimonials, pricing, portfolio) and metadata
 - `/reviews` permanently redirects to `/#reviews` (the Reviews page was dropped; reviews live on the home page only)
 - Set `NEXT_PUBLIC_SITE_URL` in production (canonical URLs, sitemap, OG tags) – see README
 - Forms submit to placeholder success pages (no backend)
-- `/book` is a date *request*, not a booking: no prices, and copy makes clear availability is confirmed afterwards (we don't publish a calendar). Response time is promised as "within 24 hours" everywhere; keep it consistent. `/book?occasion=…&need=…` prefills it (`bookingHref` in `src/data/booking.ts`); an unfinished request is kept in sessionStorage. Both forms validate inline with translated messages via `useFormErrors` (`src/lib/forms.ts`)
+- `/book` is a date *request*, not a booking: no prices, and copy makes clear availability is confirmed afterwards (we don't publish a calendar). Response time is promised as "within 24 hours" everywhere; keep it consistent. The action is called "Request a date" everywhere (nav, buttons, mobile bar); don't reintroduce "Book now". `/book?occasion=…&need=…&date=YYYY-MM-DD` prefills it (`bookingHref` in `src/data/booking.ts`; past or malformed dates are ignored); an unfinished request is kept in sessionStorage. Both forms validate inline with translated messages via `useFormErrors` (`src/lib/forms.ts`)
 - Mobile-first responsive design
 - Target audience: US citizens, primarily Chicagoland area

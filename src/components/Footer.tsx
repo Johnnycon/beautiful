@@ -16,14 +16,16 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-midnight text-pearl">
-      <div className="mx-auto max-w-[88rem] px-6 pt-20 pb-10 md:px-10">
-        <div className="grid gap-12 border-t border-pearl/15 pt-12 md:grid-cols-12">
+    <footer className="bg-ink text-pearl">
+      <div className="mx-auto max-w-[88rem] px-6 pt-16 pb-10 md:px-10 md:pt-20">
+        {/* The name, sized so it runs the full width of the page (it's about 9.1 ems wide) */}
+        <p className="font-serif text-[min(calc((100vw-3.5rem)/9.15),9.1rem)] leading-[0.95] tracking-[-0.02em] whitespace-nowrap md:text-[min(calc((100vw-5.5rem)/9.15),9.1rem)]">
+          Beautiful Inside Out
+        </p>
+
+        <div className="mt-12 grid gap-12 border-t border-pearl/15 pt-12 md:mt-16 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="font-serif text-4xl leading-none tracking-[-0.01em] md:text-5xl">
-              Beautiful Inside Out
-            </p>
-            <p className="mt-5 max-w-sm text-mist">{t("tagline")}</p>
+            <p className="max-w-sm text-mist">{t("tagline")}</p>
             <div className="mt-8 flex gap-3">
               <a
                 href={instagram.url}

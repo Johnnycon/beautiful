@@ -1,37 +1,41 @@
+import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import Button from "@/components/Button";
+import DateRequestBar from "@/components/DateRequestBar";
 import { container } from "@/components/PageHeader";
 
-// Dark booking prompt that sits directly above the footer on interior pages
+// Dark date-request prompt that closes every page, directly above the footer.
+// Children (e.g. the "how it works" steps on the home page) are set below it.
 export default function ClosingCta({
   title,
   description,
-  buttonLabel,
   showContactLink = true,
+  children,
 }: {
   title: string;
   description: string;
-  buttonLabel?: string;
   showContactLink?: boolean;
+  children?: ReactNode;
 }) {
   const t = useTranslations("common");
 
   return (
-    <section className="bg-midnight pt-24 text-pearl md:pt-32">
-      <div className={`${container} grid gap-8 md:grid-cols-12 md:items-end`}>
-        <h2 className="font-serif text-4xl leading-[1.05] md:col-span-7 md:text-6xl">{title}</h2>
-        <div className="md:col-span-4 md:col-start-9">
-          <p className="text-mist">{description}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <Button href="/book">{buttonLabel ?? t("bookNow")}</Button>
+    <section className="satin py-24 text-pearl md:py-32">
+      <div className={container}>
+        <div className="grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-5">
+            <h2 className="font-serif text-[2.75rem] leading-[1.04] tracking-[-0.01em] md:text-6xl">{title}</h2>
+            <p className="mt-5 max-w-md text-lg text-mist">{description}</p>
+          </div>
+          <DateRequestBar className="lg:col-span-7">
             {showContactLink && (
               <Link href="/contact" className="text-link hover:text-petal">
                 {t("contactUs")}
               </Link>
             )}
-          </div>
+          </DateRequestBar>
         </div>
+        {children}
       </div>
     </section>
   );

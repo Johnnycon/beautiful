@@ -7,13 +7,16 @@ import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileRequestBar from "@/components/MobileRequestBar";
 import StructuredData from "@/components/StructuredData";
 import "../globals.css";
 
-// Bodoni's optical-size axis keeps hairlines crisp at display sizes
+// Bodoni's optical-size axis keeps hairlines crisp at display sizes. The italic
+// is for quoted words and clock times.
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   axes: ["opsz"],
+  style: ["normal", "italic"],
   variable: "--font-bodoni",
   display: "swap",
 });
@@ -89,6 +92,7 @@ export default async function LocaleLayout({
           <Header />
           <main id="main">{children}</main>
           <Footer />
+          <MobileRequestBar />
         </NextIntlClientProvider>
       </body>
     </html>

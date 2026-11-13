@@ -9,6 +9,8 @@ export type Need = (typeof needs)[number];
 export interface BookingPrefill {
   occasion?: Occasion;
   need?: Need;
+  // YYYY-MM-DD, as produced by <input type="date">
+  date?: string;
 }
 
 // Link to /book that starts the request with these answers already chosen

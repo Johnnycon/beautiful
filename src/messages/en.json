@@ -28,7 +28,7 @@
     "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
-    "bookNow": "Book now",
+    "bookNow": "Request a date",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "switchLanguage": "Español",
@@ -38,7 +38,6 @@
     "hero": {
       "title": "Ready before the photographer is",
       "description": "Bridal, quinceañera and event hair and makeup by Lizbeth, at your home, venue or hotel anywhere in Chicagoland.",
-      "bookButton": "Book your date",
       "portfolioButton": "View portfolio",
       "language": "Hablamos español",
       "reflections": {
@@ -55,15 +54,16 @@
       }
     },
     "services": {
-      "title": "Signature beauty services",
-      "description": "From bridal elegance to quinceañera glam, we bring luxury styling wherever your moment happens.",
+      "title": "What we do, and what it costs",
+      "description": "Everything happens on location: we bring the lights, the kit and the chair to you. Prices are starting points, and your quote is set for your day and your party.",
       "viewAll": "View all services",
       "from": "From ${price}"
     },
     "portfolio": {
       "title": "The work speaks for itself",
       "description": "Weddings, quinceañeras, and special events, styled on-site across Chicagoland.",
-      "viewFull": "See the full portfolio"
+      "viewFull": "See the full portfolio",
+      "reelLabel": "Recent work, scrolls sideways"
     },
     "morning": {
       "title": "The morning of",
@@ -94,7 +94,8 @@
           "title": "Touch-ups before photos",
           "description": "We stay through first-look photos, and you keep a touch-up kit for the rest of the day."
         }
-      ]
+      ],
+      "planLink": "Plan your morning with us"
     },
     "testimonials": {
       "title": "What our clients say",
@@ -117,63 +118,99 @@
     "area": {
       "title": "Where we work",
       "description": "We come to you anywhere within 50 miles of Chicago. Travel within 25 miles is complimentary.",
-      "neighborhoodsTitle": "Chicago neighborhoods",
-      "suburbsTitle": "Suburbs",
-      "neighborhoods": [
-        "Little Village",
-        "Pilsen",
-        "Back of the Yards",
-        "Brighton Park",
-        "Archer Heights",
-        "Gage Park",
-        "Bridgeport",
-        "Garfield Ridge",
-        "Logan Square",
-        "Humboldt Park",
-        "Hermosa",
-        "Belmont Cragin"
-      ],
-      "suburbs": [
-        "Cicero",
-        "Berwyn",
-        "Oak Park",
-        "Oak Lawn",
-        "Evergreen Park",
-        "Summit",
-        "Melrose Park",
-        "Bolingbrook",
-        "Naperville",
-        "Aurora",
-        "Joliet",
-        "Elgin",
-        "Schaumburg",
-        "Waukegan"
+      "groups": [
+        {
+          "title": "Chicago neighborhoods",
+          "places": [
+            "Downtown",
+            "West Loop",
+            "River North",
+            "Streeterville",
+            "Gold Coast",
+            "South Loop",
+            "Lincoln Park",
+            "Wicker Park",
+            "Logan Square",
+            "Avondale",
+            "Humboldt Park",
+            "Hermosa",
+            "Belmont Cragin",
+            "Albany Park",
+            "O’Hare",
+            "Little Village",
+            "Pilsen",
+            "Bridgeport",
+            "Back of the Yards",
+            "Brighton Park",
+            "Archer Heights",
+            "Gage Park",
+            "Garfield Ridge"
+          ]
+        },
+        {
+          "title": "North and northwest suburbs",
+          "places": [
+            "Rosemont",
+            "Des Plaines",
+            "Park Ridge",
+            "Mount Prospect",
+            "Arlington Heights",
+            "Palatine",
+            "Wheeling",
+            "Buffalo Grove",
+            "Schaumburg",
+            "Hoffman Estates",
+            "Elk Grove Village",
+            "Hanover Park",
+            "Streamwood",
+            "Bartlett",
+            "Elgin",
+            "Carpentersville",
+            "Crystal Lake",
+            "Skokie",
+            "Evanston",
+            "Glenview",
+            "Northbrook",
+            "Highland Park",
+            "Lincolnshire",
+            "Mundelein",
+            "Gurnee",
+            "Waukegan"
+          ]
+        },
+        {
+          "title": "West and southwest suburbs",
+          "places": [
+            "Cicero",
+            "Berwyn",
+            "Oak Park",
+            "Summit",
+            "Melrose Park",
+            "Franklin Park",
+            "Bensenville",
+            "Addison",
+            "Elmhurst",
+            "Oak Brook",
+            "Downers Grove",
+            "Lombard",
+            "Glendale Heights",
+            "Carol Stream",
+            "Wheaton",
+            "West Chicago",
+            "St. Charles",
+            "Naperville",
+            "Aurora",
+            "Bolingbrook",
+            "Oak Lawn"
+          ]
+        }
       ],
       "ask": "Don’t see your town?",
       "askLink": "Ask us"
     },
     "cta": {
-      "title": "Your date deserves perfect beauty",
-      "description": "Let’s create something beautiful together. Book your consultation today and secure your spot for your special day.",
-      "bookNow": "Book now",
-      "contact": "Questions? Contact us"
-    },
-    "howItWorks": {
-      "title": "How booking works",
-      "steps": [
-        {
-          "title": "Choose your service",
-          "description": "Bridal, quinceañera, event glam, or a group booking."
-        },
-        {
-          "title": "Pick date and location",
-          "description": "We come to your home, venue or hotel."
-        },
-        {
-          "title": "Confirm and relax",
-          "description": "A deposit secures your spot. We handle the rest."
-        }
-      ]
+      "title": "Is your date still open?",
+      "description": "Tell us the date and what you’re celebrating. We’ll check the calendar and reply within 24 hours."
     }
   },
   "services": {
@@ -183,11 +220,10 @@
     },
     "includes": "What’s included",
     "addOns": "Popular add-ons",
-    "bookService": "Book this service",
+    "bookService": "Request a date",
     "cta": {
-      "title": "Ready to book your service?",
-      "description": "Let’s discuss your vision and create the perfect look for your special day.",
-      "button": "Check availability"
+      "title": "Not sure which service fits?",
+      "description": "Tell us about your day and we’ll recommend the right one, with a personal quote within 24 hours."
     },
     "from": "From ${price}",
     "duration": "Duration",
@@ -221,8 +257,7 @@
     },
     "cta": {
       "title": "Love what you see?",
-      "description": "Let’s create your perfect look. Book a consultation to discuss your vision.",
-      "button": "Book your look"
+      "description": "Tell us your date and the look you have in mind. We’ll check our calendar and reply within 24 hours."
     }
   },
   "contact": {
@@ -456,8 +491,7 @@
     "policies": "Policies"
   },
   "common": {
-    "bookNow": "Book now",
-    "contactUs": "Contact us",
+    "contactUs": "Questions? Contact us",
     "close": "Close",
     "previous": "Previous",
     "next": "Next",
@@ -471,7 +505,15 @@
       "photoshoot": "Photoshoot",
       "corporate": "Corporate event",
       "other": "Something else"
-    }
+    },
+    "dateBar": {
+      "occasion": "What are you celebrating?",
+      "occasionPlaceholder": "Choose an occasion",
+      "date": "Date you have in mind",
+      "submit": "Request this date",
+      "note": "No payment, no commitment. We reply within 24 hours."
+    },
+    "instagramDm": "Message us on Instagram"
   },
   "data": {
     "services": {

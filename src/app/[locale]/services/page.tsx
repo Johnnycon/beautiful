@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Check } from "lucide-react";
 import type { Locale } from "@/i18n/routing";
 import { getPageMetadata } from "@/lib/metadata";
 import { bookingHref } from "@/data/booking";
 import { services } from "@/data/services";
 import { addOnPrices, pricingPackages } from "@/data/pricing";
-import { Link } from "@/i18n/navigation";
 import Button from "@/components/Button";
 import ClosingCta from "@/components/ClosingCta";
 import PageHeader, { container } from "@/components/PageHeader";
@@ -35,10 +35,10 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
     <>
       <PageHeader title={t("hero.title")} description={t("hero.description")}>
         <nav className="mt-6 flex gap-6 text-[0.9375rem]" aria-label={t("hero.title")}>
-          <a href="#packages" className="text-link hover:text-rouge">
+          <a href="#packages" className="text-link hover:text-petal">
             {t("packages.title")}
           </a>
-          <a href="#policies" className="text-link hover:text-rouge">
+          <a href="#policies" className="text-link hover:text-petal">
             {t("policies.title")}
           </a>
         </nav>
@@ -46,41 +46,50 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
 
       {/* Services */}
       <section className="pb-24 md:pb-36">
-        <ol className={`${container} border-t border-crystal`}>
+        <ol className={container}>
           {services.map((service, index) => (
             <li
               key={service.id}
               id={service.id}
-              className="grid gap-8 border-b border-crystal py-12 md:grid-cols-12 md:py-16"
+              className="grid gap-x-8 gap-y-10 border-b border-crystal py-14 md:grid-cols-12 md:py-20"
             >
-              <div className="relative aspect-[4/5] overflow-hidden md:col-span-4 lg:col-span-3">
-                <Image
-                  src={service.image}
-                  alt={tData(`${service.id}.title`)}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  preload={index === 0}
-                  className="object-cover"
-                />
-                <PlaceholderDot src={service.image} />
+              <div className="relative mx-auto w-full max-w-[19rem] self-start md:col-span-4 md:mx-0 md:max-w-[21rem]">
+                {/* Fine outer rule, like the mirror's frame */}
+                <div aria-hidden className="absolute -inset-2.5 rounded-t-full border border-crystal" />
+                <div className="relative aspect-[3/4] overflow-hidden rounded-t-full bg-crystal/40">
+                  <Image
+                    src={service.image}
+                    alt={tData(`${service.id}.title`)}
+                    fill
+                    sizes="(max-width: 768px) 19rem, 21rem"
+                    preload={index === 0}
+                    className="object-cover"
+                  />
+                  <PlaceholderDot src={service.image} />
+                </div>
               </div>
 
-              <div className="md:col-span-8 lg:col-span-8 lg:col-start-5">
+              <div className="md:col-span-8 lg:col-span-7 lg:col-start-6">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
-                  <h2 className="font-serif text-3xl md:text-[2.75rem]">{tData(`${service.id}.title`)}</h2>
-                  <p className="tabular-nums text-lg">{t("from", { price: service.startingPrice })}</p>
+                  <h2 className="font-serif text-4xl md:text-5xl">{tData(`${service.id}.title`)}</h2>
+                  <p className="font-serif text-2xl tabular-nums md:text-[1.75rem]">
+                    {t("from", { price: service.startingPrice })}
+                  </p>
                 </div>
-                <p className="mt-1 text-sm text-slate">
+                <p className="mt-2 text-[0.9375rem] text-slate">
                   {t("duration")}: {tData(`${service.id}.duration`)}
                 </p>
                 <p className="mt-6 max-w-2xl text-lg">{tData(`${service.id}.description`)}</p>
 
-                <div className="mt-10 grid gap-10 lg:grid-cols-2">
+                <div className="mt-10 grid gap-x-10 gap-y-10 lg:grid-cols-2">
                   <div>
-                    <h3 className="font-sans text-sm text-slate">{t("includes")}</h3>
-                    <ul className="mt-3 divide-y divide-crystal border-y border-crystal">
+                    <h3 className="border-b border-crystal pb-3 font-sans text-[0.9375rem] text-slate">
+                      {t("includes")}
+                    </h3>
+                    <ul className="mt-4 space-y-2.5">
                       {(tData.raw(`${service.id}.includes`) as string[]).map((item) => (
-                        <li key={item} className="py-2.5">
+                        <li key={item} className="flex gap-3">
+                          <Check aria-hidden size={16} strokeWidth={2.25} className="mt-[0.4rem] shrink-0 text-rouge" />
                           {item}
                         </li>
                       ))}
@@ -88,10 +97,12 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
                   </div>
                   {service.addOnPrices && (
                     <div>
-                      <h3 className="font-sans text-sm text-slate">{t("addOns")}</h3>
-                      <ul className="mt-3 divide-y divide-crystal border-y border-crystal">
+                      <h3 className="border-b border-crystal pb-3 font-sans text-[0.9375rem] text-slate">
+                        {t("addOns")}
+                      </h3>
+                      <ul className="mt-4 space-y-2.5">
                         {service.addOnPrices.map((price, i) => (
-                          <li key={i} className="flex justify-between gap-4 py-2.5">
+                          <li key={i} className="flex justify-between gap-4">
                             <span>{tData(`${service.id}.addOns.${i}.name`)}</span>
                             <span className="tabular-nums text-slate">+${price}</span>
                           </li>
@@ -101,12 +112,9 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
                   )}
                 </div>
 
-                <Link
-                  href={bookingHref(service.booking)}
-                  className="text-link mt-10 inline-block hover:text-rouge"
-                >
+                <Button href={bookingHref(service.booking)} variant="secondary" className="mt-10">
                   {t("bookService")}
-                </Link>
+                </Button>
               </div>
             </li>
           ))}
@@ -125,9 +133,11 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
             {pricingPackages.map((pkg) => (
               <article
                 key={pkg.id}
-                className="flex flex-col border-b border-crystal py-10 md:px-8 md:first:pl-0 lg:border-b-0 lg:border-l lg:first:border-l-0"
+                className={`flex flex-col border-b border-crystal px-6 py-10 md:px-8 lg:border-b-0 lg:border-l lg:first:border-l-0 ${
+                  pkg.popular ? "bg-petal/45" : ""
+                }`}
               >
-                <p className={`h-6 text-sm ${pkg.popular ? "text-rouge" : ""}`}>
+                <p className={`h-6 text-sm font-medium ${pkg.popular ? "text-rouge-deep" : ""}`}>
                   {pkg.popular ? t("packages.popular") : null}
                 </p>
                 <h3 className="mt-2 font-serif text-[1.75rem]">{tPricing(`packages.${pkg.id}.name`)}</h3>
@@ -142,7 +152,8 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
                 </p>
                 <ul className="mt-6 grow space-y-2 text-[0.9375rem]">
                   {(tPricing.raw(`packages.${pkg.id}.features`) as string[]).map((feature) => (
-                    <li key={feature} className="border-l border-crystal pl-3">
+                    <li key={feature} className="flex gap-2.5">
+                      <Check aria-hidden size={14} strokeWidth={2.25} className="mt-[0.35rem] shrink-0 text-rouge" />
                       {feature}
                     </li>
                   ))}
@@ -199,7 +210,6 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
       <ClosingCta
         title={t("cta.title")}
         description={t("cta.description")}
-        buttonLabel={t("cta.button")}
       />
     </>
   );

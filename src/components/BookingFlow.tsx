@@ -7,7 +7,7 @@ import { useFormatter, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
 import { needs, occasions, type Need, type Occasion } from "@/data/booking";
-import { describedBy, emailPattern, formatPhone, phonePattern, useFormErrors } from "@/lib/forms";
+import { describedBy, emailPattern, formatPhone, localISODate, phonePattern, useFormErrors } from "@/lib/forms";
 import Button from "@/components/Button";
 import { ChoiceTile, FieldError, FieldHint, OptionalTag } from "@/components/FormParts";
 import PageHeader, { container } from "@/components/PageHeader";
@@ -56,12 +56,6 @@ const STORAGE_KEY = "booking-request";
 const questionClass = "mb-3 block font-medium";
 const labelClass = "mb-2 block font-medium";
 
-function localISODate(date: Date) {
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${date.getFullYear()}-${month}-${day}`;
-}
-
 export default function BookingFlow() {
   const t = useTranslations("book");
   const tOccasions = useTranslations("common.occasions");
@@ -77,7 +71,7 @@ export default function BookingFlow() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Pick up an unfinished request from this tab (it survives a refresh or a look at the
-  // portfolio), then apply answers passed in the link, e.g. /book?occasion=wedding
+  // portfolio), then apply answers passed in the link, e.g. /book?occasion=wedding&date=2027-06-12
   useEffect(() => {
     let saved: { request?: Partial<BookingRequest>; step?: Step } = {};
     try {
@@ -86,6 +80,9 @@ export default function BookingFlow() {
     const params = new URLSearchParams(window.location.search);
     const occasion = occasions.find((o) => o === params.get("occasion"));
     const need = needs.find((n) => n === params.get("need"));
+    // A date from the quick request bar; ignore anything malformed or already past
+    const dateParam = params.get("date") ?? "";
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(dateParam) && dateParam >= localISODate(new Date()) ? dateParam : "";
 
     // eslint-disable-next-line react-hooks/set-state-in-effect -- storage only exists after hydration
     setRequest({
@@ -93,8 +90,9 @@ export default function BookingFlow() {
       ...saved.request,
       ...(occasion && { occasion }),
       ...(need && { need }),
+      ...(date && { date }),
     });
-    if (saved.step && !occasion && !need) setStep(saved.step);
+    if (saved.step && !occasion && !need && !date) setStep(saved.step);
     setIsRestored(true);
   }, []);
 
@@ -253,76 +251,82 @@ export default function BookingFlow() {
     ] as const;
 
     return (
-      <section className="pt-36 pb-24 md:pt-44 md:pb-32">
-        <div className={container}>
-          <p className="flex items-center gap-3 font-medium">
-            <span aria-hidden className="flex size-6 items-center justify-center rounded-full bg-rouge text-pearl">
-              <Check size={14} strokeWidth={3} />
-            </span>
-            {t("success.sent", { name: firstName })}
-          </p>
-          <h1
-            ref={successHeadingRef}
-            tabIndex={-1}
-            className="mt-6 font-serif text-5xl leading-[1.02] tracking-[-0.015em] outline-none md:text-7xl"
-          >
-            {t("success.title")}
-          </h1>
+      <>
+        <section className="satin pt-36 pb-14 text-pearl md:pt-48 md:pb-20">
+          <div className={container}>
+            <p className="flex items-center gap-3 font-medium">
+              <span aria-hidden className="flex size-6 items-center justify-center rounded-full bg-rouge text-pearl">
+                <Check size={14} strokeWidth={3} />
+              </span>
+              {t("success.sent", { name: firstName })}
+            </p>
+            <h1
+              ref={successHeadingRef}
+              tabIndex={-1}
+              className="mt-6 font-serif text-5xl leading-[1.02] tracking-[-0.015em] outline-none md:text-7xl lg:text-8xl"
+            >
+              {t("success.title")}
+            </h1>
+          </div>
+        </section>
 
-          <ol className="mt-14 grid gap-10 md:mt-20 md:grid-cols-3 md:gap-8">
-            {stages.map((stage) => (
-              <li
-                key={stage.key}
-                aria-current={stage.state === "current" ? "step" : undefined}
-                className={`border-t-2 pt-5 ${
-                  stage.state === "done"
-                    ? "border-midnight"
-                    : stage.state === "current"
-                      ? "border-rouge"
-                      : "border-crystal"
-                }`}
-              >
-                <p
-                  className={`flex items-center gap-2.5 text-sm font-medium ${
-                    stage.state === "current" ? "text-rouge" : stage.state === "todo" ? "text-slate" : ""
+        <section className="pt-14 pb-24 md:pt-20 md:pb-32">
+          <div className={container}>
+            <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
+              {stages.map((stage) => (
+                <li
+                  key={stage.key}
+                  aria-current={stage.state === "current" ? "step" : undefined}
+                  className={`border-t-2 pt-5 ${
+                    stage.state === "done"
+                      ? "border-midnight"
+                      : stage.state === "current"
+                        ? "border-rouge"
+                        : "border-crystal"
                   }`}
                 >
-                  <span
-                    aria-hidden
-                    className={`flex size-5 items-center justify-center rounded-full ${
-                      stage.state === "done"
-                        ? "bg-midnight text-pearl"
-                        : stage.state === "current"
-                          ? "border-2 border-rouge"
-                          : "border border-slate/50"
+                  <p
+                    className={`flex items-center gap-2.5 text-sm font-medium ${
+                      stage.state === "current" ? "text-rouge" : stage.state === "todo" ? "text-slate" : ""
                     }`}
                   >
-                    {stage.state === "done" && <Check size={12} strokeWidth={3} />}
-                    {stage.state === "current" && <span className="size-2 rounded-full bg-rouge" />}
-                  </span>
-                  {t(`success.stages.${stage.key}.label`)}
-                  <span className="sr-only">({t(`success.state.${stage.state}`)})</span>
-                </p>
-                <p className="mt-4 font-serif text-2xl leading-tight md:text-[1.75rem]">{stage.title}</p>
-                {stage.details.map((detail) => (
-                  <p key={detail} className="mt-2 text-slate">
-                    {detail}
+                    <span
+                      aria-hidden
+                      className={`flex size-5 items-center justify-center rounded-full ${
+                        stage.state === "done"
+                          ? "bg-midnight text-pearl"
+                          : stage.state === "current"
+                            ? "border-2 border-rouge"
+                            : "border border-slate/50"
+                      }`}
+                    >
+                      {stage.state === "done" && <Check size={12} strokeWidth={3} />}
+                      {stage.state === "current" && <span className="size-2 rounded-full bg-rouge" />}
+                    </span>
+                    {t(`success.stages.${stage.key}.label`)}
+                    <span className="sr-only">({t(`success.state.${stage.state}`)})</span>
                   </p>
-                ))}
-              </li>
-            ))}
-          </ol>
+                  <p className="mt-4 font-serif text-2xl leading-tight md:text-[1.75rem]">{stage.title}</p>
+                  {stage.details.map((detail) => (
+                    <p key={detail} className="mt-2 text-slate">
+                      {detail}
+                    </p>
+                  ))}
+                </li>
+              ))}
+            </ol>
 
-          <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <Button href="/portfolio" variant="secondary">
-              {t("success.viewPortfolio")}
-            </Button>
-            <Link href="/" className="text-link hover:text-rouge">
-              {t("success.backToHome")}
-            </Link>
+            <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <Button href="/portfolio" variant="secondary">
+                {t("success.viewPortfolio")}
+              </Button>
+              <Link href="/" className="text-link hover:text-rouge">
+                {t("success.backToHome")}
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </>
     );
   }
 
@@ -337,7 +341,7 @@ export default function BookingFlow() {
     <>
       <PageHeader title={t("hero.title")} description={t("hero.description")} />
 
-      <section className="pb-24 md:pb-32">
+      <section className="pt-14 pb-24 md:pt-20 md:pb-32">
         <div className={`${container} grid gap-16 md:grid-cols-12`}>
           <div className="md:col-span-7">
             {/* Progress */}
