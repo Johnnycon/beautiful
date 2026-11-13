@@ -36,21 +36,16 @@
   },
   "home": {
     "hero": {
-      "title": "Lista antes que el fotógrafo",
-      "description": "Maquillaje y peinado para novias, quinceañeras y eventos por Lizbeth, en tu casa, salón u hotel en todo el área de Chicago.",
-      "portfolioButton": "Ver portafolio",
+      "title": "Maquillaje y peinado a domicilio",
+      "description": "Para bodas, quinceañeras y eventos en todo el área de Chicago. Lizbeth lleva las luces, el kit y la silla a tu casa, salón u hotel.",
+      "imageAlt": "Una silla de maquillaje, luces y un kit abierto instalados en una sala al amanecer, con un vestido blanco colgado junto a la ventana",
       "language": "Atención en español e inglés",
-      "reflections": {
-        "bridal": {
-          "label": "Novia",
-          "alt": "Una novia con bata de satín azul medianoche, maquillaje soft glam, chongo bajo y un tocado de perlas y cristales, mirando hacia abajo"
-        },
-        "quinceanera": {
-          "label": "Quinceañera",
-          "alt": "Una quinceañera sonriente con cabello castaño claro y tiara de cristales, con vestido de gala rojo profundo y escote bordado con cristales, en un salón iluminado por candelabros"
-        },
-        "pause": "Pausar el espejo",
-        "play": "Reproducir el espejo"
+      "facts": {
+        "prices": "Precios desde",
+        "pricesValue": "Novias desde ${bridal} · Quinceañeras desde ${quinceanera}",
+        "experience": "Experiencia",
+        "experienceValue": "Más de 11 años en maquillaje y peinado",
+        "instagram": "Mira su trabajo en Instagram"
       }
     },
     "services": {

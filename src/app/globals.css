@@ -16,7 +16,7 @@
   --color-crystal: #C9CED8;       /* hairlines and fine detail */
   --color-slate: #4A5066;         /* secondary text on light (≥5:1 on petal, ≥7:1 on pearl) */
   --color-mist: #A9AFC2;          /* secondary text on midnight */
-  --color-bulb: #FFE7B8;          /* mirror bulbs only */
+  --color-bulb: #FFE7B8;          /* the "morning of" timeline's bulbs only */
 
   /* Bodoni's tall caps need a little more room than Tailwind's 1.0 defaults */
   --text-5xl--line-height: 1.05;
@@ -25,8 +25,6 @@
   --text-8xl--line-height: 1;
 
   --animate-bulb-on: bulb-on 700ms ease-out both;
-  --animate-mirror-light: mirror-light 1600ms ease-out both;
-  --animate-mirror-glow: mirror-glow 2000ms ease-out both;
 
   @keyframes bulb-on {
     0% { background-color: color-mix(in srgb, var(--color-crystal) 25%, transparent); box-shadow: none; }
@@ -35,16 +33,6 @@
       background-color: var(--color-bulb);
       box-shadow: 0 0 10px 2px rgb(255 231 184 / 0.7), 0 0 36px 8px rgb(255 231 184 / 0.25);
     }
-  }
-
-  @keyframes mirror-glow {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes mirror-light {
-    from { filter: brightness(0.35) saturate(0.6); }
-    to { filter: brightness(1) saturate(1); }
   }
 }
 

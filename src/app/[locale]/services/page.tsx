@@ -54,7 +54,7 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
               className="grid gap-x-8 gap-y-10 border-b border-crystal py-14 md:grid-cols-12 md:py-20"
             >
               <div className="relative mx-auto w-full max-w-[19rem] self-start md:col-span-4 md:mx-0 md:max-w-[21rem]">
-                {/* Fine outer rule, like the mirror's frame */}
+                {/* Fine outer rule around the arch */}
                 <div aria-hidden className="absolute -inset-2.5 rounded-t-full border border-crystal" />
                 <div className="relative aspect-[3/4] overflow-hidden rounded-t-full bg-crystal/40">
                   <Image
