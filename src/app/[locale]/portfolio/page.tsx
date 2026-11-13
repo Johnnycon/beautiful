@@ -32,7 +32,7 @@ export default async function PortfolioPage({ params }: PageProps<"/[locale]/por
     <>
       <PageHeader title={t("hero.title")} description={t("hero.description")} />
 
-      <section className="pb-24 md:pb-32">
+      <section className="pt-10 pb-24 md:pt-14 md:pb-32">
         <div className={container}>
           <PortfolioGrid items={portfolioItems} />
         </div>
@@ -62,7 +62,6 @@ export default async function PortfolioPage({ params }: PageProps<"/[locale]/por
       <ClosingCta
         title={t("cta.title")}
         description={t("cta.description")}
-        buttonLabel={t("cta.button")}
       />
     </>
   );

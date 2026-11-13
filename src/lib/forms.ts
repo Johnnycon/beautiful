@@ -62,3 +62,11 @@ export function formatPhone(value: string) {
   if (digits.length !== 10 || value.trim().startsWith("+")) return value;
   return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
 }
+
+// Today's (or any) date as YYYY-MM-DD in the visitor's own time zone, the format
+// <input type="date"> reads and writes
+export function localISODate(date: Date) {
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
+}

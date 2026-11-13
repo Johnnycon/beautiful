@@ -73,7 +73,7 @@ export default function PortfolioGrid({ items }: { items: TranslatedPortfolioIte
       </div>
 
       {/* Gallery */}
-      <motion.ul layout className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:gap-x-6">
+      <motion.ul layout className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:gap-x-6 lg:gap-y-14">
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item, index) => (
             <motion.li
@@ -89,7 +89,7 @@ export default function PortfolioGrid({ items }: { items: TranslatedPortfolioIte
                 onClick={() => setSelectedId(item.id)}
                 className="group block w-full text-left"
               >
-                <span className="relative block aspect-[4/5] overflow-hidden bg-crystal/30">
+                <span className="relative block aspect-[3/4] overflow-hidden rounded-[2px] bg-crystal/30">
                   <Image
                     src={item.imageUrl}
                     alt={`${item.title}: ${item.description}`}
@@ -100,7 +100,7 @@ export default function PortfolioGrid({ items }: { items: TranslatedPortfolioIte
                   />
                   <PlaceholderDot src={item.imageUrl} />
                 </span>
-                <span className="mt-3 block font-serif text-lg md:text-xl">{item.title}</span>
+                <span className="mt-4 block font-serif text-lg transition-colors group-hover:text-rouge md:text-xl">{item.title}</span>
                 <span className="block text-sm text-slate">{item.description}</span>
               </button>
             </motion.li>

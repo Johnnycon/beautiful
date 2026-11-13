@@ -13,8 +13,8 @@ export default function Header() {
   const locale = useLocale();
   const t = useTranslations("nav");
 
-  // The home page opens on the dark mirror hero, so the header starts transparent there
-  const isOverHero = pathname === "/" && !isScrolled && !isMenuOpen;
+  // Every page opens on a dark satin band, so the header starts transparent over it
+  const isOverHero = !isScrolled && !isMenuOpen;
   const alternateLocale = locale === "en" ? "es" : "en";
 
   const navLinks = [
@@ -50,7 +50,7 @@ export default function Header() {
           ? "bg-midnight"
           : isOverHero
             ? "bg-transparent"
-            : "bg-pearl/92 backdrop-blur-md border-b border-crystal/70"
+            : "border-b border-crystal/70 bg-pearl/92 backdrop-blur-md"
       }`}
     >
       <nav
@@ -93,7 +93,7 @@ export default function Header() {
           <Link
             href="/book"
             className={`rounded-[3px] border px-5 py-2.5 text-[0.9375rem] font-medium transition-colors ${
-              // Over the hero, which has its own booking button, this steps back to an outline
+              // Over the opening band this steps back to an outline, so it doesn't compete with the page's own request button
               isOverHero
                 ? "border-pearl/50 text-pearl hover:border-pearl hover:bg-pearl hover:text-midnight"
                 : "border-rouge bg-rouge text-pearl hover:border-rouge-deep hover:bg-rouge-deep"
@@ -154,7 +154,7 @@ export default function Header() {
               <Link
                 href="/book"
                 onClick={() => setIsMenuOpen(false)}
-                className="rounded-[3px] bg-rouge px-6 py-3 font-medium text-pearl"
+                className="rounded-[3px] bg-rouge px-6 py-3 font-medium text-pearl shadow-[inset_0_1px_0_rgb(255_255_255/0.16)]"
               >
                 {t("bookNow")}
               </Link>

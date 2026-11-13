@@ -28,7 +28,7 @@
     "home": "Inicio",
     "services": "Servicios",
     "portfolio": "Portafolio",
-    "bookNow": "Reservar",
+    "bookNow": "Solicitar fecha",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "switchLanguage": "English",
@@ -38,7 +38,6 @@
     "hero": {
       "title": "Lista antes que el fotógrafo",
       "description": "Maquillaje y peinado para novias, quinceañeras y eventos por Lizbeth, en tu casa, salón u hotel en todo el área de Chicago.",
-      "bookButton": "Reserva tu fecha",
       "portfolioButton": "Ver portafolio",
       "language": "Atención en español e inglés",
       "reflections": {
@@ -55,15 +54,16 @@
       }
     },
     "services": {
-      "title": "Servicios de belleza exclusivos",
-      "description": "Desde la elegancia nupcial hasta el glamour de quinceañera, llevamos el estilo de lujo a donde sea tu momento especial.",
+      "title": "Lo que hacemos y cuánto cuesta",
+      "description": "Todo es a domicilio: llevamos las luces, el kit y la silla hasta donde estés. Los precios son un punto de partida, y tu cotización se arma según tu día y tu grupo.",
       "viewAll": "Ver todos los servicios",
       "from": "Desde ${price}"
     },
     "portfolio": {
       "title": "El trabajo habla por sí solo",
       "description": "Bodas, quinceañeras y eventos especiales, a domicilio en todo el área de Chicago.",
-      "viewFull": "Ver el portafolio completo"
+      "viewFull": "Ver el portafolio completo",
+      "reelLabel": "Trabajo reciente, se desplaza hacia los lados"
     },
     "morning": {
       "title": "La mañana del evento",
@@ -94,7 +94,8 @@
           "title": "Retoques antes de las fotos",
           "description": "Nos quedamos hasta las primeras fotos, y te llevas un kit de retoque para el resto del día."
         }
-      ]
+      ],
+      "planLink": "Planea tu mañana con nosotras"
     },
     "testimonials": {
       "title": "Lo que dicen nuestras clientas",
@@ -117,63 +118,99 @@
     "area": {
       "title": "Dónde trabajamos",
       "description": "Vamos a donde estés, hasta 50 millas de Chicago. El traslado dentro de 25 millas es gratis.",
-      "neighborhoodsTitle": "Barrios de Chicago",
-      "suburbsTitle": "Suburbios",
-      "neighborhoods": [
-        "Little Village",
-        "Pilsen",
-        "Back of the Yards",
-        "Brighton Park",
-        "Archer Heights",
-        "Gage Park",
-        "Bridgeport",
-        "Garfield Ridge",
-        "Logan Square",
-        "Humboldt Park",
-        "Hermosa",
-        "Belmont Cragin"
-      ],
-      "suburbs": [
-        "Cicero",
-        "Berwyn",
-        "Oak Park",
-        "Oak Lawn",
-        "Evergreen Park",
-        "Summit",
-        "Melrose Park",
-        "Bolingbrook",
-        "Naperville",
-        "Aurora",
-        "Joliet",
-        "Elgin",
-        "Schaumburg",
-        "Waukegan"
+      "groups": [
+        {
+          "title": "Barrios de Chicago",
+          "places": [
+            "El centro",
+            "West Loop",
+            "River North",
+            "Streeterville",
+            "Gold Coast",
+            "South Loop",
+            "Lincoln Park",
+            "Wicker Park",
+            "Logan Square",
+            "Avondale",
+            "Humboldt Park",
+            "Hermosa",
+            "Belmont Cragin",
+            "Albany Park",
+            "O’Hare",
+            "Little Village",
+            "Pilsen",
+            "Bridgeport",
+            "Back of the Yards",
+            "Brighton Park",
+            "Archer Heights",
+            "Gage Park",
+            "Garfield Ridge"
+          ]
+        },
+        {
+          "title": "Suburbios del norte y noroeste",
+          "places": [
+            "Rosemont",
+            "Des Plaines",
+            "Park Ridge",
+            "Mount Prospect",
+            "Arlington Heights",
+            "Palatine",
+            "Wheeling",
+            "Buffalo Grove",
+            "Schaumburg",
+            "Hoffman Estates",
+            "Elk Grove Village",
+            "Hanover Park",
+            "Streamwood",
+            "Bartlett",
+            "Elgin",
+            "Carpentersville",
+            "Crystal Lake",
+            "Skokie",
+            "Evanston",
+            "Glenview",
+            "Northbrook",
+            "Highland Park",
+            "Lincolnshire",
+            "Mundelein",
+            "Gurnee",
+            "Waukegan"
+          ]
+        },
+        {
+          "title": "Suburbios del oeste y suroeste",
+          "places": [
+            "Cicero",
+            "Berwyn",
+            "Oak Park",
+            "Summit",
+            "Melrose Park",
+            "Franklin Park",
+            "Bensenville",
+            "Addison",
+            "Elmhurst",
+            "Oak Brook",
+            "Downers Grove",
+            "Lombard",
+            "Glendale Heights",
+            "Carol Stream",
+            "Wheaton",
+            "West Chicago",
+            "St. Charles",
+            "Naperville",
+            "Aurora",
+            "Bolingbrook",
+            "Oak Lawn"
+          ]
+        }
       ],
       "ask": "¿No ves tu ciudad?",
       "askLink": "Pregúntanos"
     },
     "cta": {
-      "title": "Tu fecha merece belleza perfecta",
-      "description": "Creemos algo hermoso juntas. Reserva tu consulta hoy y asegura tu lugar para tu día especial.",
-      "bookNow": "Reservar ahora",
-      "contact": "¿Preguntas? Contáctanos"
-    },
-    "howItWorks": {
-      "title": "Cómo reservar",
-      "steps": [
-        {
-          "title": "Elige tu servicio",
-          "description": "Nupcial, quinceañera, glam para eventos o reserva grupal."
-        },
-        {
-          "title": "Escoge fecha y lugar",
-          "description": "Vamos a tu casa, salón u hotel."
-        },
-        {
-          "title": "Confirma y relájate",
-          "description": "Un depósito asegura tu lugar. Nosotros nos encargamos del resto."
-        }
-      ]
+      "title": "¿Tu fecha sigue disponible?",
+      "description": "Dinos la fecha y qué vas a celebrar. Revisamos la agenda y te respondemos dentro de 24 horas."
     }
   },
   "services": {
@@ -183,11 +220,10 @@
     },
     "includes": "Qué incluye",
     "addOns": "Complementos populares",
-    "bookService": "Reservar este servicio",
+    "bookService": "Solicitar una fecha",
     "cta": {
-      "title": "¿Lista para reservar tu servicio?",
-      "description": "Hablemos de tu visión y creemos el look perfecto para tu día especial.",
-      "button": "Ver disponibilidad"
+      "title": "¿No sabes qué servicio elegir?",
+      "description": "Cuéntanos sobre tu día y te recomendaremos el indicado, con una cotización personal dentro de 24 horas."
     },
     "from": "Desde ${price}",
     "duration": "Duración",
@@ -221,8 +257,7 @@
     },
     "cta": {
       "title": "¿Te gusta lo que ves?",
-      "description": "Creemos tu look perfecto. Reserva una consulta para hablar de tu visión.",
-      "button": "Reserva tu look"
+      "description": "Cuéntanos tu fecha y el look que tienes en mente. Revisamos nuestra agenda y te respondemos dentro de 24 horas."
     }
   },
   "contact": {
@@ -456,8 +491,7 @@
     "policies": "Políticas"
   },
   "common": {
-    "bookNow": "Reservar ahora",
-    "contactUs": "Contáctanos",
+    "contactUs": "¿Preguntas? Contáctanos",
     "close": "Cerrar",
     "previous": "Anterior",
     "next": "Siguiente",
@@ -471,7 +505,15 @@
       "photoshoot": "Sesión de fotos",
       "corporate": "Evento corporativo",
       "other": "Otra ocasión"
-    }
+    },
+    "dateBar": {
+      "occasion": "¿Qué estás celebrando?",
+      "occasionPlaceholder": "Elige una ocasión",
+      "date": "Fecha que tienes en mente",
+      "submit": "Solicitar esta fecha",
+      "note": "Sin pago y sin compromiso. Respondemos dentro de 24 horas."
+    },
+    "instagramDm": "Escríbenos por Instagram"
   },
   "data": {
     "services": {

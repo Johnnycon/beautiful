@@ -27,4 +27,4 @@ npm run lint
 - `BeautySalon` JSON-LD structured data on every page (`src/components/StructuredData.tsx`), business details in `src/config/site.ts`
 - All pages are statically prerendered for both locales
 
-See `CLAUDE.md` for project structure and i18n conventions.
+See `AGENTS.md` for project structure and i18n conventions (`CLAUDE.md` imports it for Claude Code).

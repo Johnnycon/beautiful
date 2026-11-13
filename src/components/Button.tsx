@@ -12,7 +12,8 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary: "bg-rouge text-pearl hover:bg-rouge-deep",
+  // A hairline of light along the top edge, like the sheen on a lipstick bullet
+  primary: "bg-rouge text-pearl shadow-[inset_0_1px_0_rgb(255_255_255/0.16)] hover:bg-rouge-deep",
   secondary: "bg-midnight text-pearl hover:bg-midnight-soft",
   outline: "border border-current hover:bg-midnight hover:text-pearl hover:border-midnight",
 };

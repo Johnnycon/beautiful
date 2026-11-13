@@ -22,7 +22,6 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
   setRequestLocale(locale as Locale);
 
   const t = await getTranslations("contact");
-  const tCommon = await getTranslations("common");
 
   const details = [
     {
@@ -51,9 +50,10 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
     <>
       <PageHeader title={t("hero.title")} description={t("hero.description")} />
 
-      <section className="pb-24 md:pb-32">
+      <section className="pt-14 pb-24 md:pt-20 md:pb-32">
         <div className={`${container} grid gap-16 md:grid-cols-12`}>
-          <dl className="grid content-start gap-8 border-t border-midnight pt-8 sm:grid-cols-2 md:col-span-4 md:grid-cols-1">
+          {/* On phones the form comes first; the details follow it */}
+          <dl className="order-2 grid content-start gap-8 border-t border-midnight pt-8 sm:grid-cols-2 md:order-1 md:col-span-4 md:grid-cols-1">
             {details.map((detail) => (
               <div key={detail.label}>
                 <dt className="text-sm text-slate">{detail.label}</dt>
@@ -62,7 +62,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
               </div>
             ))}
           </dl>
-          <div className="md:col-span-7 md:col-start-6">
+          <div className="order-1 md:order-2 md:col-span-7 md:col-start-6">
             <ContactForm />
           </div>
         </div>
@@ -91,7 +91,6 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
       <ClosingCta
         title={t("cta.title")}
         description={t("cta.description")}
-        buttonLabel={tCommon("requestDate")}
         showContactLink={false}
       />
     </>
