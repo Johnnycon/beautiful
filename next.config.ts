@@ -5,10 +5,15 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  // Pricing was merged into the Services page; the Reviews page was dropped
-  // in favour of the reviews on the home page
   async redirects() {
     return [
+      // English lives at the root, so /en/... is a duplicate of it. The proxy
+      // would answer with a temporary (307) redirect; make it permanent so
+      // search engines fold any /en links into the canonical URL.
+      { source: "/en", destination: "/", permanent: true },
+      { source: "/en/:path*", destination: "/:path*", permanent: true },
+      // Pricing was merged into the Services page; the Reviews page was dropped
+      // in favour of the reviews on the home page
       { source: "/pricing", destination: "/services#packages", permanent: true },
       { source: "/es/pricing", destination: "/es/services#packages", permanent: true },
       { source: "/reviews", destination: "/#reviews", permanent: true },
