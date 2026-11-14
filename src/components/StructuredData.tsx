@@ -1,23 +1,17 @@
 import { siteConfig } from "@/config/site";
-import { localizedUrl } from "@/lib/metadata";
-import type { Locale } from "@/i18n/routing";
 
 // LocalBusiness (BeautySalon) schema so search engines can show the business
 // name, service area, address and social profiles.
-export default function StructuredData({
-  locale,
-  description,
-}: {
-  locale: Locale;
-  description: string;
-}) {
+export default function StructuredData({ description }: { description: string }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     "@id": `${siteConfig.url}/#business`,
     name: siteConfig.name,
     description,
-    url: localizedUrl(locale, "/"),
+    // One business, one URL: the English home is the canonical entity URL on
+    // both locales (the Spanish page is linked through hreflang)
+    url: siteConfig.url,
     image: `${siteConfig.url}${siteConfig.ogImage}`,
     priceRange: siteConfig.priceRange,
     address: { "@type": "PostalAddress", ...siteConfig.address },

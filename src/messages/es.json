@@ -1,11 +1,11 @@
 {
   "metadata": {
     "home": {
-      "title": "Beautiful Inside Out | Maquillaje y Peinado de Lujo a Domicilio en Chicago",
+      "title": "Beautiful Inside Out | Maquillaje y peinado a domicilio en Chicago",
       "description": "Maquillaje y peinado premium a domicilio para bodas, quinceañeras, sweet 16 y eventos especiales en todo el área de Chicago. Nosotras vamos a ti."
     },
     "services": {
-      "title": "Servicios y Precios",
+      "title": "Servicios y precios",
       "description": "Maquillaje y peinado nupcial, quinceañera, sweet 16 y eventos en el área de Chicago: servicios, paquetes, extras y políticas con precios transparentes."
     },
     "portfolio": {
@@ -17,11 +17,8 @@
       "description": "¿Preguntas sobre maquillaje y peinado para tu boda, quinceañera o evento? Comunícate con Beautiful Inside Out."
     },
     "book": {
-      "title": "Solicita Tu Fecha",
-      "description": "Solicita maquillaje y peinado a domicilio para tu boda, quinceañera o evento en el área de Chicago. Confirmamos disponibilidad y enviamos una cotización personal en 24 horas."
-    },
-    "notFound": {
-      "title": "Página No Encontrada"
+      "title": "Solicita tu fecha",
+      "description": "Solicita maquillaje y peinado a domicilio para tu boda, quinceañera o evento en el área de Chicago. Confirmamos disponibilidad y te cotizamos dentro de 24 horas."
     }
   },
   "nav": {

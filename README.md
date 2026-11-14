@@ -17,7 +17,7 @@ npm run lint
 
 | Variable | Purpose |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Production origin, e.g. `https://www.example.com`. Used for canonical URLs, hreflang alternates, `sitemap.xml`, `robots.txt` and Open Graph tags. It is read at build time (pages are statically generated). On Vercel it falls back to the production domain automatically; elsewhere it falls back to `http://localhost:3000`. |
+| `NEXT_PUBLIC_SITE_URL` | Production origin, e.g. `https://www.example.com`. Used for canonical URLs, hreflang alternates, `sitemap.xml`, `robots.txt` and Open Graph tags. It is read at build time (pages are statically generated). On Vercel it falls back to the production domain automatically; elsewhere it falls back to `http://localhost:3000`, except in CI (`CI` set), where a missing URL fails the build. |
 
 ## SEO
 

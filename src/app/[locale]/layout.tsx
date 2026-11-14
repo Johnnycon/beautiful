@@ -81,7 +81,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${bodoni.variable} ${hanken.variable}`}>
       <body className="antialiased">
-        <StructuredData locale={locale} description={tMeta("home.description")} />
+        <StructuredData description={tMeta("home.description")} />
         <NextIntlClientProvider messages={clientMessages}>
           <a
             href="#main"

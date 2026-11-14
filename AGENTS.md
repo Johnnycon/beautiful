@@ -97,6 +97,9 @@ The site supports English and Spanish for the Chicagoland Hispanic community.
 3. Access with `t('key')` or `t('nested.key')`; use `t.raw('key')` for arrays (e.g. service `includes`)
 4. Page titles/descriptions live under `metadata.<page>`
 
+### No automatic language redirects
+`localeDetection`, `localeCookie` and `alternateLinks` are off in `src/i18n/routing.ts`: every URL serves one language regardless of browser language or cookies (search engines advise against language redirects), and hreflang lives only in each page's `<head>`. `/en/...` 308s to the unprefixed URL (`next.config.ts`).
+
 ### Language Switcher
 Located in Header component - uses globe icon, switches between locales while preserving current path.
 
@@ -109,7 +112,9 @@ All page content, data (services, testimonials, pricing, portfolio) and metadata
 - 9 portfolio slots and 2 service images still use Unsplash placeholders (allowed in `next.config.ts`)
 - `/pricing` permanently redirects to `/services#packages` (Pricing was merged into Services)
 - `/reviews` permanently redirects to `/#reviews` (the Reviews page was dropped; reviews live on the home page only)
-- Set `NEXT_PUBLIC_SITE_URL` in production (canonical URLs, sitemap, OG tags) – see README
+- Set `NEXT_PUBLIC_SITE_URL` in production (canonical URLs, sitemap, OG tags) – see README. CI builds without it (or Vercel's production URL) fail on purpose rather than ship localhost canonicals
+- Favicon and app icons (`src/app/favicon.ico`, `icon.png`, `apple-icon.png`) are a stand-in Bodoni "B" monogram until there is a real logo
+- SEO honesty: testimonials must be real clients' words; never add `AggregateRating`/`Review` markup to the business schema (self-serving reviews aren't eligible); no per-town landing pages
 - Forms submit to placeholder success pages (no backend)
 - `/book` is a date *request*, not a booking: no prices, and copy makes clear availability is confirmed afterwards (we don't publish a calendar). Response time is promised as "within 24 hours" everywhere; keep it consistent. The action is called "Request a date" everywhere (nav, buttons, mobile bar); don't reintroduce "Book now". `/book?occasion=…&need=…&date=YYYY-MM-DD` prefills it (`bookingHref` in `src/data/booking.ts`; past or malformed dates are ignored); an unfinished request is kept in sessionStorage. Both forms validate inline with translated messages via `useFormErrors` (`src/lib/forms.ts`)
 - Mobile-first responsive design
